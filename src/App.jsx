@@ -306,7 +306,7 @@ export default function App() {
       {/* RENDER PAGE: INICIO VS DEDICATED CATALOG PAGE */}
       {currentPage === 'inicio' ? (
         <main>
-          {/* FULL-WIDTH HERO BANNER */}
+          {/* FULL-WIDTH HERO BANNER WITH ELEGANT POETIC BANNER BAR */}
           <section className="hero-banner-section-full">
             <div 
               className="hero-banner-full-card"
@@ -321,6 +321,16 @@ export default function App() {
                 alt="Florería Rouss Banner Full Width - Los verdaderos vikingos regalan flores. Reserva tu ramo." 
                 className="hero-banner-full-img"
               />
+            </div>
+
+            {/* ELEGANT POETIC BANNER BAR */}
+            <div 
+              className="banner-hint-bar" 
+              onClick={() => navigateToPage('catalogo')}
+              title="Explorar la Colección Imperial Rouss"
+            >
+              <FlowerSparkleIcon size={16} color="#D4AF37" />
+              <span>"Cada pétalo cuenta una historia inolvidable" · Explora la Colección Imperial</span>
             </div>
           </section>
 
@@ -640,7 +650,7 @@ export default function App() {
                 ))}
               </div>
 
-              {/* Mobile Category Dropdown Selector (No Horizontal Scroll Cutoff) */}
+              {/* Mobile Category Dropdown Selector */}
               <div className="mobile-category-selector-wrapper">
                 <select 
                   value={activeCategory} 
