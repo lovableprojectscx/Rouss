@@ -110,6 +110,38 @@ h1, h2, h3, h4 {
   line-height: 1.5;
 }
 
+/* TOP PROMOTIONAL ANNOUNCEMENT BAR (CINTILLO SUPERIOR) */
+.top-promo-bar {
+  background: #121110;
+  color: #D4AF37;
+  font-size: 0.78125rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid rgba(197, 155, 39, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  white-space: nowrap;
+  overflow-x: auto;
+  letter-spacing: 0.02em;
+}
+
+.top-promo-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.promo-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.promo-divider {
+  color: rgba(212, 175, 55, 0.4);
+}
+
 /* SITE HEADER */
 .site-header {
   position: sticky;
@@ -168,7 +200,7 @@ h1, h2, h3, h4 {
   gap: 0.75rem;
 }
 
-/* SOLID WHATSAPP BUTTON (NO GRADIENTS, NO GLOWS) */
+/* SOLID WHATSAPP BUTTON */
 .btn-whatsapp-solid {
   display: inline-flex;
   align-items: center;
@@ -236,7 +268,7 @@ h1, h2, h3, h4 {
   cursor: pointer;
 }
 
-/* HERO BANNER */
+/* HERO BANNER - FULL WIDTH IMPRESSIVE HEIGHT */
 .hero-banner-section-full {
   width: 100vw;
   position: relative;
@@ -269,20 +301,6 @@ h1, h2, h3, h4 {
 
 .hero-banner-full-card:hover .hero-banner-full-img {
   transform: scale(1.025);
-}
-
-.banner-hint-bar {
-  background: var(--bg-dark);
-  color: #D4AF37;
-  padding: 0.85rem;
-  text-align: center;
-  font-size: 0.875rem;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  border-top: 1px solid rgba(197, 155, 39, 0.3);
 }
 
 /* FEATURES SECTION */
@@ -661,7 +679,7 @@ h1, h2, h3, h4 {
   white-space: nowrap;
 }
 
-/* DEDICATED EXCLUSIVE CATALOG PAGE (ULTRA OPTIMIZED FOR MOBILE) */
+/* DEDICATED EXCLUSIVE CATALOG PAGE */
 .catalog-page-wrapper {
   padding: 2.5rem 0 5rem;
   background: var(--bg-main);
@@ -688,7 +706,7 @@ h1, h2, h3, h4 {
   line-height: 1.4;
 }
 
-/* SEARCH & FILTER BAR - MOBILE RESPONSIVE */
+/* SEARCH & FILTER BAR */
 .catalog-bar-minimal {
   display: flex;
   align-items: center;
@@ -756,7 +774,7 @@ h1, h2, h3, h4 {
   border-color: var(--text-primary);
 }
 
-/* PRODUCTS GRID - MOBILE OPTIMIZED */
+/* PRODUCTS GRID */
 .products-grid-minimal {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -1055,6 +1073,11 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 640px) {
+  .top-promo-bar {
+    font-size: 0.725rem;
+    padding: 0.45rem 0.75rem;
+    gap: 0.6rem;
+  }
   .form-grid-2col { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .about-stats { gap: 0.5rem; }

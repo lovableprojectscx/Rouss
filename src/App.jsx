@@ -194,8 +194,23 @@ export default function App() {
 
   return (
     <div className="site-wrapper">
+
+      {/* TOP PROMOTIONAL ANNOUNCEMENT BAR */}
+      <div className="top-promo-bar">
+        <div className="promo-item">
+          <span>✨ Envíos Express de Rosas Premium en Lima & Callao</span>
+        </div>
+        <span className="promo-divider">|</span>
+        <div className="promo-item">
+          <span>👑 Arreglos Imperiales con Tiaras de Cristal</span>
+        </div>
+        <span className="promo-divider">|</span>
+        <div className="promo-item">
+          <span>💬 Pedidos Directos por WhatsApp: <strong>+51 921 585 977</strong></span>
+        </div>
+      </div>
       
-      {/* 1. HEADER & NAVIGATION WITH REAL URL ROUTING */}
+      {/* 1. HEADER & NAVIGATION */}
       <header className="site-header">
         <div className="container header-container">
           <div className="logo-link" onClick={() => navigateToPage('inicio')}>
@@ -298,7 +313,7 @@ export default function App() {
               onClick={() => navigateToPage('catalogo')}
               role="button"
               tabIndex={0}
-              title="Haz clic para ver el Catálogo de Productos"
+              title="Explorar Colección de Productos"
               onKeyDown={(e) => e.key === 'Enter' && navigateToPage('catalogo')}
             >
               <img 
@@ -306,11 +321,6 @@ export default function App() {
                 alt="Florería Rouss Banner Full Width - Los verdaderos vikingos regalan flores. Reserva tu ramo." 
                 className="hero-banner-full-img"
               />
-            </div>
-
-            <div className="banner-hint-bar">
-              <FlowerSparkleIcon size={16} color="#D4AF37" />
-              <span>Haz clic sobre el banner para ver la Colección Completa en /catalogo</span>
             </div>
           </section>
 
