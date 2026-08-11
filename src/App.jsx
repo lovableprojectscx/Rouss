@@ -206,7 +206,7 @@ export default function App() {
         </div>
         <span className="promo-divider">|</span>
         <div className="promo-item">
-          <span>💬 Pedidos Directos por WhatsApp: <strong>+51 921 585 977</strong></span>
+          <span>💬 WhatsApp: <strong>+51 921 585 977</strong></span>
         </div>
       </div>
       
@@ -588,7 +588,7 @@ export default function App() {
           </section>
         </main>
       ) : (
-        /* DEDICATED EXCLUSIVE CATALOG PAGE (WITH SYNCED URL /catalogo) */
+        /* DEDICATED EXCLUSIVE CATALOG PAGE (WITH NO HORIZONTAL SCROLL) */
         <div className="catalog-page-wrapper">
           <div className="container">
             
@@ -602,7 +602,7 @@ export default function App() {
               </p>
             </div>
 
-            {/* SEARCH & FILTER BAR */}
+            {/* SEARCH & CATEGORY SELECT BAR */}
             <div className="catalog-bar-minimal">
               <div className="search-input-wrapper">
                 <SearchMinimalIcon size={18} color="#C59B27" />
@@ -620,7 +620,8 @@ export default function App() {
                 )}
               </div>
 
-              <div className="catalog-filter-pills">
+              {/* Desktop Filter Pills */}
+              <div className="catalog-filter-pills desktop-pills-flex">
                 {[
                   { id: 'todos', label: 'Todos' },
                   { id: 'propuestas', label: 'Propuestas & Bodas' },
@@ -638,6 +639,23 @@ export default function App() {
                   </button>
                 ))}
               </div>
+
+              {/* Mobile Category Dropdown Selector (No Horizontal Scroll Cutoff) */}
+              <div className="mobile-category-selector-wrapper">
+                <select 
+                  value={activeCategory} 
+                  onChange={(e) => setActiveCategory(e.target.value)}
+                  className="mobile-category-select"
+                >
+                  <option value="todos">🌹 Todas las Categorías</option>
+                  <option value="propuestas">💍 Propuestas & Bodas</option>
+                  <option value="coronas">👑 Cumpleaños & Coronales</option>
+                  <option value="rosas">💐 Rosas Premium</option>
+                  <option value="tematicos">⚽ Diseños Únicos</option>
+                  <option value="pastel">🌸 Delicadeza Pastel</option>
+                </select>
+              </div>
+
             </div>
 
             {/* PRODUCTS GRID */}
