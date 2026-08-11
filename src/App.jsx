@@ -195,18 +195,37 @@ export default function App() {
   return (
     <div className="site-wrapper">
 
-      {/* TOP PROMOTIONAL ANNOUNCEMENT BAR */}
-      <div className="top-promo-bar">
-        <div className="promo-item">
-          <span>✨ Envíos Express de Rosas Premium en Lima & Callao</span>
-        </div>
-        <span className="promo-divider">|</span>
-        <div className="promo-item">
-          <span>👑 Arreglos Imperiales con Tiaras de Cristal</span>
-        </div>
-        <span className="promo-divider">|</span>
-        <div className="promo-item">
-          <span>💬 WhatsApp: <strong>+51 921 585 977</strong></span>
+      {/* TOP INFINITE AUTO-SCROLLING TICKER MARQUEE */}
+      <div className="top-promo-bar-wrapper">
+        <div className="top-promo-ticker">
+          <div className="promo-ticker-track">
+            <div className="promo-item">
+              <span>✨ Envíos Express de Rosas Premium en Lima & Callao</span>
+            </div>
+            <span className="promo-divider">|</span>
+            <div className="promo-item">
+              <span>👑 Arreglos Imperiales con Tiaras de Cristal</span>
+            </div>
+            <span className="promo-divider">|</span>
+            <div className="promo-item">
+              <span>💬 WhatsApp: <strong>+51 921 585 977</strong></span>
+            </div>
+            <span className="promo-divider">|</span>
+
+            {/* Loop Duplicate Track */}
+            <div className="promo-item">
+              <span>✨ Envíos Express de Rosas Premium en Lima & Callao</span>
+            </div>
+            <span className="promo-divider">|</span>
+            <div className="promo-item">
+              <span>👑 Arreglos Imperiales con Tiaras de Cristal</span>
+            </div>
+            <span className="promo-divider">|</span>
+            <div className="promo-item">
+              <span>💬 WhatsApp: <strong>+51 921 585 977</strong></span>
+            </div>
+            <span className="promo-divider">|</span>
+          </div>
         </div>
       </div>
       
@@ -306,7 +325,7 @@ export default function App() {
       {/* RENDER PAGE: INICIO VS DEDICATED CATALOG PAGE */}
       {currentPage === 'inicio' ? (
         <main>
-          {/* FULL-WIDTH HERO BANNER WITH ELEGANT POETIC BANNER BAR */}
+          {/* FULL-WIDTH HERO BANNER WITH CLEAN POETIC BANNER BAR (NO FLOWER ICON) */}
           <section className="hero-banner-section-full">
             <div 
               className="hero-banner-full-card"
@@ -323,13 +342,12 @@ export default function App() {
               />
             </div>
 
-            {/* ELEGANT POETIC BANNER BAR */}
+            {/* CLEAN POETIC BANNER BAR WITHOUT FLOWER ICON */}
             <div 
               className="banner-hint-bar" 
               onClick={() => navigateToPage('catalogo')}
               title="Explorar la Colección Imperial Rouss"
             >
-              <FlowerSparkleIcon size={16} color="#D4AF37" />
               <span>"Cada pétalo cuenta una historia inolvidable" · Explora la Colección Imperial</span>
             </div>
           </section>

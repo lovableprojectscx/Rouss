@@ -110,21 +110,42 @@ h1, h2, h3, h4 {
   line-height: 1.5;
 }
 
-/* TOP PROMOTIONAL ANNOUNCEMENT BAR */
-.top-promo-bar {
+/* TOP PROMOTIONAL INFINITE MARQUEE TICKER BAR */
+.top-promo-bar-wrapper {
   background: #121110;
   color: #D4AF37;
-  font-size: 0.78125rem;
-  font-weight: 500;
-  text-align: center;
-  padding: 0.5rem 1rem;
   border-bottom: 1px solid rgba(197, 155, 39, 0.35);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.top-promo-ticker {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  padding: 0.5rem 0;
+}
+
+.promo-ticker-track {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+  gap: 1.5rem;
+  white-space: nowrap;
+  animation: marqueeTicker 24s linear infinite;
+  will-change: transform;
+  font-size: 0.78125rem;
+  font-weight: 500;
   letter-spacing: 0.02em;
+}
+
+.top-promo-ticker:hover .promo-ticker-track {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeTicker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .promo-item {
@@ -298,7 +319,7 @@ h1, h2, h3, h4 {
   transform: scale(1.025);
 }
 
-/* ELEGANT POETIC BANNER BAR */
+/* ELEGANT POETIC BANNER BAR WITHOUT FLOWER ICON */
 .banner-hint-bar {
   background: #121110;
   color: #D4AF37;
@@ -1118,10 +1139,9 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 640px) {
-  .top-promo-bar {
+  .promo-ticker-track {
     font-size: 0.725rem;
-    padding: 0.45rem 0.75rem;
-    gap: 0.6rem;
+    gap: 1.25rem;
   }
   .form-grid-2col { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
