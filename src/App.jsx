@@ -13,8 +13,9 @@ import {
 } from './components/PremiumIcons'
 import { fetchRoussData, createReservation } from './lib/supabase'
 
-// 14 Official Products from Florería Rouss Owner + Signature Models
+// 29 Official Products from Florería Rouss Owner + Signature Models
 const INITIAL_PRODUCTS = [
+  // TANDA 1
   {
     id: 'ba000001-0000-4000-a000-000000000011',
     title: 'Ramo Buchón "Sol Radiante" (12 Girasoles)',
@@ -183,17 +184,187 @@ const INITIAL_PRODUCTS = [
     imageFallback: '/images/products/bouquet-romance-3-lirios-rosas-pastel.jpg',
     description: 'Romántica sinfonía floral compuesta por 3 lirios orientales rosados y rosas en tonos suaves, envueltas en pliegues de papel de seda marfil.'
   },
+
+  // TANDA 2
   {
-    id: 'ba000001-0000-4000-a000-000000000001',
-    title: 'Ramo Propuesta "Corazón & Corona"',
+    id: 'ba000001-0000-4000-a000-000000000031',
+    title: 'Cucurucho Pasión 8 Rosas Rojas',
+    category: 'rosas',
+    categories: ['rosas'],
+    categoryName: 'Rosas Premium',
+    price: 'S/ 80.00',
+    tag: 'Económico & Chic',
+    image: '/images/products/cucurucho-pasion-8-rosas-rojas.webp',
+    imageFallback: '/images/products/cucurucho-pasion-8-rosas-rojas.jpg',
+    description: 'Delicado y moderno cucurucho en tono negro de alta costura con 8 rosas rojas selectas y detalles en baby breath.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000032',
+    title: 'Bouquet Delicadeza 12 Rosas Rosa Pastel',
+    category: 'pastel',
+    categories: ['pastel', 'rosas'],
+    categoryName: 'Delicadeza Pastel & Lirios',
+    price: 'S/ 90.00',
+    tag: 'Delicadeza Soft',
+    image: '/images/products/bouquet-delicadeza-12-rosas-rosa-pastel.webp',
+    imageFallback: '/images/products/bouquet-delicadeza-12-rosas-rosa-pastel.jpg',
+    description: 'Encantador bouquet de 12 rosas en tono rosa pastel envuelto en papel coreano translúcido con cinta satinada.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000033',
+    title: 'Bouquet Multicolor Fiesta de Primavera',
+    category: 'combos',
+    categories: ['combos', 'pastel'],
+    categoryName: 'Detalles & Combos Especiales',
+    price: 'S/ 90.00',
+    tag: 'Primavera Rouss',
+    image: '/images/products/bouquet-multicolor-fiesta-primavera.webp',
+    imageFallback: '/images/products/bouquet-multicolor-fiesta-primavera.jpg',
+    description: 'Vibrante arreglo floral primaveral con rosas, margaritas, follaje verde y flores variadas en papel coreano de diseñador.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000034',
+    title: 'Mini Bouquet 4 Rosas & Astromelias',
+    category: 'rosas',
+    categories: ['rosas'],
+    categoryName: 'Rosas Premium',
+    price: 'S/ 55.00',
+    tag: 'Detalle Accesible',
+    image: '/images/products/mini-bouquet-4-rosas-astromelias.webp',
+    imageFallback: '/images/products/mini-bouquet-4-rosas-astromelias.jpg',
+    description: 'Exquisito arreglo compacto de 4 rosas rojas seleccionadas rodeadas por astromelias blancas y envoltura cónica marfil.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000035',
+    title: 'Bouquet Exótico 5 Rosas & Anturio Rosa',
+    category: 'pastel',
+    categories: ['pastel', 'rosas'],
+    categoryName: 'Delicadeza Pastel & Lirios',
+    price: 'S/ 85.00',
+    tag: 'Flor Exótica',
+    image: '/images/products/bouquet-exotico-5-rosas-anturio-rosa.webp',
+    imageFallback: '/images/products/bouquet-exotico-5-rosas-anturio-rosa.jpg',
+    description: 'Sofisticada combinación de 5 rosas pastel con 1 anturio exótico rosado y follaje fino en envoltura de alta costura.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000036',
+    title: 'Bouquet Imperial 20 Rosas & Doble Anturio',
+    category: 'rosas',
+    categories: ['rosas', 'pastel'],
+    categoryName: 'Rosas Premium',
+    price: 'S/ 190.00',
+    tag: 'Diseño Exclusivo',
+    image: '/images/products/bouquet-imperial-20-rosas-doble-anturio.webp',
+    imageFallback: '/images/products/bouquet-imperial-20-rosas-doble-anturio.jpg',
+    description: 'Lujoso arreglo esférico de 20 rosas en tonalidades blush/durazno acompañadas de 2 majestuosos anturios en papel coreano rosado.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000037',
+    title: 'Bouquet Clásico 12 Rosas Rojas',
+    category: 'rosas',
+    categories: ['rosas'],
+    categoryName: 'Rosas Premium',
+    price: 'S/ 80.00',
+    tag: 'Clásico Atemporal',
+    image: '/images/products/bouquet-clasico-12-rosas-rojas.webp',
+    imageFallback: '/images/products/bouquet-clasico-12-rosas-rojas.jpg',
+    description: 'Clásico y elegante arreglo de 12 rosas rojas de invernadero con corona de gypsophila blanca y cono marfil.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000038',
+    title: 'Mini Bouquet Lirio Oriental & Astromelias',
+    category: 'pastel',
+    categories: ['pastel'],
+    categoryName: 'Delicadeza Pastel & Lirios',
+    price: 'S/ 55.00',
+    tag: 'Aroma Dulce',
+    image: '/images/products/mini-bouquet-lirio-oriental-astromelias.webp',
+    imageFallback: '/images/products/mini-bouquet-lirio-oriental-astromelias.jpg',
+    description: 'Luminoso bouquet que destaca 1 lirio oriental rosado perfumado enmarcado en alegres astromelias multicolores.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000039',
+    title: 'Bouquet Distinción 8 Claveles Importados',
+    category: 'pastel',
+    categories: ['pastel'],
+    categoryName: 'Delicadeza Pastel & Lirios',
+    price: 'S/ 90.00',
+    tag: 'Importado Especial',
+    image: '/images/products/bouquet-distincion-8-claveles-importados.webp',
+    imageFallback: '/images/products/bouquet-distincion-8-claveles-importados.jpg',
+    description: 'Fino ramo elaborado con 8 claveles importados de pétalos veteados en matices frambuesa y blanco, con envoltura de diseño oscuro.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000040',
+    title: 'Ramo Exclusivo Orquídea Real & Estrellitas de Belén',
     category: 'propuestas',
-    categories: ['propuestas', 'coronas'],
+    categories: ['propuestas', 'pastel'],
     categoryName: 'Propuestas & Bodas',
-    price: 'S/ 280.00',
-    tag: 'Firma Rouss',
-    image: '/images/product-proposal-crown.jpg',
-    imageFallback: '/images/product-proposal-crown.jpg',
-    description: 'Espectacular domo de rosas rojas seleccionadas con cinta personalizada "¿Quieres casarte conmigo?", tiara imperial dorada y mariposas de oro refinadas.'
+    price: 'S/ 150.00',
+    tag: 'Alta Costura',
+    image: '/images/products/ramo-exclusivo-orquidea-real-estrellitas-belen.webp',
+    imageFallback: '/images/products/ramo-exclusivo-orquidea-real-estrellitas-belen.jpg',
+    description: 'Creación de alta floristería con vara de orquídea blanca de lujo, estrellitas de Belén y hojas de ruscus en envoltura de seda blanca.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000041',
+    title: 'Bouquet Radiante 6 Girasoles & Margaritas',
+    category: 'buchones',
+    categories: ['buchones'],
+    categoryName: 'Ramos Buchones & Girasoles',
+    price: 'S/ 80.00',
+    tag: 'Energía Solar',
+    image: '/images/products/bouquet-radiante-6-girasoles-margaritas.webp',
+    imageFallback: '/images/products/bouquet-radiante-6-girasoles-margaritas.jpg',
+    description: 'Radiante arreglo circular de 6 girasoles de exportación acompañados de margaritas silvestres y envoltura en tono rosa pastel.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000042',
+    title: 'Bouquet Silvestre Romance Pastel',
+    category: 'pastel',
+    categories: ['pastel'],
+    categoryName: 'Delicadeza Pastel & Lirios',
+    price: 'S/ 65.00',
+    tag: 'Ternura Floral',
+    image: '/images/products/bouquet-silvestre-romance-pastel.webp',
+    imageFallback: '/images/products/bouquet-silvestre-romance-pastel.jpg',
+    description: 'Tierno bouquet alargado con flores silvestres y rosas en tonos suaves, atado con cinta dorada y papel coreano translúcido.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000043',
+    title: 'Sombrerera Floral Box Girasoles & Rosas',
+    category: 'combos',
+    categories: ['combos', 'buchones'],
+    categoryName: 'Detalles & Combos Especiales',
+    price: 'S/ 100.00',
+    tag: 'Floral Box',
+    image: '/images/products/sombrerera-floral-box-girasoles-rosas.webp',
+    imageFallback: '/images/products/sombrerera-floral-box-girasoles-rosas.jpg',
+    description: 'Elegante sombrerera rígida con composición circular de girasoles brillantes, rosas rojas intensas y margaritas frescas.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000044',
+    title: 'Bouquet Dulzura Lirio Rosado & Conejitos',
+    category: 'pastel',
+    categories: ['pastel'],
+    categoryName: 'Delicadeza Pastel & Lirios',
+    price: 'S/ 120.00',
+    tag: 'Dulzura Pastel',
+    image: '/images/products/bouquet-dulzura-lirio-rosado-conejitos.webp',
+    imageFallback: '/images/products/bouquet-dulzura-lirio-rosado-conejitos.jpg',
+    description: 'Armoniosa composición de 1 lirio oriental rosa, conejitos (antirrinos) blancos y flores complementarias en papel coreano de seda.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000045',
+    title: 'Ramo Princesa 12 Rosas Durazno & Tiara de Cristal',
+    category: 'coronas',
+    categories: ['coronas', 'pastel'],
+    categoryName: 'Cumpleaños & Coronales',
+    price: 'S/ 200.00',
+    tag: 'Tiara de Cristal',
+    image: '/images/products/ramo-princesa-12-rosas-durazno-tiara-cristal.webp',
+    imageFallback: '/images/products/ramo-princesa-12-rosas-durazno-tiara-cristal.jpg',
+    description: 'Distinguido bouquet de 12 rosas en tono durazno/pastel coronado con una tiara de cristal brillante y envoltura de alta costura.'
   }
 ];
 
@@ -280,7 +451,7 @@ export default function App() {
     nombre: '',
     telefono: '',
     ocasion: 'Ramo Buchón de Impacto',
-    presupuesto: 'S/ 200 - S/ 350',
+    presupuesto: 'S/ 80 - S/ 200',
     fechaEntrega: '',
     mensaje: ''
   });
@@ -592,9 +763,9 @@ export default function App() {
 
                 <div className="feature-card-image">
                   <picture>
-                    <source srcSet="/images/products/ramo-buchon-corona-reina-50-rosas.webp" type="image/webp" />
+                    <source srcSet="/images/products/ramo-princesa-12-rosas-durazno-tiara-cristal.webp" type="image/webp" />
                     <img 
-                      src="/images/products/ramo-buchon-corona-reina-50-rosas.jpg" 
+                      src="/images/products/ramo-princesa-12-rosas-durazno-tiara-cristal.jpg" 
                       alt="Diseños de Autor Únicos" 
                       className="feature-img-thumb"
                     />
@@ -605,15 +776,15 @@ export default function App() {
 
                 <div className="feature-card-image">
                   <picture>
-                    <source srcSet="/images/products/bouquet-conservacion-20-rosas-hidratacion.webp" type="image/webp" />
+                    <source srcSet="/images/products/cucurucho-pasion-8-rosas-rojas.webp" type="image/webp" />
                     <img 
-                      src="/images/products/bouquet-conservacion-20-rosas-hidratacion.jpg" 
+                      src="/images/products/cucurucho-pasion-8-rosas-rojas.jpg" 
                       alt="Envío Express Puntual" 
                       className="feature-img-thumb"
                     />
                   </picture>
-                  <h3 className="feature-title">Envío Express & Hidratación</h3>
-                  <p className="feature-desc">Tecnología de esponja absorbente para máxima conservación y entregas cuidadosas en Lima y Callao.</p>
+                  <h3 className="feature-title">Envío Express & Calidad</h3>
+                  <p className="feature-desc">Rosas frescas de exportación con envolturas elegantes y entregas puntuales en Lima y Callao.</p>
                 </div>
               </div>
             </div>
@@ -628,7 +799,7 @@ export default function App() {
                 </span>
                 <h2>Alta Floristería a tu Alcance</h2>
                 <p>
-                  Explora nuestra colección oficial de ramos buchones, coronas de cristal y arreglos de autor.
+                  Explora nuestra colección oficial de más de {productsList.length} arreglos exclusivos, ramos buchones y coronas de cristal.
                 </p>
                 
                 <button 
@@ -750,10 +921,11 @@ export default function App() {
                       >
                         <option value="Ramo Buchón de Rosas & Girasoles">Ramo Buchón de Rosas & Girasoles</option>
                         <option value="Cumpleaños con Tiara de Cristal">Cumpleaños con Tiara de Cristal</option>
+                        <option value="Cucurucho o Mini Bouquet Accesible">Cucurucho o Mini Bouquet Accesible</option>
+                        <option value="Bouquet con Anturios Exóticos">Bouquet con Anturios Exóticos</option>
+                        <option value="Sombrerera Floral Box">Sombrerera Floral Box</option>
                         <option value="Propuesta de Matrimonio">Propuesta de Matrimonio</option>
                         <option value="Aniversario Romántico">Aniversario Romántico</option>
-                        <option value="Bouquet de Lirios & Rosas Pastel">Bouquet de Lirios & Rosas Pastel</option>
-                        <option value="Combo Especial con Peluche">Combo Especial con Peluche</option>
                       </select>
                     </div>
 
@@ -764,10 +936,10 @@ export default function App() {
                         onChange={(e) => setFormData({...formData, presupuesto: e.target.value})}
                         className="form-select"
                       >
-                        <option value="S/ 100 - S/ 180">S/ 100 - S/ 180</option>
-                        <option value="S/ 180 - S/ 300">S/ 180 - S/ 300</option>
-                        <option value="S/ 300 - S/ 450 (Formato Maxi)">S/ 300 - S/ 450 (Formato Maxi)</option>
-                        <option value="S/ 450+ Arreglo Monumental">S/ 450+ Arreglo Monumental</option>
+                        <option value="S/ 55 - S/ 100 (Detalle Accesible)">S/ 55 - S/ 100 (Detalle Accesible)</option>
+                        <option value="S/ 100 - S/ 180 (Gama Media)">S/ 100 - S/ 180 (Gama Media)</option>
+                        <option value="S/ 180 - S/ 300 (Gama Alta)">S/ 180 - S/ 300 (Gama Alta)</option>
+                        <option value="S/ 300 - S/ 450+ (Formato Maxi Buchón)">S/ 300 - S/ 450+ (Formato Maxi Buchón)</option>
                       </select>
                     </div>
 
@@ -825,7 +997,7 @@ export default function App() {
                   </span>
                   <h2>Elegancia & Sofisticación en Cada Pétalo</h2>
                   <p>
-                    <strong>Florería Rouss by Jharol Baldeón</strong> es una marca registrada de alta floristería especializada en ramos buchones, rosas de exportación y arreglos con tiaras imperiales de cristal.
+                    <strong>Florería Rouss by Jharol Baldeón</strong> es una marca registrada de alta floristería especializada en ramos buchones, rosas de exportación, orquídeas reales y arreglos con tiaras imperiales de cristal.
                   </p>
                   <p>
                     Cada obra floral es concebida con técnicas exclusivas de diseño para aniversarios, cumpleaños, propuestas de matrimonio y momentos que perduran para siempre.
@@ -871,7 +1043,7 @@ export default function App() {
                 <SearchMinimalIcon size={18} color="#C59B27" />
                 <input 
                   type="text" 
-                  placeholder="Buscar arreglo (ej. Buchón, Girasoles, Corona, Lirios)..." 
+                  placeholder="Buscar arreglo (ej. Buchón, Girasoles, Anturio, Orquídea)..." 
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="search-input"
