@@ -1124,7 +1124,7 @@ export default function App() {
               href="https://www.instagram.com/rouss8439/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="header-social-link"
+              className="header-social-link desktop-only"
               title="Seguir en Instagram @rouss8439"
             >
               <InstagramGoldIcon size={18} color="#C59B27" />
@@ -1134,7 +1134,7 @@ export default function App() {
               href="https://www.facebook.com/rouss.floristeria.2025" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="header-social-link"
+              className="header-social-link desktop-only"
               title="Seguir en Facebook Florería Rouss"
             >
               <FacebookGoldIcon size={18} color="#C59B27" />
@@ -1142,11 +1142,11 @@ export default function App() {
 
             <button 
               onClick={() => handleWhatsAppOrder('Consulta General')} 
-              className="btn-whatsapp-solid"
+              className="btn-whatsapp-solid header-wa-btn"
               title="Pedir por WhatsApp"
             >
               <WhatsAppGoldIcon size={18} color="#FFFFFF" />
-              <span>Pedir por WhatsApp</span>
+              <span className="wa-btn-text">Pedir por WhatsApp</span>
             </button>
 
             {/* Mobile Hamburger Toggle */}
@@ -1182,13 +1182,36 @@ export default function App() {
             <a href="#nosotros" className="mobile-drawer-link" onClick={() => setMobileMenuOpen(false)}>Sobre Rouss</a>
           </>
         )}
+
+        {/* Social Links Row in Drawer */}
+        <div className="mobile-drawer-social-row">
+          <a 
+            href="https://www.instagram.com/rouss8439/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="drawer-social-pill"
+          >
+            <InstagramGoldIcon size={16} color="#C59B27" />
+            <span>Instagram</span>
+          </a>
+          <a 
+            href="https://www.facebook.com/rouss.floristeria.2025" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="drawer-social-pill"
+          >
+            <FacebookGoldIcon size={16} color="#C59B27" />
+            <span>Facebook</span>
+          </a>
+        </div>
+
         <button 
           onClick={() => { handleWhatsAppOrder('Consulta General'); setMobileMenuOpen(false); }} 
           className="btn-whatsapp-solid"
-          style={{ width: '100%', borderRadius: 'var(--radius-full)', marginTop: '0.5rem', padding: '0.8rem' }}
+          style={{ width: '100%', borderRadius: 'var(--radius-full)', marginTop: '0.75rem', padding: '0.85rem' }}
         >
           <WhatsAppGoldIcon size={20} color="#FFFFFF" />
-          <span style={{ display: 'inline' }}>Contactar por WhatsApp</span>
+          <span style={{ display: 'inline', fontWeight: 600 }}>WhatsApp Directo (+51 941 493 471)</span>
         </button>
       </div>
 
