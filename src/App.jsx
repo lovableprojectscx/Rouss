@@ -1931,10 +1931,6 @@ export default function App() {
               <button type="button" onClick={() => setShowPrivacyModal(true)}>Políticas de Privacidad (Ley N° 29733)</button>
               <span style={{ color: '#57534E' }}>·</span>
               <button type="button" onClick={() => setShowPrivacyModal(true)}>Términos del Servicio & Envíos</button>
-              <span style={{ color: '#57534E' }}>·</span>
-              <button type="button" onClick={() => setShowClaimsModal(true)} style={{ color: '#C59B27', fontWeight: 600 }}>
-                Libro de Reclamaciones Virtual
-              </button>
             </div>
 
             <div style={{ marginTop: '0.85rem' }}>
