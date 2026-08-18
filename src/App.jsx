@@ -7,6 +7,7 @@ import {
   SearchMinimalIcon,
   CloseMinimalIcon,
   InstagramGoldIcon,
+  FacebookGoldIcon,
   MapPinGoldIcon,
   PhoneGoldIcon,
   WhatsAppGoldIcon
@@ -890,10 +891,10 @@ export default function App() {
     return matchesCategory && matchesSearch;
   });
 
-  // WhatsApp Handlers (+51 921 585 977)
+  // WhatsApp Handlers (+51 941 493 471)
   const handleWhatsAppOrder = (productName) => {
     const message = encodeURIComponent(`Hola Florería Rouss, me gustaría solicitar información y disponibilidad de: *${productName}*.`);
-    window.open(`https://wa.me/51921585977?text=${message}`, '_blank');
+    window.open(`https://wa.me/51941493471?text=${message}`, '_blank');
   };
 
   const handleFormSubmit = async (e) => {
@@ -911,7 +912,7 @@ export default function App() {
 *Fecha de Entrega*: ${fechaEntrega || 'Por coordinar'}
 *Detalles / Dedicatoria*: ${mensaje || 'Sin mensaje especificado'}`;
 
-    window.open(`https://wa.me/51921585977?text=${encodeURIComponent(messageText)}`, '_blank');
+    window.open(`https://wa.me/51941493471?text=${encodeURIComponent(messageText)}`, '_blank');
   };
 
   return (
@@ -922,29 +923,45 @@ export default function App() {
         <div className="top-promo-ticker">
           <div className="promo-ticker-track">
             <div className="promo-item">
-              <span>Envíos Express de Rosas & Tulipanes Holandeses en Lima & Callao</span>
+              <span>Envíos a todo Lima (tarifa según distancia)</span>
             </div>
             <span className="promo-divider">|</span>
             <div className="promo-item">
-              <span>Ramos Buchones & Arreglos Imperiales con Tiaras</span>
+              <span>+1000 Pedidos Seguros Entregados</span>
             </div>
             <span className="promo-divider">|</span>
             <div className="promo-item">
-              <span>WhatsApp: <strong>+51 921 585 977</strong></span>
+              <span>3 Años de Trayectoria en Alta Floristería</span>
+            </div>
+            <span className="promo-divider">|</span>
+            <div className="promo-item">
+              <span>WhatsApp Directo: <strong>+51 941 493 471</strong></span>
+            </div>
+            <span className="promo-divider">|</span>
+            <div className="promo-item">
+              <span>Chorrillos, Lima - Av. Alameda Sur con Av. Los Incas</span>
             </div>
             <span className="promo-divider">|</span>
 
             {/* Loop Duplicate Track */}
             <div className="promo-item">
-              <span>Envíos Express de Rosas & Tulipanes Holandeses en Lima & Callao</span>
+              <span>Envíos a todo Lima (tarifa según distancia)</span>
             </div>
             <span className="promo-divider">|</span>
             <div className="promo-item">
-              <span>Ramos Buchones & Arreglos Imperiales con Tiaras</span>
+              <span>+1000 Pedidos Seguros Entregados</span>
             </div>
             <span className="promo-divider">|</span>
             <div className="promo-item">
-              <span>WhatsApp: <strong>+51 921 585 977</strong></span>
+              <span>3 Años de Trayectoria en Alta Floristería</span>
+            </div>
+            <span className="promo-divider">|</span>
+            <div className="promo-item">
+              <span>WhatsApp Directo: <strong>+51 941 493 471</strong></span>
+            </div>
+            <span className="promo-divider">|</span>
+            <div className="promo-item">
+              <span>Chorrillos, Lima - Av. Alameda Sur con Av. Los Incas</span>
             </div>
             <span className="promo-divider">|</span>
           </div>
@@ -1327,24 +1344,24 @@ export default function App() {
                   </span>
                   <h2>Elegancia & Sofisticación en Cada Pétalo</h2>
                   <p>
-                    <strong>Florería Rouss by Jharol Baldeón</strong> es una marca registrada de alta floristería especializada en ramos buchones, tulipanes holandeses, rosas de exportación y coronas de autor con tiaras imperiales.
+                    <strong>Florería Rouss by Jharol Baldeón</strong> cuenta con 3 años de trayectoria en el rubro de alta floristería en Lima, especializada en ramos buchones, tulipanes holandeses, rosas de exportación y coronas de autor con tiaras imperiales.
                   </p>
                   <p>
-                    Cada obra floral es concebida con técnicas exclusivas de diseño para aniversarios, cumpleaños, propuestas de matrimonio y momentos que perduran para siempre.
+                    Ubicados en Chorrillos (Av. Alameda Sur cruce con Av. Los Incas), realizamos envíos seguros y garantizados a todo Lima Metropolitana con más de 1,000 entregas exitosas.
                   </p>
 
                   <div className="about-stats">
                     <div className="stat-item">
-                      <span className="stat-number">100%</span>
-                      <span className="stat-label">Flores Selectas</span>
+                      <span className="stat-number">3 Años</span>
+                      <span className="stat-label">En el Rubro</span>
                     </div>
                     <div className="stat-item">
                       <span className="stat-number">+1000</span>
-                      <span className="stat-label">Momentos Felices</span>
+                      <span className="stat-label">Pedidos Seguros</span>
                     </div>
                     <div className="stat-item">
-                      <span className="stat-number">5.0 / 5.0</span>
-                      <span className="stat-label">Valoración Clientes</span>
+                      <span className="stat-number">Todo Lima</span>
+                      <span className="stat-label">Zonas de Delivery</span>
                     </div>
                   </div>
                 </div>
@@ -1540,24 +1557,30 @@ export default function App() {
               <div className="contact-info">
                 <div className="contact-item">
                   <PhoneGoldIcon size={18} color="#C59B27" />
-                  <span>+51 921 585 977 (WhatsApp)</span>
+                  <span>+51 941 493 471 (WhatsApp)</span>
                 </div>
                 <div className="contact-item">
                   <InstagramGoldIcon size={18} color="#C59B27" />
                   <a href="https://instagram.com/rouss8439" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
-                    @rouss8439
+                    @rouss8439 (Instagram)
+                  </a>
+                </div>
+                <div className="contact-item">
+                  <FacebookGoldIcon size={18} color="#C59B27" />
+                  <a href="https://www.facebook.com/share/18MDdziT14/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
+                    Florería Rouss (Facebook)
                   </a>
                 </div>
                 <div className="contact-item">
                   <MapPinGoldIcon size={18} color="#C59B27" />
-                  <span>Código de Atención: 15067 | Lima, Perú</span>
+                  <span>Av. Alameda Sur cruce con Av. Los Incas, Chorrillos, Lima</span>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="footer-bottom">
-            <p>© {new Date().getFullYear()} Florería Rouss. Todos los derechos reservados.</p>
+            <p>© {new Date().getFullYear()} Florería Rouss · 3 Años en el Rubro · +1000 Pedidos Seguros. Envíos a todo Lima.</p>
             <p>Rouss By Jharol Baldeón</p>
           </div>
         </div>
@@ -1565,7 +1588,7 @@ export default function App() {
 
       {/* FLOATING WHATSAPP BUTTON */}
       <a 
-        href="https://wa.me/51921585977?text=Hola%20Florer%C3%ADa%20Rouss,%20deseo%20consultar%20por%20sus%20arreglos%20florales" 
+        href="https://wa.me/51941493471?text=Hola%20Florer%C3%ADa%20Rouss,%20deseo%20consultar%20por%20sus%20arreglos%20florales" 
         target="_blank" 
         rel="noopener noreferrer" 
         className="floating-wa-btn"

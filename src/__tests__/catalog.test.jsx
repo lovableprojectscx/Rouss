@@ -59,7 +59,7 @@ describe('Florería Rouss - Catálogo & Componentes', () => {
     expect(screen.getByText(/Maxi Bouquet Imperial 12 Tulipanes Rosa Holandés/i)).toBeInTheDocument()
   })
 
-  it('opens WhatsApp with official number +51 921 585 977 when clicking order button', async () => {
+  it('opens WhatsApp with official number +51 941 493 471 when clicking order button', async () => {
     const openSpy = vi.spyOn(window, 'open').mockImplementation(() => {})
     render(<App />)
     const catalogBtns = screen.getAllByRole('button', { name: 'Catálogo Exclusivo' })
@@ -70,7 +70,7 @@ describe('Florería Rouss - Catálogo & Componentes', () => {
 
     expect(openSpy).toHaveBeenCalled()
     const callUrl = openSpy.mock.calls[0][0]
-    expect(callUrl).toContain('51921585977')
+    expect(callUrl).toContain('51941493471')
     expect(callUrl).toContain('wa.me')
   })
 
