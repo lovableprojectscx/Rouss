@@ -85,4 +85,55 @@ test.describe('Florería Rouss - E2E Tests', () => {
     await closeBtn.click()
     await expect(modal).not.toBeVisible()
   })
+
+  test('Libro de Reclamaciones completes full lifecycle submission and generates correlative code', async ({ page }) => {
+    await page.goto('/')
+
+    // Open claims modal
+    const claimsBtn = page.locator('button.footer-claims-btn')
+    await claimsBtn.scrollIntoViewIfNeeded()
+    await claimsBtn.click()
+
+    const modal = page.locator('.claims-modal-card')
+    await expect(modal).toBeVisible()
+
+    // Fill consumer details
+    await page.locator('input[name="numeroDocumento"]').fill('72849105')
+    await page.locator('input[name="nombreCompleto"]').fill('Carlos Huamán Quispe')
+    await page.locator('input[name="email"]').fill('carlos.huaman@gmail.com')
+    await page.locator('input[name="telefono"]').fill('998877665')
+    await page.locator('input[name="distrito"]').fill('Chorrillos')
+    await page.locator('input[name="direccion"]').fill('Av. Los Próceres 450')
+
+    // Fill claim details
+    await page.locator('input[name="montoReclamado"]').fill('220.00')
+    await page.locator('input[name="descripcionBien"]').fill('Ramo Buchón 24 Rosas Rojas Corona Princesa')
+    await page.locator('textarea[name="detalleReclamacion"]').fill('El arreglo llegó con dos horas de retraso sobre la hora solicitada.')
+    await page.locator('textarea[name="pedidoConsumidor"]').fill('Solicito una compensación o descuento en mi siguiente pedido.')
+
+    // Check legal checkboxes
+    await page.locator('input[name="aceptaDeclaracion"]').check()
+    await page.locator('input[name="aceptaDatosPersonales"]').check()
+
+    // Submit form
+    const submitBtn = page.locator('button.btn-submit-claim')
+    await submitBtn.click()
+
+    // Verify success confirmation card
+    const successCard = page.locator('.claims-success-card')
+    await expect(successCard).toBeVisible()
+    await expect(successCard).toContainText('¡Hoja de Reclamación Registrada Exitosamente!')
+
+    // Verify generated correlative code
+    const codeValue = page.locator('.code-value')
+    await expect(codeValue).toBeVisible()
+    await expect(codeValue).toContainText('ROUSS-LR-')
+
+    // Verify download PDF and WhatsApp buttons
+    const downloadPdfBtn = page.locator('.btn-download-pdf')
+    await expect(downloadPdfBtn).toBeVisible()
+
+    const waBtn = page.locator('.btn-wa-claim-confirm')
+    await expect(waBtn).toBeVisible()
+  })
 })
