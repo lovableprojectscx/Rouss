@@ -13,7 +13,7 @@ export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
  */
 export async function fetchRoussData() {
   try {
-    const [productsRes, categoriesRes, settingsRes, testimoniosRes] = await Promise.all([
+    const [productsRes, categoriesRes, settingsRes, testimoniosRes, bannersRes] = await Promise.all([
       supabase
         .from('products')
         .select('*')
@@ -36,6 +36,12 @@ export async function fetchRoussData() {
         .select('*')
         .eq('tenant_id', ROUSS_TENANT_ID)
         .eq('activo', true)
+        .order('orden', { ascending: true }),
+      supabase
+        .from('banners')
+        .select('*')
+        .eq('tenant_id', ROUSS_TENANT_ID)
+        .eq('activo', true)
         .order('orden', { ascending: true })
     ])
 
@@ -43,7 +49,8 @@ export async function fetchRoussData() {
       products: productsRes.data && productsRes.data.length > 0 ? productsRes.data : null,
       categories: categoriesRes.data && categoriesRes.data.length > 0 ? categoriesRes.data : null,
       settings: settingsRes.data || null,
-      testimonios: testimoniosRes.data && testimoniosRes.data.length > 0 ? testimoniosRes.data : null
+      testimonios: testimoniosRes.data && testimoniosRes.data.length > 0 ? testimoniosRes.data : null,
+      banners: bannersRes.data && bannersRes.data.length > 0 ? bannersRes.data : null
     }
   } catch (error) {
     console.warn('Usando respaldo local para Florería Rouss:', error)
@@ -51,7 +58,8 @@ export async function fetchRoussData() {
       products: null,
       categories: null,
       settings: null,
-      testimonios: null
+      testimonios: null,
+      banners: null
     }
   }
 }

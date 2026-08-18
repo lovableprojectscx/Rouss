@@ -111,6 +111,11 @@ export default function App() {
   // Dynamic State synchronized with Supabase
   const [productsList, setProductsList] = useState(INITIAL_PRODUCTS);
   const [galleryList, setGalleryList] = useState(INITIAL_CLIENT_GALLERY);
+  const [heroBanner, setHeroBanner] = useState({
+    imagen: '/images/banner.png',
+    subtitulo: '"Cada pétalo cuenta una historia inolvidable" · Explora la Colección Imperial',
+    link: '/catalogo'
+  });
 
   // Page state initialized from URL path / hash
   const [currentPage, setCurrentPage] = useState(() => {
@@ -155,6 +160,17 @@ export default function App() {
       const data = await fetchRoussData();
       if (!isMounted) return;
 
+      // Update Banner from Supabase
+      if (data.banners && data.banners.length > 0) {
+        const primaryBanner = data.banners[0];
+        setHeroBanner({
+          imagen: primaryBanner.imagen || '/images/banner.png',
+          subtitulo: primaryBanner.subtitulo || '"Cada pétalo cuenta una historia inolvidable" · Explora la Colección Imperial',
+          link: primaryBanner.link || '/catalogo'
+        });
+      }
+
+      // Update Products from Supabase
       if (data.products && data.products.length > 0) {
         const mappedProducts = data.products.map(p => {
           const catKey = Array.isArray(p.category) && p.category.length > 0 ? p.category[0] : (p.slug || 'rosas');
@@ -172,6 +188,7 @@ export default function App() {
         setProductsList(mappedProducts);
       }
 
+      // Update Testimonios / Moments from Supabase
       if (data.testimonios && data.testimonios.length > 0) {
         const mappedTestimonios = data.testimonios.map(t => ({
           id: t.id,
@@ -381,7 +398,7 @@ export default function App() {
       {/* RENDER PAGE: INICIO VS DEDICATED CATALOG PAGE */}
       {currentPage === 'inicio' ? (
         <main>
-          {/* FULL-WIDTH HERO BANNER WITH CLEAN POETIC BANNER BAR */}
+          {/* FULL-WIDTH HERO BANNER - DYNAMIC FROM SUPABASE */}
           <section className="hero-banner-section-full">
             <div 
               className="hero-banner-full-card"
@@ -392,19 +409,19 @@ export default function App() {
               onKeyDown={(e) => e.key === 'Enter' && navigateToPage('catalogo')}
             >
               <img 
-                src="/images/banner.png" 
-                alt="Florería Rouss Banner Full Width - Los verdaderos vikingos regalan flores. Reserva tu ramo." 
+                src={heroBanner.imagen} 
+                alt="Florería Rouss Banner Full Width" 
                 className="hero-banner-full-img"
               />
             </div>
 
-            {/* CLEAN POETIC BANNER BAR */}
+            {/* CLEAN POETIC BANNER BAR - DYNAMIC FROM SUPABASE */}
             <div 
               className="banner-hint-bar" 
               onClick={() => navigateToPage('catalogo')}
               title="Explorar la Colección Imperial Rouss"
             >
-              <span>"Cada pétalo cuenta una historia inolvidable" · Explora la Colección Imperial</span>
+              <span>{heroBanner.subtitulo}</span>
             </div>
           </section>
 
