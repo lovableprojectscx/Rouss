@@ -1422,10 +1422,10 @@ export default function App() {
               <div className="about-grid">
                 <div className="about-showcase-frame">
                   <picture>
-                    <source srcSet="/images/products/maxi-bouquet-imperial-12-tulipanes-rosa-holandes.webp" type="image/webp" />
+                    <source srcSet="/images/products/ramo-buchon-corona-reina-50-rosas.webp" type="image/webp" />
                     <img 
-                      src="/images/products/maxi-bouquet-imperial-12-tulipanes-rosa-holandes.jpg" 
-                      alt="Arreglo de Tulipanes Rouss by Jharol Baldeón" 
+                      src="/images/products/ramo-buchon-corona-reina-50-rosas.jpg" 
+                      alt="Ramo Buchón Corona Imperial Rouss by Jharol Baldeón" 
                       className="about-img"
                     />
                   </picture>
