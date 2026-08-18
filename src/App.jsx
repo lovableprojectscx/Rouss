@@ -740,13 +740,13 @@ const CATEGORY_NAMES_MAP = {
 
 const CATEGORIES_TABS = [
   { id: 'todos', label: 'Todos los Arreglos' },
-  { id: 'tulipanes', label: '🌷 Tulipanes de Lujo' },
-  { id: 'buchones', label: '👑 Ramos Buchones' },
-  { id: 'coronas', label: '💎 Cumpleaños & Coronas' },
-  { id: 'rosas', label: '💐 Rosas Premium' },
-  { id: 'pastel', label: '🌸 Lirios & Pastel' },
-  { id: 'combos', label: '🧸 Combos & Boxes' },
-  { id: 'propuestas', label: '💍 Propuestas & Bodas' }
+  { id: 'tulipanes', label: 'Tulipanes de Lujo' },
+  { id: 'buchones', label: 'Ramos Buchones' },
+  { id: 'coronas', label: 'Cumpleaños & Coronas' },
+  { id: 'rosas', label: 'Rosas Premium' },
+  { id: 'pastel', label: 'Lirios & Pastel' },
+  { id: 'combos', label: 'Combos & Boxes' },
+  { id: 'propuestas', label: 'Propuestas & Bodas' }
 ];
 
 export default function App() {
@@ -904,12 +904,12 @@ export default function App() {
     createReservation({ nombre, telefono, ocasion, presupuesto, fechaEntrega, mensaje });
 
     const messageText = `Hola Florería Rouss, solicito una cotización personalizada:
-📌 *Nombre*: ${nombre || 'No especificado'}
-📱 *Teléfono*: ${telefono || 'No especificado'}
-🌹 *Ocasión*: ${ocasion}
-💰 *Presupuesto*: ${presupuesto}
-📅 *Fecha de Entrega*: ${fechaEntrega || 'Por coordinar'}
-💬 *Detalles / Dedicatoria*: ${mensaje || 'Sin mensaje especificado'}`;
+*Nombre*: ${nombre || 'No especificado'}
+*Teléfono*: ${telefono || 'No especificado'}
+*Ocasión*: ${ocasion}
+*Presupuesto*: ${presupuesto}
+*Fecha de Entrega*: ${fechaEntrega || 'Por coordinar'}
+*Detalles / Dedicatoria*: ${mensaje || 'Sin mensaje especificado'}`;
 
     window.open(`https://wa.me/51921585977?text=${encodeURIComponent(messageText)}`, '_blank');
   };
@@ -922,29 +922,29 @@ export default function App() {
         <div className="top-promo-ticker">
           <div className="promo-ticker-track">
             <div className="promo-item">
-              <span>✨ Envíos Express de Rosas & Tulipanes Holandeses en Lima & Callao</span>
+              <span>Envíos Express de Rosas & Tulipanes Holandeses en Lima & Callao</span>
             </div>
             <span className="promo-divider">|</span>
             <div className="promo-item">
-              <span>👑 Ramos Buchones & Arreglos Imperiales con Tiaras</span>
+              <span>Ramos Buchones & Arreglos Imperiales con Tiaras</span>
             </div>
             <span className="promo-divider">|</span>
             <div className="promo-item">
-              <span>💬 WhatsApp: <strong>+51 921 585 977</strong></span>
+              <span>WhatsApp: <strong>+51 921 585 977</strong></span>
             </div>
             <span className="promo-divider">|</span>
 
             {/* Loop Duplicate Track */}
             <div className="promo-item">
-              <span>✨ Envíos Express de Rosas & Tulipanes Holandeses en Lima & Callao</span>
+              <span>Envíos Express de Rosas & Tulipanes Holandeses en Lima & Callao</span>
             </div>
             <span className="promo-divider">|</span>
             <div className="promo-item">
-              <span>👑 Ramos Buchones & Arreglos Imperiales con Tiaras</span>
+              <span>Ramos Buchones & Arreglos Imperiales con Tiaras</span>
             </div>
             <span className="promo-divider">|</span>
             <div className="promo-item">
-              <span>💬 WhatsApp: <strong>+51 921 585 977</strong></span>
+              <span>WhatsApp: <strong>+51 921 585 977</strong></span>
             </div>
             <span className="promo-divider">|</span>
           </div>
@@ -1343,7 +1343,7 @@ export default function App() {
                       <span className="stat-label">Momentos Felices</span>
                     </div>
                     <div className="stat-item">
-                      <span className="stat-number">★ 5.0</span>
+                      <span className="stat-number">5.0 / 5.0</span>
                       <span className="stat-label">Valoración Clientes</span>
                     </div>
                   </div>
@@ -1405,14 +1405,14 @@ export default function App() {
                   onChange={(e) => setActiveCategory(e.target.value)}
                   className="mobile-category-select"
                 >
-                  <option value="todos">🌹 Todos los Arreglos ({productsList.length})</option>
-                  <option value="tulipanes">🌷 Tulipanes de Lujo</option>
-                  <option value="buchones">👑 Ramos Buchones & Girasoles</option>
-                  <option value="coronas">💎 Cumpleaños & Coronas</option>
-                  <option value="rosas">💐 Rosas Premium</option>
-                  <option value="pastel">🌸 Lirios & Pastel</option>
-                  <option value="combos">🧸 Combos & Boxes</option>
-                  <option value="propuestas">💍 Propuestas & Bodas</option>
+                  <option value="todos">Todos los Arreglos ({productsList.length})</option>
+                  <option value="tulipanes">Tulipanes de Lujo</option>
+                  <option value="buchones">Ramos Buchones & Girasoles</option>
+                  <option value="coronas">Cumpleaños & Coronas</option>
+                  <option value="rosas">Rosas Premium</option>
+                  <option value="pastel">Lirios & Pastel</option>
+                  <option value="combos">Combos & Boxes</option>
+                  <option value="propuestas">Propuestas & Bodas</option>
                 </select>
               </div>
 
