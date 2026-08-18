@@ -94,5 +94,17 @@ describe('Florería Rouss - Catálogo & Componentes', () => {
 
     expect(screen.getByText('Colección Exclusiva Rouss')).toBeInTheDocument()
     expect(screen.getByText(/Maxi Bouquet Imperial 12 Tulipanes Rosa/i)).toBeInTheDocument()
+    expect(window.location.search).toContain('categoria=tulipanes')
+  })
+
+  it('updates browser URL to /catalogo?categoria=rosas when clicking Rosas filter pill', async () => {
+    render(<App />)
+    const catalogBtns = screen.getAllByRole('button', { name: 'Catálogo Exclusivo' })
+    fireEvent.click(catalogBtns[0])
+
+    const rosasPill = screen.getByRole('button', { name: 'Rosas' })
+    fireEvent.click(rosasPill)
+
+    expect(window.location.search).toContain('categoria=rosas')
   })
 })

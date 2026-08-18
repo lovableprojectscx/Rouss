@@ -54,4 +54,15 @@ test.describe('Florería Rouss - E2E Tests', () => {
     await closeBtn.click()
     await expect(modal).not.toBeVisible()
   })
+
+  test('Catalog deep links directly to category via URL query parameter', async ({ page }) => {
+    await page.goto('/catalogo?categoria=rosas')
+
+    // Verify URL
+    await expect(page).toHaveURL(/.*categoria=rosas/)
+
+    // Verify products displayed include roses
+    const roseProduct = page.locator('.product-card-minimal', { hasText: 'Cucurucho Pasión 8 Rosas Rojas' })
+    await expect(roseProduct).toBeVisible()
+  })
 })

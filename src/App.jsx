@@ -782,27 +782,68 @@ export default function App() {
     link: '/catalogo'
   });
 
-  // Page state initialized from URL path / hash
+  // Page state initialized from URL path / hash / search params
   const [currentPage, setCurrentPage] = useState(() => {
     if (typeof window !== 'undefined') {
       const path = window.location.pathname.toLowerCase();
       const hash = window.location.hash.toLowerCase();
       const params = new URLSearchParams(window.location.search);
-      if (path.includes('catalogo') || hash.includes('catalogo') || params.has('producto')) {
+      if (path.includes('catalogo') || hash.includes('catalogo') || params.has('producto') || params.has('categoria') || params.has('cat')) {
         return 'catalogo';
       }
     }
     return 'inicio';
   });
 
-  const [activeCategory, setActiveCategory] = useState('todos');
+  const [activeCategory, setActiveCategory] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const cat = params.get('categoria') || params.get('cat') || params.get('category');
+      if (cat) {
+        return cat.toLowerCase();
+      }
+    }
+    return 'todos';
+  });
+
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedItem, setSelectedItem] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Auto-open product modal if URL has ?producto=slug
+  // Synchronize browser history and auto-open product modal or filter by category
   useEffect(() => {
     if (typeof window === 'undefined') return;
+
+    const handlePopState = () => {
+      const path = window.location.pathname.toLowerCase();
+      const hash = window.location.hash.toLowerCase();
+      const params = new URLSearchParams(window.location.search);
+
+      if (path.includes('catalogo') || hash.includes('catalogo') || params.has('producto') || params.has('categoria') || params.has('cat')) {
+        setCurrentPage('catalogo');
+      } else {
+        setCurrentPage('inicio');
+      }
+
+      const catParam = params.get('categoria') || params.get('cat') || params.get('category');
+      if (catParam) {
+        setActiveCategory(catParam.toLowerCase());
+      } else {
+        setActiveCategory('todos');
+      }
+
+      const productSlug = params.get('producto');
+      if (productSlug && productsList.length > 0) {
+        const found = productsList.find(p => getProductSlug(p) === productSlug || p.id === productSlug || p.slug === productSlug);
+        if (found) setSelectedItem(found);
+      } else {
+        setSelectedItem(null);
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+
+    // Initial check for ?producto=slug
     const params = new URLSearchParams(window.location.search);
     const productSlug = params.get('producto');
     if (productSlug && productsList.length > 0) {
@@ -812,6 +853,8 @@ export default function App() {
         setCurrentPage('catalogo');
       }
     }
+
+    return () => window.removeEventListener('popstate', handlePopState);
   }, [productsList]);
 
   // Form State
@@ -888,6 +931,15 @@ export default function App() {
     return () => { isMounted = false; };
   }, []);
 
+  // Change category filter and update browser URL (?categoria=rosas)
+  const handleCategoryChange = (category) => {
+    setActiveCategory(category);
+    if (currentPage === 'catalogo') {
+      const url = category && category !== 'todos' ? `/catalogo?categoria=${encodeURIComponent(category)}` : '/catalogo';
+      window.history.pushState({ page: 'catalogo', categoria: category }, '', url);
+    }
+  };
+
   // Switch page and update browser address bar URL cleanly (/catalogo) with optional category filter
   const navigateToPage = (page, category = 'todos') => {
     setCurrentPage(page);
@@ -899,8 +951,8 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
     if (page === 'catalogo') {
-      const url = category && category !== 'todos' ? `/catalogo?categoria=${category}` : '/catalogo';
-      window.history.pushState({ page: 'catalogo', category }, '', url);
+      const url = category && category !== 'todos' ? `/catalogo?categoria=${encodeURIComponent(category)}` : '/catalogo';
+      window.history.pushState({ page: 'catalogo', categoria: category }, '', url);
     } else {
       window.history.pushState({ page: 'inicio' }, '', '/');
     }
@@ -910,13 +962,15 @@ export default function App() {
   const openProductModal = (product) => {
     setSelectedItem(product);
     const slug = getProductSlug(product);
-    window.history.pushState({ page: 'catalogo', producto: slug }, '', `/catalogo?producto=${slug}`);
+    const catQuery = activeCategory && activeCategory !== 'todos' ? `&categoria=${encodeURIComponent(activeCategory)}` : '';
+    window.history.pushState({ page: 'catalogo', producto: slug, categoria: activeCategory }, '', `/catalogo?producto=${slug}${catQuery}`);
   };
 
   const closeProductModal = () => {
     setSelectedItem(null);
     if (currentPage === 'catalogo') {
-      window.history.pushState({ page: 'catalogo' }, '', '/catalogo');
+      const url = activeCategory && activeCategory !== 'todos' ? `/catalogo?categoria=${encodeURIComponent(activeCategory)}` : '/catalogo';
+      window.history.pushState({ page: 'catalogo', categoria: activeCategory }, '', url);
     } else {
       window.history.pushState({ page: 'inicio' }, '', '/');
     }
@@ -1652,7 +1706,7 @@ export default function App() {
                   <button 
                     key={cat.id}
                     className={`pill-btn ${activeCategory === cat.id ? 'active' : ''}`}
-                    onClick={() => setActiveCategory(cat.id)}
+                    onClick={() => handleCategoryChange(cat.id)}
                   >
                     {cat.label}
                   </button>
@@ -1663,7 +1717,7 @@ export default function App() {
               <div className="mobile-category-selector-wrapper">
                 <select 
                   value={activeCategory} 
-                  onChange={(e) => setActiveCategory(e.target.value)}
+                  onChange={(e) => handleCategoryChange(e.target.value)}
                   className="mobile-category-select"
                 >
                   <option value="todos">Todos los Arreglos ({productsList.length})</option>
