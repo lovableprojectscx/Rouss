@@ -15,9 +15,11 @@ import {
   CheckMinimalIcon,
   FloralCornerVine,
   FloatingPetalsLayer,
-  FloralDivider
+  FloralDivider,
+  BookClaimsGoldIcon
 } from './components/PremiumIcons'
 import { fetchRoussData, createReservation } from './lib/supabase'
+import LibroReclamacionesModal from './components/LibroReclamacionesModal'
 
 // 56 Official Products from Florería Rouss Owner (Tanda 1 + Tanda 2 + Tanda 3 + Tanda 4)
 const INITIAL_PRODUCTS = [
@@ -809,6 +811,15 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedItem, setSelectedItem] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showClaimsModal, setShowClaimsModal] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const path = window.location.pathname.toLowerCase();
+      const hash = window.location.hash.toLowerCase();
+      const params = new URLSearchParams(window.location.search);
+      return path.includes('reclamacion') || hash.includes('reclamacion') || params.has('reclamo') || params.has('reclamaciones');
+    }
+    return false;
+  });
 
   // Synchronize browser history and auto-open product modal or filter by category
   useEffect(() => {
@@ -818,6 +829,12 @@ export default function App() {
       const path = window.location.pathname.toLowerCase();
       const hash = window.location.hash.toLowerCase();
       const params = new URLSearchParams(window.location.search);
+
+      if (path.includes('reclamacion') || hash.includes('reclamacion') || params.has('reclamo') || params.has('reclamaciones')) {
+        setShowClaimsModal(true);
+      } else {
+        setShowClaimsModal(false);
+      }
 
       if (path.includes('catalogo') || hash.includes('catalogo') || params.has('producto') || params.has('categoria') || params.has('cat')) {
         setCurrentPage('catalogo');
@@ -1914,8 +1931,25 @@ export default function App() {
               <button type="button" onClick={() => setShowPrivacyModal(true)}>Políticas de Privacidad (Ley N° 29733)</button>
               <span style={{ color: '#57534E' }}>·</span>
               <button type="button" onClick={() => setShowPrivacyModal(true)}>Términos del Servicio & Envíos</button>
+              <span style={{ color: '#57534E' }}>·</span>
+              <button type="button" onClick={() => setShowClaimsModal(true)} style={{ color: '#C59B27', fontWeight: 600 }}>
+                Libro de Reclamaciones Virtual
+              </button>
             </div>
-            <p style={{ marginTop: '0.5rem', color: '#8C857B', fontSize: '0.8rem' }}>Rouss By Jharol Baldeón · Chorrillos, Lima</p>
+
+            <div style={{ marginTop: '0.85rem' }}>
+              <button 
+                type="button" 
+                className="footer-claims-btn"
+                onClick={() => setShowClaimsModal(true)}
+                title="Libro de Reclamaciones Virtual - Conforme a Ley N° 29571 e INDECOPI"
+              >
+                <BookClaimsGoldIcon size={18} color="#C59B27" />
+                <span>Libro de Reclamaciones Virtual (INDECOPI)</span>
+              </button>
+            </div>
+
+            <p style={{ marginTop: '0.65rem', color: '#8C857B', fontSize: '0.8rem' }}>Rouss By Jharol Baldeón · Chorrillos, Lima</p>
           </div>
         </div>
       </footer>
@@ -2073,6 +2107,12 @@ export default function App() {
           </div>
         </div>
       )}
+
+      {/* LIBRO DE RECLAMACIONES VIRTUAL (LEY N° 29571 / INDECOPI) */}
+      <LibroReclamacionesModal 
+        isOpen={showClaimsModal} 
+        onClose={() => setShowClaimsModal(false)} 
+      />
 
     </div>
   )

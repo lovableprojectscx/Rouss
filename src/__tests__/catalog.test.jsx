@@ -107,4 +107,16 @@ describe('Florería Rouss - Catálogo & Componentes', () => {
 
     expect(window.location.search).toContain('categoria=rosas')
   })
+
+  it('opens Libro de Reclamaciones Virtual modal from footer with INDECOPI legal form', async () => {
+    render(<App />)
+    const claimsBtns = screen.getAllByRole('button', { name: /Libro de Reclamaciones/i })
+    fireEvent.click(claimsBtns[0])
+
+    expect(screen.getAllByText(/Libro de Reclamaciones Virtual/i).length).toBeGreaterThanOrEqual(1)
+    expect(screen.getAllByText(/Ley N° 29571/i).length).toBeGreaterThanOrEqual(1)
+    expect(screen.getByText(/Identificación del Consumidor Reclamante/i)).toBeInTheDocument()
+    expect(screen.getByText(/Identificación del Bien Contratado/i)).toBeInTheDocument()
+    expect(screen.getByText(/Detalle de la Reclamación y Pedido/i)).toBeInTheDocument()
+  })
 })

@@ -143,3 +143,52 @@ export async function createReservation({ nombre, telefono, ocasion, presupuesto
     return null
   }
 }
+
+/**
+ * Registra una Hoja de Reclamación oficial en Supabase conforme a la Ley N° 29571 / INDECOPI
+ */
+export async function createReclamacion(reclamacion) {
+  try {
+    const year = new Date().getFullYear()
+    const randomSuffix = Math.floor(1000 + Math.random() * 9000)
+    const codigoReclamacion = `ROUSS-LR-${year}-${randomSuffix}`
+
+    const payload = {
+      tenant_id: ROUSS_TENANT_ID,
+      codigo_reclamacion: codigoReclamacion,
+      tipo_documento: reclamacion.tipoDocumento || 'DNI',
+      numero_documento: reclamacion.numeroDocumento || '',
+      nombre_completo: reclamacion.nombreCompleto || '',
+      email: reclamacion.email || '',
+      telefono: reclamacion.telefono || '',
+      departamento: reclamacion.departamento || 'Lima',
+      provincia: reclamacion.provincia || 'Lima',
+      distrito: reclamacion.distrito || 'Chorrillos',
+      direccion: reclamacion.direccion || '',
+      es_menor_edad: Boolean(reclamacion.esMenorEdad),
+      nombre_apoderado: reclamacion.nombreApoderado || null,
+      tipo_bien: reclamacion.tipoBien || 'Producto',
+      monto_reclamado: parseFloat(reclamacion.montoReclamado || 0),
+      descripcion_bien: reclamacion.descripcionBien || '',
+      tipo_reclamacion: reclamacion.tipoReclamacion || 'Reclamo',
+      detalle_reclamacion: reclamacion.detalleReclamacion || '',
+      pedido_consumidor: reclamacion.pedidoConsumidor || '',
+      estado: 'PENDIENTE'
+    }
+
+    const { data, error } = await supabase
+      .from('reclamaciones')
+      .insert([payload])
+      .select()
+
+    if (error) {
+      console.warn('Aviso al guardar reclamación en Supabase:', error.message)
+      return { ...payload, id: 'local-' + Date.now(), created_at: new Date().toISOString() }
+    }
+
+    return data && data.length > 0 ? data[0] : payload
+  } catch (err) {
+    console.warn('Error al procesar hoja de reclamación:', err)
+    return null
+  }
+}

@@ -65,4 +65,24 @@ test.describe('Florería Rouss - E2E Tests', () => {
     const roseProduct = page.locator('.product-card-minimal', { hasText: 'Cucurucho Pasión 8 Rosas Rojas' })
     await expect(roseProduct).toBeVisible()
   })
+
+  test('Libro de Reclamaciones modal opens from footer and displays INDECOPI form', async ({ page }) => {
+    await page.goto('/')
+
+    // Click footer claims button
+    const claimsBtn = page.locator('button.footer-claims-btn')
+    await claimsBtn.scrollIntoViewIfNeeded()
+    await claimsBtn.click()
+
+    // Verify modal is visible
+    const modal = page.locator('.claims-modal-card')
+    await expect(modal).toBeVisible()
+    await expect(modal).toContainText('Libro de Reclamaciones Virtual')
+    await expect(modal).toContainText('Identificación del Consumidor Reclamante')
+
+    // Close modal
+    const closeBtn = page.locator('.claims-close-btn')
+    await closeBtn.click()
+    await expect(modal).not.toBeVisible()
+  })
 })
