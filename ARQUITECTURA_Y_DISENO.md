@@ -10,14 +10,14 @@
 - **Tipografía**: **Poppins** (Google Fonts: 400, 500, 600, 700) aplicada globalmente.
 - **Iconografía**: Módulo vectorial SVG nativo parametrizable (`PremiumIcons.jsx`), escalable y sin pérdida de nitidez.
 - **Enrutamiento**: HTML5 History API (`window.history.pushState` y escucha `popstate`) sincronizado con rutas `/` e `/catalogo`.
-- **Optimización de Imágenes**: Convertidor de imágenes de alta fidelidad **WebP** (`imageOptimizer.js` y `convert-to-webp.js` / `convert-tanda2.js` / `convert-tanda3.js`) 100% compatible con **iOS (Safari iOS 14+)**, **Android** y navegadores de escritorio.
+- **Optimización de Imágenes**: Convertidor de imágenes de alta fidelidad **WebP** (`imageOptimizer.js` y scripts de optimización `sharp`) 100% compatible con **iOS (Safari iOS 14+)**, **Android** y navegadores de escritorio.
 - **Testing**: Suite completa de pruebas con **Vitest** (pruebas unitarias y de componentes) y **Playwright** (pruebas End-to-End en Desktop Chromium y Mobile Safari iOS).
 
 ---
 
 ## 2. 🌹 Catálogo Oficial en Supabase (`mypes`)
 
-Se cargaron los **44 arreglos florales oficiales** enviados directamente por el dueño vía WhatsApp (Tanda 1, Tanda 2 y Tanda 3), estructurados con descripciones profesionales de alta gama sin emojis informales:
+Se cargaron los **56 arreglos florales oficiales** enviados directamente por el dueño vía WhatsApp (Tanda 1, Tanda 2, Tanda 3 y Tanda 4), estructurados con descripciones profesionales de alta gama sin emojis informales:
 
 ### Tanda 1 (14 Arreglos de Alta Gama & Formato Buchón)
 | # | Título Oficial del Arreglo | Categoría | Precio (S/) | Formato |
@@ -56,7 +56,7 @@ Se cargaron los **44 arreglos florales oficiales** enviados directamente por el 
 | 28 | **Bouquet Dulzura Lirio Rosado & Conejitos** | Delicadeza Pastel & Lirios | S/ 120.00 | WebP + JPG |
 | 29 | **Ramo Princesa 12 Rosas Durazno & Tiara de Cristal** | Cumpleaños & Coronales | S/ 200.00 | WebP + JPG |
 
-### Tanda 3 (15 Arreglos: Gerberas, Dúo de Lirios, Estructura Geométrica & Rosas Azules)
+### Tanda 3 (15 Arreglos: Gerberas, Lirios, Estructura Geométrica & Rosas Azules)
 | # | Título Oficial del Arreglo | Categoría | Precio (S/) | Formato |
 | :- | :--- | :--- | :--- | :--- |
 | 30 | **Ramo Princesa 2 Gerberas & Follaje Rosa** | Delicadeza Pastel & Lirios | S/ 85.00 | WebP + JPG |
@@ -75,26 +75,34 @@ Se cargaron los **44 arreglos florales oficiales** enviados directamente por el 
 | 43 | **Bouquet Solar 6 Rosas Amarillas & Astromelias** | Rosas Premium | S/ 65.00 | WebP + JPG |
 | 44 | **Bouquet Silvestre 1 Lirio Rosado & Astromelias** | Delicadeza Pastel & Lirios | S/ 70.00 | WebP + JPG |
 
+### Tanda 4 (12 Arreglos: Colección Tulipanes Holandeses & Wood Floral Box)
+| # | Título Oficial del Arreglo | Categoría | Precio (S/) | Formato |
+| :- | :--- | :--- | :--- | :--- |
+| 45 | **Bouquet Dúo Lirios Orientales & Corona Floral** | Delicadeza Pastel & Lirios | S/ 90.00 | WebP + JPG |
+| 46 | **Wood Floral Box 7 Rosas & Lirios Silvestres** | Detalles & Combos Especiales | S/ 110.00 | WebP + JPG |
+| 47 | **Maxi Bouquet Imperial 12 Tulipanes Rosa Holandés** | Tulipanes Holandeses & Flores de Lujo | S/ 350.00 | WebP + JPG |
+| 48 | **Bouquet Alta Costura 6 Tulipanes Rojos** | Tulipanes Holandeses & Flores de Lujo | S/ 190.00 | WebP + JPG |
+| 49 | **Bouquet Delicadeza 5 Tulipanes Rosados** | Tulipanes Holandeses & Flores de Lujo | S/ 160.00 | WebP + JPG |
+| 50 | **Bouquet Solar 3 Tulipanes Amarillos & Margaritas** | Tulipanes Holandeses & Flores de Lujo | S/ 85.00 | WebP + JPG |
+| 51 | **Bouquet Black & White 6 Tulipanes Rosa Pastel** | Tulipanes Holandeses & Flores de Lujo | S/ 200.00 | WebP + JPG |
+| 52 | **Bouquet Gold Chic 6 Tulipanes Rosa Pastel** | Tulipanes Holandeses & Flores de Lujo | S/ 200.00 | WebP + JPG |
+| 53 | **Maxi Ramo 12 Tulipanes Rojos de Gala** | Tulipanes Holandeses & Flores de Lujo | S/ 270.00 | WebP + JPG |
+| 54 | **Bouquet Imperial 10 Tulipanes Bicolores Rojo & Rosa** | Tulipanes Holandeses & Flores de Lujo | S/ 280.00 | WebP + JPG |
+| 55 | **Bouquet Primavera 3 Tulipanes Blancos & Girasoles** | Tulipanes Holandeses & Flores de Lujo | S/ 120.00 | WebP + JPG |
+| 56 | **Bouquet Royal 8 Tulipanes Púrpura Imperial** | Tulipanes Holandeses & Flores de Lujo | S/ 200.00 | WebP + JPG |
+
 ---
 
 ## 3. 🖼️ Módulo Convertidor y Optimizador WebP
 
-1. **Scripts CLI Automatizados (`scripts/convert-to-webp.js`, `scripts/convert-tanda2.js`, `scripts/convert-tanda3.js`)**:
-   - `npm run optimize:images`: Procesa todas las imágenes de la carpeta `Productos Rouss/`, escala a un máximo de 1200px (calidad 88%), preserva el espacio sRGB y genera tanto `.webp` como `.jpg` para compatibilidad total.
+1. **Scripts CLI Automatizados**:
+   - `npm run optimize:images` y scripts de tandas procesan lotes a **WebP 88% sRGB** con respaldos JPG.
 2. **Utilidad de Navegador (`src/lib/imageOptimizer.js`)**:
-   - Función `convertImageToWebP(file, options)` que procesa imágenes mediante Canvas 2D en el cliente, soportada en **iOS Safari 14+**, iPadOS, Chrome y Firefox.
+   - Función `convertImageToWebP(file, options)` soportada en **iOS Safari 14+**, iPadOS, Chrome y Firefox.
 
 ---
 
 ## 4. 🧪 Suite de Pruebas Automatizadas
 
-- **Vitest**: `npm test` ejecuta 7 pruebas unitarias verificando:
-  - Renderizado de productos y precios en Soles (`S/`).
-  - Navegación a `/catalogo`.
-  - Búsqueda y filtrado instantáneo en vivo (incluyendo búsqueda de Gerberas, Rosas Azules y Lirios de Tanda 3).
-  - Enlaces dinámicos de WhatsApp con número oficial `+51 921 585 977`.
-  - Apertura del Lightbox Modal con fotografía ampliada.
-  - Conversión a WebP con `imageOptimizer.js`.
-- **Playwright (E2E)**: `npx playwright test` ejecuta 6 pruebas automatizadas en paralelo:
-  - **Desktop Chromium**: Navegación completa, modal y búsqueda.
-  - **Mobile Safari (iOS iPhone 14)**: Validación de menús táctiles y responsive.
+- **Vitest**: `npm test` ejecuta 7 pruebas unitarias (100% pasadas).
+- **Playwright (E2E)**: `npx playwright test` ejecuta 6 pruebas en Desktop Chromium y Mobile Safari iOS (100% pasadas).
