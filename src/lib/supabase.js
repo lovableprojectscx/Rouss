@@ -1,10 +1,10 @@
 import { createClient } from '@supabase/supabase-js'
 
-const SUPABASE_URL = 'https://llasbukvdjlvwlgofgke.supabase.co'
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxsYXNidWt2ZGpsdndsZ29mZ2tlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU3MzkyMjUsImV4cCI6MjA5MTMxNTIyNX0.s9Ze3b2u25CJP1psY_ycAdm68RVIX02IR-eQl0_FJTY'
+const SUPABASE_URL = (typeof import.meta !== 'undefined' && import.meta.env?.VITE_SUPABASE_URL) || 'https://llasbukvdjlvwlgofgke.supabase.co'
+const SUPABASE_ANON_KEY = (typeof import.meta !== 'undefined' && import.meta.env?.VITE_SUPABASE_ANON_KEY) || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxsYXNidWt2ZGpsdndsZ29mZ2tlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU3MzkyMjUsImV4cCI6MjA5MTMxNTIyNX0.s9Ze3b2u25CJP1psY_ycAdm68RVIX02IR-eQl0_FJTY'
 
-export const ROUSS_TENANT_ID = 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'
-export const ROUSS_TENANT_SLUG = 'rouss'
+export const ROUSS_TENANT_ID = (typeof import.meta !== 'undefined' && import.meta.env?.VITE_ROUSS_TENANT_ID) || 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'
+export const ROUSS_TENANT_SLUG = (typeof import.meta !== 'undefined' && import.meta.env?.VITE_ROUSS_TENANT_SLUG) || 'rouss'
 
 export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
 
