@@ -13,7 +13,7 @@ import {
 } from './components/PremiumIcons'
 import { fetchRoussData, createReservation } from './lib/supabase'
 
-// 44 Official Products from Florería Rouss Owner (Tanda 1 + Tanda 2 + Tanda 3)
+// 56 Official Products from Florería Rouss Owner (Tanda 1 + Tanda 2 + Tanda 3 + Tanda 4)
 const INITIAL_PRODUCTS = [
   // TANDA 1 (14)
   {
@@ -547,6 +547,152 @@ const INITIAL_PRODUCTS = [
     image: '/images/products/bouquet-silvestre-1-lirio-rosado-astromelias.webp',
     imageFallback: '/images/products/bouquet-silvestre-1-lirio-rosado-astromelias.jpg',
     description: 'Sinfonía floral de 1 lirio oriental rosado complementado con astromelias multicolores en papel coreano rosa.'
+  },
+
+  // TANDA 4 (12 - COLECCIÓN TULIPANES & BOXES)
+  {
+    id: 'ba000001-0000-4000-a000-000000000071',
+    title: 'Bouquet Dúo Lirios Orientales & Corona Floral',
+    category: 'pastel',
+    categories: ['pastel'],
+    categoryName: 'Delicadeza Pastel & Lirios',
+    price: 'S/ 90.00',
+    tag: 'Dúo Aromático',
+    image: '/images/products/bouquet-duo-lirios-orientales-corona-floral.webp',
+    imageFallback: '/images/products/bouquet-duo-lirios-orientales-corona-floral.jpg',
+    description: 'Espectacular bouquet de 2 lirios orientales abiertos en plenitud rodeados de una corona de flores y envoltura roja con lazo de gala.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000072',
+    title: 'Wood Floral Box 7 Rosas & Lirios Silvestres',
+    category: 'combos',
+    categories: ['combos', 'rosas'],
+    categoryName: 'Detalles & Combos Especiales',
+    price: 'S/ 110.00',
+    tag: 'Floral Box Wood',
+    image: '/images/products/wood-floral-box-7-rosas-lirios-silvestres.webp',
+    imageFallback: '/images/products/wood-floral-box-7-rosas-lirios-silvestres.jpg',
+    description: 'Arreglo de autor en caja floral de madera rústica con 7 rosas rojas selectas, lirio silvestre y cinta decorativa de alta costura.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000073',
+    title: 'Maxi Bouquet Imperial 12 Tulipanes Rosa Holandés',
+    category: 'tulipanes',
+    categories: ['tulipanes', 'pastel'],
+    categoryName: 'Tulipanes Holandeses & Flores de Lujo',
+    price: 'S/ 350.00',
+    tag: 'Tulipán Imperial',
+    image: '/images/products/maxi-bouquet-imperial-12-tulipanes-rosa-holandes.webp',
+    imageFallback: '/images/products/maxi-bouquet-imperial-12-tulipanes-rosa-holandes.jpg',
+    description: 'Lujoso bouquet de 12 tulipanes holandeses en tonalidad rosa suave, cuidadosamente envueltos en papel coreano plisado y cinta con sello de autor Rouss.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000074',
+    title: 'Bouquet Alta Costura 6 Tulipanes Rojos',
+    category: 'tulipanes',
+    categories: ['tulipanes', 'rosas'],
+    categoryName: 'Tulipanes Holandeses & Flores de Lujo',
+    price: 'S/ 190.00',
+    tag: 'Tulipán Pasión',
+    image: '/images/products/bouquet-alta-costura-6-tulipanes-rojos.webp',
+    imageFallback: '/images/products/bouquet-alta-costura-6-tulipanes-rojos.jpg',
+    description: 'Elegante ramo alargado con 6 tulipanes rojos de exportación en envoltura de seda blanca y lazo de gala.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000075',
+    title: 'Bouquet Delicadeza 5 Tulipanes Rosados',
+    category: 'tulipanes',
+    categories: ['tulipanes', 'pastel'],
+    categoryName: 'Tulipanes Holandeses & Flores de Lujo',
+    price: 'S/ 160.00',
+    tag: 'Tulipán Soft',
+    image: '/images/products/bouquet-delicadeza-5-tulipanes-rosados.webp',
+    imageFallback: '/images/products/bouquet-delicadeza-5-tulipanes-rosados.jpg',
+    description: 'Exquisito bouquet cónico de 5 tulipanes rosados holandeses en papel coreano blanco perlado.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000076',
+    title: 'Bouquet Solar 3 Tulipanes Amarillos & Margaritas',
+    category: 'tulipanes',
+    categories: ['tulipanes', 'pastel'],
+    categoryName: 'Tulipanes Holandeses & Flores de Lujo',
+    price: 'S/ 85.00',
+    tag: 'Tulipán Solar',
+    image: '/images/products/bouquet-solar-3-tulipanes-amarillos-margaritas.webp',
+    imageFallback: '/images/products/bouquet-solar-3-tulipanes-amarillos-margaritas.jpg',
+    description: 'Luminoso bouquet que combina 3 tulipanes amarillos intensos con margaritas silvestres y envoltura de diseñador.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000077',
+    title: 'Bouquet Black & White 6 Tulipanes Rosa Pastel',
+    category: 'tulipanes',
+    categories: ['tulipanes', 'pastel'],
+    categoryName: 'Tulipanes Holandeses & Flores de Lujo',
+    price: 'S/ 200.00',
+    tag: 'Tulipán Black & White',
+    image: '/images/products/bouquet-black-white-6-tulipanes-rosa-pastel.webp',
+    imageFallback: '/images/products/bouquet-black-white-6-tulipanes-rosa-pastel.jpg',
+    description: 'Moderno y contrastado diseño de 6 tulipanes rosados envueltos en papel coreano bicolor negro y blanco con dedicatoria.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000078',
+    title: 'Bouquet Gold Chic 6 Tulipanes Rosa Pastel',
+    category: 'tulipanes',
+    categories: ['tulipanes', 'pastel'],
+    categoryName: 'Tulipanes Holandeses & Flores de Lujo',
+    price: 'S/ 200.00',
+    tag: 'Tulipán Gold',
+    image: '/images/products/bouquet-gold-chic-6-tulipanes-rosa-pastel.webp',
+    imageFallback: '/images/products/bouquet-gold-chic-6-tulipanes-rosa-pastel.jpg',
+    description: 'Distinguido ramo de 6 tulipanes rosados envuelto en papel dorado champagne de alta textura y lazo satinado.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000079',
+    title: 'Maxi Ramo 12 Tulipanes Rojos de Gala',
+    category: 'tulipanes',
+    categories: ['tulipanes', 'rosas'],
+    categoryName: 'Tulipanes Holandeses & Flores de Lujo',
+    price: 'S/ 270.00',
+    tag: 'Tulipán Gala',
+    image: '/images/products/maxi-ramo-12-tulipanes-rojos-de-gala.webp',
+    imageFallback: '/images/products/maxi-ramo-12-tulipanes-rojos-de-gala.jpg',
+    description: 'Monumental arreglo de 12 tulipanes rojos vivos con delicada nube de gypsophila en envoltura de alta densidad.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000080',
+    title: 'Bouquet Imperial 10 Tulipanes Bicolores Rojo & Rosa',
+    category: 'tulipanes',
+    categories: ['tulipanes', 'pastel'],
+    categoryName: 'Tulipanes Holandeses & Flores de Lujo',
+    price: 'S/ 280.00',
+    tag: 'Tulipán Bicolor',
+    image: '/images/products/bouquet-imperial-10-tulipanes-bicolores-rojo-rosa.webp',
+    imageFallback: '/images/products/bouquet-imperial-10-tulipanes-bicolores-rojo-rosa.jpg',
+    description: 'Exclusivo arreglo esférico de 10 tulipanes en degradé rojo y rosa con fino lazo de seda en tono plata.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000081',
+    title: 'Bouquet Primavera 3 Tulipanes Blancos & Girasoles',
+    category: 'tulipanes',
+    categories: ['tulipanes', 'buchones'],
+    categoryName: 'Tulipanes Holandeses & Flores de Lujo',
+    price: 'S/ 120.00',
+    tag: 'Tulipán & Girasol',
+    image: '/images/products/bouquet-primavera-3-tulipanes-blancos-girasoles.webp',
+    imageFallback: '/images/products/bouquet-primavera-3-tulipanes-blancos-girasoles.jpg',
+    description: 'Fresca fusión de 3 tulipanes blancos puros con girasol y margaritas silvestres en envoltura de alta costura.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000082',
+    title: 'Bouquet Royal 8 Tulipanes Púrpura Imperial',
+    category: 'tulipanes',
+    categories: ['tulipanes', 'pastel'],
+    categoryName: 'Tulipanes Holandeses & Flores de Lujo',
+    price: 'S/ 200.00',
+    tag: 'Tulipán Púrpura',
+    image: '/images/products/bouquet-royal-8-tulipanes-purpura-imperial.webp',
+    imageFallback: '/images/products/bouquet-royal-8-tulipanes-purpura-imperial.jpg',
+    description: 'Raro y sofisticado bouquet con 8 tulipanes morados importados en envoltura rosa con lazo de satén.'
   }
 ];
 
@@ -583,6 +729,7 @@ const INITIAL_CLIENT_GALLERY = [
 ];
 
 const CATEGORY_NAMES_MAP = {
+  'tulipanes': 'Tulipanes Holandeses & Flores de Lujo',
   'buchones': 'Ramos Buchones & Girasoles',
   'coronas': 'Cumpleaños & Coronales',
   'rosas': 'Rosas Premium',
@@ -593,12 +740,13 @@ const CATEGORY_NAMES_MAP = {
 
 const CATEGORIES_TABS = [
   { id: 'todos', label: 'Todos los Arreglos' },
-  { id: 'buchones', label: 'Ramos Buchones' },
-  { id: 'coronas', label: 'Cumpleaños & Coronas' },
-  { id: 'rosas', label: 'Rosas Premium' },
-  { id: 'pastel', label: 'Lirios & Pastel' },
-  { id: 'combos', label: 'Combos & Peluches' },
-  { id: 'propuestas', label: 'Propuestas & Bodas' }
+  { id: 'tulipanes', label: '🌷 Tulipanes de Lujo' },
+  { id: 'buchones', label: '👑 Ramos Buchones' },
+  { id: 'coronas', label: '💎 Cumpleaños & Coronas' },
+  { id: 'rosas', label: '💐 Rosas Premium' },
+  { id: 'pastel', label: '🌸 Lirios & Pastel' },
+  { id: 'combos', label: '🧸 Combos & Boxes' },
+  { id: 'propuestas', label: '💍 Propuestas & Bodas' }
 ];
 
 export default function App() {
@@ -632,8 +780,8 @@ export default function App() {
   const [formData, setFormData] = useState({
     nombre: '',
     telefono: '',
-    ocasion: 'Ramo Buchón de Impacto',
-    presupuesto: 'S/ 55 - S/ 150',
+    ocasion: 'Tulipanes Holandeses de Lujo',
+    presupuesto: 'S/ 85 - S/ 200',
     fechaEntrega: '',
     mensaje: ''
   });
@@ -774,7 +922,7 @@ export default function App() {
         <div className="top-promo-ticker">
           <div className="promo-ticker-track">
             <div className="promo-item">
-              <span>✨ Envíos Express de Rosas Premium en Lima & Callao</span>
+              <span>✨ Envíos Express de Rosas & Tulipanes Holandeses en Lima & Callao</span>
             </div>
             <span className="promo-divider">|</span>
             <div className="promo-item">
@@ -788,7 +936,7 @@ export default function App() {
 
             {/* Loop Duplicate Track */}
             <div className="promo-item">
-              <span>✨ Envíos Express de Rosas Premium en Lima & Callao</span>
+              <span>✨ Envíos Express de Rosas & Tulipanes Holandeses en Lima & Callao</span>
             </div>
             <span className="promo-divider">|</span>
             <div className="promo-item">
@@ -932,6 +1080,19 @@ export default function App() {
               <div className="features-grid">
                 <div className="feature-card-image">
                   <picture>
+                    <source srcSet="/images/products/maxi-bouquet-imperial-12-tulipanes-rosa-holandes.webp" type="image/webp" />
+                    <img 
+                      src="/images/products/maxi-bouquet-imperial-12-tulipanes-rosa-holandes.jpg" 
+                      alt="Tulipanes Holandeses de Lujo" 
+                      className="feature-img-thumb"
+                    />
+                  </picture>
+                  <h3 className="feature-title">Tulipanes Holandeses</h3>
+                  <p className="feature-desc">Arreglos exclusivos de tulipanes importados en tonalidades rosa, rojo, amarillo, morado y blanco.</p>
+                </div>
+
+                <div className="feature-card-image">
+                  <picture>
                     <source srcSet="/images/products/ramo-buchon-12-girasoles-sol-radiante.webp" type="image/webp" />
                     <img 
                       src="/images/products/ramo-buchon-12-girasoles-sol-radiante.jpg" 
@@ -940,7 +1101,7 @@ export default function App() {
                     />
                   </picture>
                   <h3 className="feature-title">Ramos Buchones de Lujo</h3>
-                  <p className="feature-desc">Arreglos monumentales desde 12 hasta 80 rosas y girasoles con envoltura coreana de alta costura.</p>
+                  <p className="feature-desc">Creaciones monumentales desde 12 hasta 80 rosas y girasoles con envoltura coreana de alta costura.</p>
                 </div>
 
                 <div className="feature-card-image">
@@ -953,20 +1114,7 @@ export default function App() {
                     />
                   </picture>
                   <h3 className="feature-title">Diseños de Autor Únicos</h3>
-                  <p className="feature-desc">Creaciones exclusivas firmadas por Jharol Baldeón con tiaras imperiales, gerberas y orquídeas.</p>
-                </div>
-
-                <div className="feature-card-image">
-                  <picture>
-                    <source srcSet="/images/products/cucurucho-pasion-8-rosas-rojas.webp" type="image/webp" />
-                    <img 
-                      src="/images/products/cucurucho-pasion-8-rosas-rojas.jpg" 
-                      alt="Envío Express Puntual" 
-                      className="feature-img-thumb"
-                    />
-                  </picture>
-                  <h3 className="feature-title">Envío Express & Calidad</h3>
-                  <p className="feature-desc">Rosas frescas de exportación con envolturas elegantes y entregas puntuales en Lima y Callao.</p>
+                  <p className="feature-desc">Creaciones exclusivas firmadas por Jharol Baldeón con tiaras imperiales, gerberas y cajas florales.</p>
                 </div>
               </div>
             </div>
@@ -981,7 +1129,7 @@ export default function App() {
                 </span>
                 <h2>Alta Floristería a tu Alcance</h2>
                 <p>
-                  Explora nuestra colección oficial de {productsList.length} arreglos exclusivos, ramos buchones, coronas de cristal y bouquets de autor.
+                  Explora nuestra colección oficial de {productsList.length} arreglos exclusivos, tulipanes holandeses, ramos buchones y coronas de cristal.
                 </p>
                 
                 <button 
@@ -1101,11 +1249,11 @@ export default function App() {
                         onChange={(e) => setFormData({...formData, ocasion: e.target.value})}
                         className="form-select"
                       >
+                        <option value="Tulipanes Holandeses Importados">Tulipanes Holandeses Importados</option>
                         <option value="Ramo Buchón de Rosas & Girasoles">Ramo Buchón de Rosas & Girasoles</option>
                         <option value="Cumpleaños con Tiara de Cristal">Cumpleaños con Tiara de Cristal</option>
+                        <option value="Wood Floral Box o Sombrerera">Wood Floral Box o Sombrerera</option>
                         <option value="Cucurucho o Mini Bouquet Accesible">Cucurucho o Mini Bouquet Accesible</option>
-                        <option value="Bouquet con Gerberas o Lirios">Bouquet con Gerberas o Lirios</option>
-                        <option value="Bouquet con Billetes Personalizados">Bouquet con Billetes Personalizados</option>
                         <option value="Propuesta de Matrimonio">Propuesta de Matrimonio</option>
                         <option value="Aniversario Romántico">Aniversario Romántico</option>
                       </select>
@@ -1119,9 +1267,9 @@ export default function App() {
                         className="form-select"
                       >
                         <option value="S/ 55 - S/ 100 (Detalle Accesible)">S/ 55 - S/ 100 (Detalle Accesible)</option>
-                        <option value="S/ 100 - S/ 180 (Gama Media)">S/ 100 - S/ 180 (Gama Media)</option>
-                        <option value="S/ 180 - S/ 300 (Gama Alta)">S/ 180 - S/ 300 (Gama Alta)</option>
-                        <option value="S/ 300 - S/ 450+ (Formato Maxi Buchón)">S/ 300 - S/ 450+ (Formato Maxi Buchón)</option>
+                        <option value="S/ 100 - S/ 200 (Tulipanes & Rosas)">S/ 100 - S/ 200 (Tulipanes & Rosas)</option>
+                        <option value="S/ 200 - S/ 350 (Tulipanes Imperial / Buchón)">S/ 200 - S/ 350 (Tulipanes Imperial / Buchón)</option>
+                        <option value="S/ 350 - S/ 450+ (Formato Maxi Monumental)">S/ 350 - S/ 450+ (Formato Maxi Monumental)</option>
                       </select>
                     </div>
 
@@ -1164,10 +1312,10 @@ export default function App() {
               <div className="about-grid">
                 <div className="about-showcase-frame">
                   <picture>
-                    <source srcSet="/images/products/ramo-buchon-reina-imperial-80-rosas.webp" type="image/webp" />
+                    <source srcSet="/images/products/maxi-bouquet-imperial-12-tulipanes-rosa-holandes.webp" type="image/webp" />
                     <img 
-                      src="/images/products/ramo-buchon-reina-imperial-80-rosas.jpg" 
-                      alt="Arreglo de Autor Rouss by Jharol Baldeón" 
+                      src="/images/products/maxi-bouquet-imperial-12-tulipanes-rosa-holandes.jpg" 
+                      alt="Arreglo de Tulipanes Rouss by Jharol Baldeón" 
                       className="about-img"
                     />
                   </picture>
@@ -1179,7 +1327,7 @@ export default function App() {
                   </span>
                   <h2>Elegancia & Sofisticación en Cada Pétalo</h2>
                   <p>
-                    <strong>Florería Rouss by Jharol Baldeón</strong> es una marca registrada de alta floristería especializada en ramos buchones, rosas de exportación, gerberas y arreglos con tiaras imperiales de cristal.
+                    <strong>Florería Rouss by Jharol Baldeón</strong> es una marca registrada de alta floristería especializada en ramos buchones, tulipanes holandeses, rosas de exportación y coronas de autor con tiaras imperiales.
                   </p>
                   <p>
                     Cada obra floral es concebida con técnicas exclusivas de diseño para aniversarios, cumpleaños, propuestas de matrimonio y momentos que perduran para siempre.
@@ -1215,7 +1363,7 @@ export default function App() {
               </span>
               <h1>Colección Imperial Rouss</h1>
               <p>
-                {productsList.length} diseños de autor elaborados con las mejores rosas y flores frescas. Selecciona tu arreglo favorito para solicitarlo directamente vía WhatsApp.
+                {productsList.length} diseños de autor elaborados con tulipanes holandeses, rosas de exportación y flores frescas. Selecciona tu arreglo favorito para solicitarlo directamente vía WhatsApp.
               </p>
             </div>
 
@@ -1225,7 +1373,7 @@ export default function App() {
                 <SearchMinimalIcon size={18} color="#C59B27" />
                 <input 
                   type="text" 
-                  placeholder="Buscar arreglo (ej. Buchón, Gerberas, Lirios, Rosas Azules)..." 
+                  placeholder="Buscar arreglo (ej. Tulipanes, Buchón, Gerberas, Box, Lirios)..." 
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="search-input"
@@ -1258,11 +1406,12 @@ export default function App() {
                   className="mobile-category-select"
                 >
                   <option value="todos">🌹 Todos los Arreglos ({productsList.length})</option>
+                  <option value="tulipanes">🌷 Tulipanes de Lujo</option>
                   <option value="buchones">👑 Ramos Buchones & Girasoles</option>
                   <option value="coronas">💎 Cumpleaños & Coronas</option>
                   <option value="rosas">💐 Rosas Premium</option>
                   <option value="pastel">🌸 Lirios & Pastel</option>
-                  <option value="combos">🧸 Combos & Peluches</option>
+                  <option value="combos">🧸 Combos & Boxes</option>
                   <option value="propuestas">💍 Propuestas & Bodas</option>
                 </select>
               </div>
@@ -1337,7 +1486,7 @@ export default function App() {
             <div className="footer-brand">
               <img src="/images/logo-footer.png" alt="Rouss Logo" className="footer-logo" />
               <p className="footer-desc">
-                Florería Rouss - Especialistas en ramos buchones, rosas de exportación y flores premium. Diseños de alta costura para momentos inolvidables.
+                Florería Rouss - Especialistas en tulipanes holandeses, ramos buchones, rosas de exportación y flores premium. Diseños de alta costura para momentos inolvidables.
               </p>
             </div>
 
@@ -1364,6 +1513,11 @@ export default function App() {
               <h4 className="footer-title">Colecciones</h4>
               <ul className="footer-links">
                 <li>
+                  <button onClick={() => { navigateToPage('catalogo'); setActiveCategory('tulipanes'); }}>
+                    Tulipanes de Lujo
+                  </button>
+                </li>
+                <li>
                   <button onClick={() => { navigateToPage('catalogo'); setActiveCategory('buchones'); }}>
                     Ramos Buchones
                   </button>
@@ -1376,11 +1530,6 @@ export default function App() {
                 <li>
                   <button onClick={() => { navigateToPage('catalogo'); setActiveCategory('rosas'); }}>
                     Rosas Premium
-                  </button>
-                </li>
-                <li>
-                  <button onClick={() => { navigateToPage('catalogo'); setActiveCategory('pastel'); }}>
-                    Lirios & Pastel
                   </button>
                 </li>
               </ul>

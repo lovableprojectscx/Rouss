@@ -24,35 +24,39 @@ describe('Florería Rouss - Catálogo & Componentes', () => {
     expect(screen.getByPlaceholderText(/Buscar arreglo/i)).toBeInTheDocument()
   })
 
-  it('displays official WhatsApp products from Tanda 1, Tanda 2, and Tanda 3 with exact prices', async () => {
+  it('displays official WhatsApp products from all tandas including Tulipanes with exact prices', async () => {
     render(<App />)
     const catalogBtns = screen.getAllByRole('button', { name: 'Catálogo Exclusivo' })
     fireEvent.click(catalogBtns[0])
 
-    // Tanda 1 Products
+    // Tanda 1
     expect(screen.getByText(/Ramo Buchón "Sol Radiante"/i)).toBeInTheDocument()
     expect(screen.getAllByText('S/ 180.00').length).toBeGreaterThanOrEqual(1)
 
-    // Tanda 2 Products
+    // Tanda 2
     expect(screen.getByText(/Cucurucho Pasión 8 Rosas Rojas/i)).toBeInTheDocument()
     expect(screen.getAllByText('S/ 80.00').length).toBeGreaterThanOrEqual(1)
 
-    // Tanda 3 Products
+    // Tanda 3
     expect(screen.getByText(/Ramo Princesa 2 Gerberas & Follaje Rosa/i)).toBeInTheDocument()
     expect(screen.getAllByText('S/ 85.00').length).toBeGreaterThanOrEqual(1)
-    expect(screen.getByText(/Estructura Geométrica 2 Lirios, 10 Rosas & Claveles/i)).toBeInTheDocument()
-    expect(screen.getAllByText('S/ 160.00').length).toBeGreaterThanOrEqual(1)
+
+    // Tanda 4 (Tulipanes)
+    expect(screen.getByText(/Maxi Bouquet Imperial 12 Tulipanes Rosa Holandés/i)).toBeInTheDocument()
+    expect(screen.getAllByText('S/ 350.00').length).toBeGreaterThanOrEqual(1)
+    expect(screen.getByText(/Bouquet Alta Costura 6 Tulipanes Rojos/i)).toBeInTheDocument()
+    expect(screen.getAllByText('S/ 190.00').length).toBeGreaterThanOrEqual(1)
   })
 
-  it('filters products accurately when typing in search input for Tanda 3 items', async () => {
+  it('filters products accurately when typing in search input for Tulipanes', async () => {
     render(<App />)
     const catalogBtns = screen.getAllByRole('button', { name: 'Catálogo Exclusivo' })
     fireEvent.click(catalogBtns[0])
 
     const searchInput = screen.getByPlaceholderText(/Buscar arreglo/i)
-    fireEvent.change(searchInput, { target: { value: 'Gerberas' } })
+    fireEvent.change(searchInput, { target: { value: 'Tulipanes' } })
 
-    expect(screen.getByText(/Ramo Princesa 2 Gerberas & Follaje Rosa/i)).toBeInTheDocument()
+    expect(screen.getByText(/Maxi Bouquet Imperial 12 Tulipanes Rosa Holandés/i)).toBeInTheDocument()
   })
 
   it('opens WhatsApp with official number +51 921 585 977 when clicking order button', async () => {
