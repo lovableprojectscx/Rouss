@@ -85,4 +85,13 @@ describe('Florería Rouss - Catálogo & Componentes', () => {
     expect(screen.getAllByText(/Ramos Buchones & Girasoles/i).length).toBeGreaterThanOrEqual(1)
     expect(screen.getAllByRole('button', { name: /Compartir/i }).length).toBeGreaterThanOrEqual(1)
   })
+
+  it('opens Privacy Policy modal when clicking privacy links', async () => {
+    render(<App />)
+    const privacyBtn = screen.getByRole('button', { name: /Políticas de Privacidad \(Ley N° 29733\)/i })
+    fireEvent.click(privacyBtn)
+
+    expect(screen.getByText(/Políticas de Privacidad y Términos de Servicio/i)).toBeInTheDocument()
+    expect(screen.getAllByText(/Ley N° 29733/i).length).toBeGreaterThanOrEqual(1)
+  })
 })

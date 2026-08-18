@@ -767,6 +767,7 @@ export default function App() {
   const [productsList, setProductsList] = useState(INITIAL_PRODUCTS);
   const [galleryList, setGalleryList] = useState(INITIAL_CLIENT_GALLERY);
   const [toastMessage, setToastMessage] = useState('');
+  const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [heroBanner, setHeroBanner] = useState({
     imagen: '/images/banner.png',
     subtitulo: '"Cada pétalo cuenta una historia inolvidable" · Explora la Colección Imperial',
@@ -990,12 +991,10 @@ export default function App() {
     window.open(`https://wa.me/51941493471?text=${message}`, '_blank');
   };
 
-  const handleFormSubmit = async (e) => {
+  // Direct WhatsApp Form Submit (Sin almacenamiento externo)
+  const handleFormSubmit = (e) => {
     e.preventDefault();
     const { nombre, telefono, ocasion, presupuesto, fechaEntrega, mensaje } = formData;
-    
-    // Save to Supabase 'reservations' asynchronously
-    createReservation({ nombre, telefono, ocasion, presupuesto, fechaEntrega, mensaje });
 
     const messageText = `Hola Florería Rouss, solicito una cotización personalizada:
 *Nombre*: ${nombre || 'No especificado'}
@@ -1410,6 +1409,10 @@ export default function App() {
                     <WhatsAppGoldIcon size={20} color="#FFFFFF" />
                     <span>Enviar Solicitud por WhatsApp</span>
                   </button>
+
+                  <p className="privacy-notice-text">
+                    🔒 Tu solicitud se envía directamente a nuestro WhatsApp oficial sin almacenar datos en servidores de terceros. <button type="button" className="privacy-link-btn" onClick={() => setShowPrivacyModal(true)}>Ver Políticas de Privacidad</button>.
+                  </p>
                 </form>
               </div>
 
@@ -1684,7 +1687,12 @@ export default function App() {
 
           <div className="footer-bottom">
             <p>© {new Date().getFullYear()} Florería Rouss · 3 Años en el Rubro · +1000 Pedidos Seguros. Envíos a todo Lima.</p>
-            <p>Rouss By Jharol Baldeón</p>
+            <div className="footer-legal-links">
+              <button type="button" onClick={() => setShowPrivacyModal(true)}>Políticas de Privacidad (Ley N° 29733)</button>
+              <span style={{ color: '#57534E' }}>·</span>
+              <button type="button" onClick={() => setShowPrivacyModal(true)}>Términos del Servicio & Envíos</button>
+            </div>
+            <p style={{ marginTop: '0.5rem', color: '#8C857B', fontSize: '0.8rem' }}>Rouss By Jharol Baldeón · Chorrillos, Lima</p>
           </div>
         </div>
       </footer>
@@ -1771,6 +1779,75 @@ export default function App() {
         <div className="share-toast">
           <CheckMinimalIcon size={18} color="#D4AF37" />
           <span>{toastMessage}</span>
+        </div>
+      )}
+
+      {/* PRIVACY POLICY & TERMS MODAL (LEY N° 29733 PERÚ) */}
+      {showPrivacyModal && (
+        <div className="legal-modal-backdrop" onClick={() => setShowPrivacyModal(false)}>
+          <div className="legal-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close-btn" onClick={() => setShowPrivacyModal(false)} title="Cerrar ventana">
+              <CloseMinimalIcon size={18} color="#FFFFFF" />
+            </button>
+
+            <div className="legal-modal-header">
+              <span className="section-tag">
+                <CrownPremiumIcon size={14} color="#C59B27" /> Transparencia & Seguridad
+              </span>
+              <h3 className="legal-modal-title">Políticas de Privacidad y Términos de Servicio</h3>
+              <p style={{ fontSize: '0.8rem', color: '#8C857B', marginTop: '0.25rem' }}>
+                Última actualización: Agosto 2026 · Florería Rouss By Jharol Baldeón (Lima, Perú)
+              </p>
+            </div>
+
+            <div className="legal-modal-body">
+              <h4>1. Identidad y Compromiso con la Privacidad</h4>
+              <p>
+                <strong>Florería Rouss by Jharol Baldeón</strong>, con sede en Av. Alameda Sur cruce con Av. Los Incas, Chorrillos, Lima - Perú, se encuentra comprometida con la protección de la privacidad y los derechos de sus clientes en estricto cumplimiento de la <strong>Ley N° 29733 (Ley de Protección de Datos Personales de la República del Perú)</strong> y su Reglamento (D.S. 003-2013-JUS).
+              </p>
+
+              <h4>2. Finalidad y Uso del Formulario</h4>
+              <p>
+                El formulario de cotización y los botones de pedido de este sitio web tienen el único propósito de facilitar la comunicación directa y personalizada entre el cliente y nuestro equipo de atención:
+              </p>
+              <ul>
+                <li><strong>Envío directo a WhatsApp</strong>: Los datos ingresados (nombre, teléfono, tipo de arreglo, ocasión, fecha y mensaje para la dedicatoria) se redactan exclusivamente en un mensaje de chat cifrado de WhatsApp dirigido al número oficial <strong>+51 941 493 471</strong>.</li>
+                <li><strong>Sin almacenamiento invasivo</strong>: No almacenamos datos sensibles en bases de datos públicas ni compartimos información con anunciantes externos.</li>
+              </ul>
+
+              <h4>3. Confidencialidad de las Dedicatorias y Mensajes</h4>
+              <p>
+                Entendemos que los arreglos florales representan sentimientos íntimos. Todas las cartas, dedicatorias, cintas personalizadas y detalles de destinatarios son tratados con absoluta confidencialidad por el florista y el personal de entrega.
+              </p>
+
+              <h4>4. Cobertura y Políticas de Envíos en Lima</h4>
+              <p>
+                Realizamos entregas a domicilio en todos los distritos de Lima Metropolitana y Callao. El costo de delivery se calcula de manera transparente acorde a la distancia desde nuestra sede en Chorrillos. Toda entrega es coordinada previamente vía WhatsApp con el comprador o destinatario.
+              </p>
+
+              <h4>5. Derechos ARCO (Acceso, Rectificación, Cancelación y Oposición)</h4>
+              <p>
+                Cualquier cliente puede ejercer sus derechos de consulta, rectificación o eliminación de sus datos de contacto comunicándose directamente a nuestro WhatsApp oficial <strong>+51 941 493 471</strong> o por nuestras redes sociales verificadas <strong>@rouss8439</strong>.
+              </p>
+
+              <h4>6. Aceptación de los Términos</h4>
+              <p>
+                Al utilizar nuestro catálogo web y pulsar sobre los botones de pedido o cotización por WhatsApp, el usuario manifiesta su conformidad libre y voluntaria con estas políticas.
+              </p>
+
+              <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+                <button 
+                  type="button" 
+                  className="btn-solid-gold"
+                  style={{ padding: '0.65rem 2rem', fontSize: '0.9rem' }}
+                  onClick={() => setShowPrivacyModal(false)}
+                >
+                  Entendido y Conforme
+                </button>
+              </div>
+            </div>
+
+          </div>
         </div>
       )}
 
