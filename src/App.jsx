@@ -579,22 +579,22 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 'ba000001-0000-4000-a000-000000000073',
-    title: 'Maxi Bouquet Imperial 12 Tulipanes Rosa Holandés',
+    title: 'Maxi Bouquet Imperial 12 Tulipanes Rosa',
     category: 'tulipanes',
     categories: ['tulipanes', 'pastel'],
-    categoryName: 'Tulipanes Holandeses & Flores de Lujo',
+    categoryName: 'Tulipanes',
     price: 'S/ 350.00',
     tag: 'Tulipán Imperial',
     image: '/images/products/maxi-bouquet-imperial-12-tulipanes-rosa-holandes.webp',
     imageFallback: '/images/products/maxi-bouquet-imperial-12-tulipanes-rosa-holandes.jpg',
-    description: 'Lujoso bouquet de 12 tulipanes holandeses en tonalidad rosa suave, cuidadosamente envueltos en papel coreano plisado y cinta con sello de autor Rouss.'
+    description: 'Lujoso bouquet de 12 tulipanes frescos en tonalidad rosa suave, cuidadosamente envueltos en papel coreano plisado y cinta con sello de autor Rouss.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000074',
     title: 'Bouquet Alta Costura 6 Tulipanes Rojos',
     category: 'tulipanes',
     categories: ['tulipanes', 'rosas'],
-    categoryName: 'Tulipanes Holandeses & Flores de Lujo',
+    categoryName: 'Tulipanes',
     price: 'S/ 190.00',
     tag: 'Tulipán Pasión',
     image: '/images/products/bouquet-alta-costura-6-tulipanes-rojos.webp',
@@ -606,19 +606,19 @@ const INITIAL_PRODUCTS = [
     title: 'Bouquet Delicadeza 5 Tulipanes Rosados',
     category: 'tulipanes',
     categories: ['tulipanes', 'pastel'],
-    categoryName: 'Tulipanes Holandeses & Flores de Lujo',
+    categoryName: 'Tulipanes',
     price: 'S/ 160.00',
     tag: 'Tulipán Soft',
     image: '/images/products/bouquet-delicadeza-5-tulipanes-rosados.webp',
     imageFallback: '/images/products/bouquet-delicadeza-5-tulipanes-rosados.jpg',
-    description: 'Exquisito bouquet cónico de 5 tulipanes rosados holandeses en papel coreano blanco perlado.'
+    description: 'Exquisito bouquet cónico de 5 tulipanes rosados frescos en papel coreano blanco perlado.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000076',
     title: 'Bouquet Solar 3 Tulipanes Amarillos & Margaritas',
     category: 'tulipanes',
     categories: ['tulipanes', 'pastel'],
-    categoryName: 'Tulipanes Holandeses & Flores de Lujo',
+    categoryName: 'Tulipanes',
     price: 'S/ 85.00',
     tag: 'Tulipán Solar',
     image: '/images/products/bouquet-solar-3-tulipanes-amarillos-margaritas.webp',
@@ -630,7 +630,7 @@ const INITIAL_PRODUCTS = [
     title: 'Bouquet Black & White 6 Tulipanes Rosa Pastel',
     category: 'tulipanes',
     categories: ['tulipanes', 'pastel'],
-    categoryName: 'Tulipanes Holandeses & Flores de Lujo',
+    categoryName: 'Tulipanes',
     price: 'S/ 200.00',
     tag: 'Tulipán Black & White',
     image: '/images/products/bouquet-black-white-6-tulipanes-rosa-pastel.webp',
@@ -642,7 +642,7 @@ const INITIAL_PRODUCTS = [
     title: 'Bouquet Gold Chic 6 Tulipanes Rosa Pastel',
     category: 'tulipanes',
     categories: ['tulipanes', 'pastel'],
-    categoryName: 'Tulipanes Holandeses & Flores de Lujo',
+    categoryName: 'Tulipanes',
     price: 'S/ 200.00',
     tag: 'Tulipán Gold',
     image: '/images/products/bouquet-gold-chic-6-tulipanes-rosa-pastel.webp',
@@ -654,7 +654,7 @@ const INITIAL_PRODUCTS = [
     title: 'Maxi Ramo 12 Tulipanes Rojos de Gala',
     category: 'tulipanes',
     categories: ['tulipanes', 'rosas'],
-    categoryName: 'Tulipanes Holandeses & Flores de Lujo',
+    categoryName: 'Tulipanes',
     price: 'S/ 270.00',
     tag: 'Tulipán Gala',
     image: '/images/products/maxi-ramo-12-tulipanes-rojos-de-gala.webp',
@@ -666,7 +666,7 @@ const INITIAL_PRODUCTS = [
     title: 'Bouquet Imperial 10 Tulipanes Bicolores Rojo & Rosa',
     category: 'tulipanes',
     categories: ['tulipanes', 'pastel'],
-    categoryName: 'Tulipanes Holandeses & Flores de Lujo',
+    categoryName: 'Tulipanes',
     price: 'S/ 280.00',
     tag: 'Tulipán Bicolor',
     image: '/images/products/bouquet-imperial-10-tulipanes-bicolores-rojo-rosa.webp',
@@ -678,7 +678,7 @@ const INITIAL_PRODUCTS = [
     title: 'Bouquet Primavera 3 Tulipanes Blancos & Girasoles',
     category: 'tulipanes',
     categories: ['tulipanes', 'buchones'],
-    categoryName: 'Tulipanes Holandeses & Flores de Lujo',
+    categoryName: 'Tulipanes',
     price: 'S/ 120.00',
     tag: 'Tulipán & Girasol',
     image: '/images/products/bouquet-primavera-3-tulipanes-blancos-girasoles.webp',
@@ -690,12 +690,12 @@ const INITIAL_PRODUCTS = [
     title: 'Bouquet Royal 8 Tulipanes Púrpura Imperial',
     category: 'tulipanes',
     categories: ['tulipanes', 'pastel'],
-    categoryName: 'Tulipanes Holandeses & Flores de Lujo',
+    categoryName: 'Tulipanes',
     price: 'S/ 200.00',
     tag: 'Tulipán Púrpura',
     image: '/images/products/bouquet-royal-8-tulipanes-purpura-imperial.webp',
     imageFallback: '/images/products/bouquet-royal-8-tulipanes-purpura-imperial.jpg',
-    description: 'Raro y sofisticado bouquet con 8 tulipanes morados importados en envoltura rosa con lazo de satén.'
+    description: 'Raro y sofisticado bouquet con 8 tulipanes morados en envoltura rosa con lazo de satén.'
   }
 ];
 
@@ -736,24 +736,24 @@ const INITIAL_CLIENT_GALLERY = [
 ];
 
 const CATEGORY_NAMES_MAP = {
-  'tulipanes': 'Tulipanes Holandeses & Flores de Lujo',
+  'tulipanes': 'Tulipanes',
   'buchones': 'Ramos Buchones & Girasoles',
-  'coronas': 'Cumpleaños & Coronales',
+  'coronas': 'Cumpleaños & Coronas',
   'rosas': 'Rosas Premium',
-  'pastel': 'Delicadeza Pastel & Lirios',
-  'combos': 'Detalles & Combos Especiales',
+  'pastel': 'Lirios & Gerberas',
+  'combos': 'Combos & Cajas Florales',
   'propuestas': 'Propuestas & Bodas'
 };
 
 const CATEGORIES_TABS = [
   { id: 'todos', label: 'Todos los Arreglos' },
-  { id: 'tulipanes', label: 'Tulipanes de Lujo' },
+  { id: 'tulipanes', label: 'Tulipanes' },
   { id: 'buchones', label: 'Ramos Buchones' },
   { id: 'coronas', label: 'Cumpleaños & Coronas' },
-  { id: 'rosas', label: 'Rosas Premium' },
-  { id: 'pastel', label: 'Lirios & Pastel' },
-  { id: 'combos', label: 'Combos & Boxes' },
-  { id: 'propuestas', label: 'Propuestas & Bodas' }
+  { id: 'rosas', label: 'Rosas' },
+  { id: 'pastel', label: 'Lirios & Gerberas' },
+  { id: 'combos', label: 'Combos & Cajas' },
+  { id: 'propuestas', label: 'Propuestas' }
 ];
 
 // Helper to get slug for URL sharing
@@ -1239,19 +1239,19 @@ export default function App() {
                 <div 
                   className="feature-card-image"
                   onClick={() => navigateToPage('catalogo', 'tulipanes')}
-                  title="Ver Colección de Tulipanes Holandeses"
+                  title="Ver Colección de Tulipanes"
                 >
                   <picture>
                     <source srcSet="/images/products/maxi-bouquet-imperial-12-tulipanes-rosa-holandes.webp" type="image/webp" />
                     <img 
                       src="/images/products/maxi-bouquet-imperial-12-tulipanes-rosa-holandes.jpg" 
-                      alt="Tulipanes Holandeses de Lujo" 
+                      alt="Tulipanes de Lujo" 
                       className="feature-img-thumb"
                       loading="lazy"
                     />
                   </picture>
-                  <h3 className="feature-title">Tulipanes Holandeses</h3>
-                  <p className="feature-desc">Arreglos exclusivos de tulipanes importados en tonalidades rosa, rojo, amarillo, morado y blanco.</p>
+                  <h3 className="feature-title">Tulipanes</h3>
+                  <p className="feature-desc">Arreglos exclusivos de tulipanes frescos en tonalidades rosa, rojo, amarillo, morado y blanco.</p>
                   <button 
                     className="btn-feature-link"
                     onClick={(e) => { e.stopPropagation(); navigateToPage('catalogo', 'tulipanes'); }}
@@ -1326,7 +1326,7 @@ export default function App() {
                 </span>
                 <h2>Alta Floristería a tu Alcance</h2>
                 <p>
-                  Explora nuestra colección oficial de {productsList.length} arreglos exclusivos, tulipanes holandeses, ramos buchones y coronas de cristal.
+                  Explora nuestra colección de {productsList.length} arreglos exclusivos, tulipanes frescos, ramos buchones y coronas de autor.
                 </p>
                 
                 <button 
@@ -1451,7 +1451,7 @@ export default function App() {
                         onChange={(e) => setFormData({...formData, ocasion: e.target.value})}
                         className="form-select"
                       >
-                        <option value="Tulipanes Holandeses Importados">Tulipanes Holandeses Importados</option>
+                        <option value="Tulipanes Selectos">Tulipanes Selectos</option>
                         <option value="Ramo Buchón de Rosas & Girasoles">Ramo Buchón de Rosas & Girasoles</option>
                         <option value="Cumpleaños con Tiara de Cristal">Cumpleaños con Tiara de Cristal</option>
                         <option value="Wood Floral Box o Sombrerera">Wood Floral Box o Sombrerera</option>
@@ -1533,7 +1533,7 @@ export default function App() {
                   </span>
                   <h2>Elegancia & Sofisticación en Cada Pétalo</h2>
                   <p>
-                    <strong>Florería Rouss by Jharol Baldeón</strong> cuenta con 3 años de trayectoria en el rubro de alta floristería en Lima, especializada en ramos buchones, tulipanes holandeses, rosas de exportación y coronas de autor con tiaras imperiales.
+                    <strong>Florería Rouss by Jharol Baldeón</strong> cuenta con 3 años de trayectoria en el rubro de alta floristería en Lima, especializada en ramos buchones, tulipanes frescos, rosas de exportación y coronas de autor con tiaras imperiales.
                   </p>
                   <p>
                     Ubicados en Chorrillos (Av. Alameda Sur cruce con Av. Los Incas), realizamos envíos seguros y garantizados a todo Lima Metropolitana con más de 1,000 entregas exitosas.
@@ -1567,28 +1567,33 @@ export default function App() {
               <span className="section-tag">
                 <FlowerSparkleIcon size={14} color="#C59B27" /> Catálogo Oficial
               </span>
-              <h1>Colección Imperial Rouss</h1>
+              <h1>Colección Exclusiva Rouss</h1>
               <p>
-                {productsList.length} diseños de autor elaborados con tulipanes holandeses, rosas de exportación y flores frescas. Selecciona tu arreglo favorito para solicitarlo directamente vía WhatsApp.
+                Explora nuestra variedad de ramos buchones, rosas, tulipanes, girasoles y detalles florales elaborados con flores frescas seleccionadas. Pide tu diseño favorito directamente vía WhatsApp.
               </p>
             </div>
 
             {/* SEARCH & CATEGORY SELECT BAR */}
             <div className="catalog-bar-minimal">
-              <div className="search-input-wrapper">
-                <SearchMinimalIcon size={18} color="#C59B27" />
-                <input 
-                  type="text" 
-                  placeholder="Buscar arreglo (ej. Tulipanes, Buchón, Gerberas, Box, Lirios)..." 
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="search-input"
-                />
-                {searchQuery && (
-                  <button onClick={() => setSearchQuery('')} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
-                    <CloseMinimalIcon size={16} color="#8C857B" />
-                  </button>
-                )}
+              <div className="catalog-bar-top">
+                <div className="search-input-wrapper">
+                  <SearchMinimalIcon size={18} color="#C59B27" />
+                  <input 
+                    type="text" 
+                    placeholder="Buscar arreglo (ej. Tulipanes, Buchón, Gerberas, Box, Lirios)..." 
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="search-input"
+                  />
+                  {searchQuery && (
+                    <button onClick={() => setSearchQuery('')} style={{ background: 'none', border: 'none', cursor: 'pointer' }} title="Limpiar búsqueda">
+                      <CloseMinimalIcon size={16} color="#8C857B" />
+                    </button>
+                  )}
+                </div>
+                <div className="catalog-count-badge">
+                  <span>{filteredProducts.length} {filteredProducts.length === 1 ? 'arreglo' : 'arreglos'}</span>
+                </div>
               </div>
 
               {/* Desktop Filter Pills */}
@@ -1612,13 +1617,13 @@ export default function App() {
                   className="mobile-category-select"
                 >
                   <option value="todos">Todos los Arreglos ({productsList.length})</option>
-                  <option value="tulipanes">Tulipanes de Lujo</option>
+                  <option value="tulipanes">Tulipanes</option>
                   <option value="buchones">Ramos Buchones & Girasoles</option>
                   <option value="coronas">Cumpleaños & Coronas</option>
-                  <option value="rosas">Rosas Premium</option>
-                  <option value="pastel">Lirios & Pastel</option>
-                  <option value="combos">Combos & Boxes</option>
-                  <option value="propuestas">Propuestas & Bodas</option>
+                  <option value="rosas">Rosas</option>
+                  <option value="pastel">Lirios & Gerberas</option>
+                  <option value="combos">Combos & Cajas</option>
+                  <option value="propuestas">Propuestas</option>
                 </select>
               </div>
 
@@ -1640,13 +1645,19 @@ export default function App() {
                         loading="lazy"
                       />
                     </picture>
-                    <span className="product-badge">{product.tag}</span>
+                    <span className="product-badge">{product.tag || 'Exclusivo'}</span>
                   </div>
                   
                   <div className="product-content">
-                    <span className="product-category">{product.categoryName}</span>
-                    <h3 className="product-title">{product.title}</h3>
-                    <p className="product-desc">{product.description}</p>
+                    <span className="product-category">
+                      {product.categoryName || CATEGORY_NAMES_MAP[product.category] || 'Arreglo de Autor'}
+                    </span>
+                    <h3 className="product-title" onClick={() => openProductModal(product)} style={{ cursor: 'pointer' }}>
+                      {product.title}
+                    </h3>
+                    <p className="product-desc">
+                      {product.description}
+                    </p>
                     
                     <div className="product-footer">
                       <div className="product-price">
@@ -1656,7 +1667,7 @@ export default function App() {
 
                     <div className="product-card-actions">
                       <button 
-                        onClick={() => handleWhatsAppOrder(product.title)}
+                        onClick={() => handleWhatsAppOrder(product.title, product.price)}
                         className="btn-order-wa-solid"
                         style={{ flexGrow: 1 }}
                       >
@@ -1677,14 +1688,12 @@ export default function App() {
             </div>
 
             {filteredProducts.length === 0 && (
-              <div style={{ textAlign: 'center', padding: '3rem 1rem' }}>
-                <p style={{ fontSize: '1.1rem', color: '#8C857B', marginBottom: '1rem' }}>
-                  No se encontraron arreglos para "{searchQuery}".
-                </p>
+              <div className="empty-catalog-state">
+                <p>No encontramos arreglos con el término "{searchQuery}".</p>
                 <button 
                   onClick={() => { setSearchQuery(''); setActiveCategory('todos'); }}
                   className="btn-solid-gold"
-                  style={{ fontSize: '0.875rem', padding: '0.6rem 1.5rem' }}
+                  style={{ marginTop: '1rem', padding: '0.6rem 1.5rem', fontSize: '0.9rem' }}
                 >
                   Ver Todos los Arreglos
                 </button>
@@ -1702,7 +1711,7 @@ export default function App() {
             <div className="footer-brand">
               <img src="/images/logo-footer.png" alt="Rouss Logo" className="footer-logo" />
               <p className="footer-desc">
-                Florería Rouss - Especialistas en tulipanes holandeses, ramos buchones, rosas de exportación y flores premium. Diseños de alta costura para momentos inolvidables.
+                Florería Rouss - Especialistas en ramos buchones, tulipanes, rosas de exportación y flores premium. Diseños de autor para momentos inolvidables en Lima.
               </p>
             </div>
 
@@ -1729,22 +1738,22 @@ export default function App() {
               <h4 className="footer-title">Colecciones</h4>
               <ul className="footer-links">
                 <li>
-                  <button onClick={() => { navigateToPage('catalogo'); setActiveCategory('tulipanes'); }}>
-                    Tulipanes de Lujo
+                  <button onClick={() => { navigateToPage('catalogo', 'tulipanes'); }}>
+                    Tulipanes
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => { navigateToPage('catalogo'); setActiveCategory('buchones'); }}>
+                  <button onClick={() => { navigateToPage('catalogo', 'buchones'); }}>
                     Ramos Buchones
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => { navigateToPage('catalogo'); setActiveCategory('coronas'); }}>
+                  <button onClick={() => { navigateToPage('catalogo', 'coronas'); }}>
                     Cumpleaños & Coronas
                   </button>
                 </li>
                 <li>
-                  <button onClick={() => { navigateToPage('catalogo'); setActiveCategory('rosas'); }}>
+                  <button onClick={() => { navigateToPage('catalogo', 'rosas'); }}>
                     Rosas Premium
                   </button>
                 </li>

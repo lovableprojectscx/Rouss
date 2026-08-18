@@ -17,7 +17,7 @@ test.describe('Florería Rouss - E2E Tests', () => {
 
     // Verify URL and Catalog Header
     await expect(page).toHaveURL(/.*catalogo/)
-    const catalogHeading = page.locator('h1', { hasText: 'Colección Imperial Rouss' })
+    const catalogHeading = page.locator('h1', { hasText: 'Colección Exclusiva Rouss' })
     await expect(catalogHeading).toBeVisible()
   })
 
