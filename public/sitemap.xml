@@ -1,353 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- PÁGINA PRINCIPAL -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- 1. Home Page / Página de Inicio -->
   <url>
     <loc>https://floreriarouss.com/</loc>
     <lastmod>2026-08-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://floreriarouss.com/images/banner.webp</image:loc>
+      <image:title>Florería Rouss - Alta Floristería y Ramos Buchones en Lima</image:title>
+      <image:caption>Florería Rouss by Jharol Baldeón en Chorrillos, Lima - Delivery a todo Lima</image:caption>
+    </image:image>
   </url>
-  <!-- CATÁLOGO GENERAL -->
+
+  <!-- 2. Catálogo Oficial / Complete Catalog -->
   <url>
     <loc>https://floreriarouss.com/catalogo</loc>
     <lastmod>2026-08-18</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://floreriarouss.com/images/products/ramo-buchon-12-girasoles-sol-radiante.webp</image:loc>
+      <image:title>Ramo Buchón Sol Radiante 12 Girasoles - Florería Rouss</image:title>
+    </image:image>
   </url>
+
+  <!-- 3. Categoría: Rosas Premium -->
   <url>
-    <loc>https://floreriarouss.com/catalogo?producto=ramo-buchon-12-girasoles-sol-radiante</loc>
+    <loc>https://floreriarouss.com/catalogo?categoria=rosas</loc>
     <lastmod>2026-08-18</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://floreriarouss.com/images/products/cucurucho-pasion-8-rosas-rojas.webp</image:loc>
+      <image:title>Rosas Rojas de Exportación en Lima - Florería Rouss</image:title>
+    </image:image>
   </url>
+
+  <!-- 4. Categoría: Tulipanes Frescos -->
   <url>
-    <loc>https://floreriarouss.com/catalogo?producto=ramo-buchon-50-rosas-globos-helio</loc>
+    <loc>https://floreriarouss.com/catalogo?categoria=tulipanes</loc>
     <lastmod>2026-08-18</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://floreriarouss.com/images/products/maxi-bouquet-imperial-12-tulipanes-rosa-holandes.webp</image:loc>
+      <image:title>Tulipanes Frescos en Lima con Envoltura Coreana - Florería Rouss</image:title>
+    </image:image>
   </url>
+
+  <!-- 5. Categoría: Ramos Buchones & Girasoles -->
   <url>
-    <loc>https://floreriarouss.com/catalogo?producto=maxi-ramo-buchon-80-rosas-6-girasoles</loc>
+    <loc>https://floreriarouss.com/catalogo?categoria=buchones</loc>
     <lastmod>2026-08-18</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://floreriarouss.com/images/products/ramo-buchon-corona-reina-50-rosas.webp</image:loc>
+      <image:title>Ramos Buchones Gigantes de Rosas y Girasoles - Florería Rouss</image:title>
+    </image:image>
   </url>
+
+  <!-- 6. Categoría: Cumpleaños & Coronas con Tiara -->
   <url>
-    <loc>https://floreriarouss.com/catalogo?producto=ramo-buchon-reina-imperial-80-rosas</loc>
+    <loc>https://floreriarouss.com/catalogo?categoria=coronas</loc>
     <lastmod>2026-08-18</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://floreriarouss.com/images/products/ramo-princesa-12-rosas-durazno-tiara-cristal.webp</image:loc>
+      <image:title>Ramos con Corona y Tiara de Cristal para Cumpleaños - Florería Rouss</image:title>
+    </image:image>
   </url>
+
+  <!-- 7. Categoría: Lirios & Gerberas (Colores Pastel) -->
   <url>
-    <loc>https://floreriarouss.com/catalogo?producto=ramo-buchon-corona-reina-50-rosas</loc>
+    <loc>https://floreriarouss.com/catalogo?categoria=pastel</loc>
     <lastmod>2026-08-18</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://floreriarouss.com/images/products/bouquet-dulzura-lirio-rosado-conejitos.webp</image:loc>
+      <image:title>Lirios Orientales y Gerberas Pastel - Florería Rouss</image:title>
+    </image:image>
   </url>
+
+  <!-- 8. Categoría: Combos & Cajas Florales (Flower Boxes) -->
   <url>
-    <loc>https://floreriarouss.com/catalogo?producto=ramo-buchon-sol-de-amor-3-girasoles</loc>
+    <loc>https://floreriarouss.com/catalogo?categoria=combos</loc>
     <lastmod>2026-08-18</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://floreriarouss.com/images/products/combo-box-amor-incondicional-rosas-vino-peluche.webp</image:loc>
+      <image:title>Combos Florales con Peluches, Chocolates y Vinos - Florería Rouss</image:title>
+    </image:image>
   </url>
+
+  <!-- 9. Categoría: Propuestas & Bodas -->
   <url>
-    <loc>https://floreriarouss.com/catalogo?producto=ramo-buchon-corona-dorada-24-rosas</loc>
+    <loc>https://floreriarouss.com/catalogo?categoria=propuestas</loc>
     <lastmod>2026-08-18</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://floreriarouss.com/images/products/ramo-propuesta-corazon-corona-quieres-casarte-conmigo.webp</image:loc>
+      <image:title>Ramos para Pedida de Mano y Matrimonio - Florería Rouss</image:title>
+    </image:image>
   </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=ramo-buchon-corona-imperial-50-rosas</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=ramo-buchon-aurora-3-girasoles</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=ramo-buchon-magico-12-rosas-girasol</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=combo-cumpleanos-buchon-50-rosas</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=combo-reina-buchon-corona-globos</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=combo-imperial-buchon-girasoles-vino</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=combo-pasional-24-rosas-vino-globo</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=cucurucho-pasion-8-rosas-rojas</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=cucurucho-rosa-delicadeza-8-rosas</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=cucurucho-dulzura-8-rosas-rosa</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=cucurucho-encanto-8-rosas-fucsia</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=cucurucho-primavera-8-rosas-blancas</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=cucurucho-girasol-radiante-3-rosas</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=mini-bouquet-ternura-3-rosas-rojas</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=mini-bouquet-dulce-amor-3-rosas-rosa</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=mini-bouquet-sol-de-verano-girasol</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=mini-bouquet-pasion-express-2-rosas</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=mini-bouquet-girasol-single-alegria</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=exotic-box-anturio-rojo-rosas</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=tropical-box-anturio-exotico-girasoles</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=elegance-box-anturio-blanco-lirios</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=sweet-box-anturio-rosa-rosas-pastel</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=ramo-princesa-2-gerberas-follaje-rosa</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=ramo-reina-gerberas-rosas-pastel</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=bouquet-frescura-gerberas-fucsia-rosas</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=bouquet-primaveral-gerberas-rosas-blancas</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=box-geometrico-gerberas-fucsia-rosas</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=box-geometrico-gerberas-rosa-rosas</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=box-geometrico-girasol-rosas-rojas</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=box-geometrico-lirios-rosas-pastel</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=ramo-dulce-armonia-lirios-rosas-rosadas</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=ramo-pureza-imperial-lirios-rosas-blancas</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=ramo-pasion-lirios-rosas-rojas</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=bouquet-royal-rosas-azules-papel-coreano</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=bouquet-zafiro-rosas-azules-girasol</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=cucurucho-azul-infinito-rosas-azules</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=box-imperial-rosas-azules-corona-dorada</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=maxi-bouquet-imperial-12-tulipanes-rosa-holandes</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=bouquet-alta-costura-6-tulipanes-rojos</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=bouquet-gala-6-tulipanes-rosas</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=cucurucho-tulipanes-rojos-girasoles-cinta-dorada</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=cucurucho-tulipanes-amarillos-girasoles</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=cucurucho-tulipanes-rosa-pastel-delicadeza</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=cucurucho-tulipanes-bicolor-amor-eterno</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=wood-floral-box-tulipanes-rojos-rosas-rojas</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=wood-floral-box-tulipanes-rosa-rosas-pastel</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=wood-floral-box-tulipanes-amarillos-girasoles</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=wood-floral-box-tulipanes-bicolor-flores-silvestres</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://floreriarouss.com/catalogo?producto=wood-floral-box-tulipanes-blancos-rosas-blancas</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
 </urlset>

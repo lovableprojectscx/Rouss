@@ -1,6 +1,39 @@
-# robots.txt for Florería Rouss (https://floreriarouss.com)
+# ==============================================================================
+# Florería Rouss - Robots.txt
+# Canonical Domain: https://floreriarouss.com
+# Purpose: Search Engine Crawling (SEO) & Generative AI Indexing (GEO)
+# ==============================================================================
+
 User-agent: *
 Allow: /
+Allow: /catalogo
+Allow: /images/
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /sitemap.xml
 
-# Sitemaps
+# AI & Generative Search Engines (GEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Sitemaps and LLM Guides
 Sitemap: https://floreriarouss.com/sitemap.xml
+# LLM Knowledge Standard: https://floreriarouss.com/llms.txt
