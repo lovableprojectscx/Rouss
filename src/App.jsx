@@ -771,6 +771,18 @@ function getProductSlug(product) {
   return product.id;
 }
 
+const VALID_CATEGORIES = ['todos', 'tulipanes', 'buchones', 'coronas', 'rosas', 'pastel', 'combos', 'propuestas', 'tematicos'];
+
+// Sanitiza y limpia cualquier parámetro de categoría contra caracteres especiales (ej: rosas>, rosas/, rosa)
+export function sanitizeCategory(cat) {
+  if (!cat || typeof cat !== 'string') return 'todos';
+  const cleaned = cat.trim().toLowerCase().replace(/[^a-z0-9_-]/g, '');
+  if (!cleaned) return 'todos';
+  if (VALID_CATEGORIES.includes(cleaned)) return cleaned;
+  const found = VALID_CATEGORIES.find(c => c.startsWith(cleaned) || cleaned.startsWith(c));
+  return found || 'todos';
+}
+
 export default function App() {
   // Dynamic State synchronized with Supabase
   const [productsList, setProductsList] = useState(INITIAL_PRODUCTS);
@@ -800,9 +812,9 @@ export default function App() {
   const [activeCategory, setActiveCategory] = useState(() => {
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
-      const cat = params.get('categoria') || params.get('cat') || params.get('category');
-      if (cat) {
-        return cat.toLowerCase();
+      const rawCat = params.get('categoria') || params.get('cat') || params.get('category');
+      if (rawCat) {
+        return sanitizeCategory(rawCat);
       }
     }
     return 'todos';
@@ -842,9 +854,9 @@ export default function App() {
         setCurrentPage('inicio');
       }
 
-      const catParam = params.get('categoria') || params.get('cat') || params.get('category');
-      if (catParam) {
-        setActiveCategory(catParam.toLowerCase());
+      const rawCatParam = params.get('categoria') || params.get('cat') || params.get('category');
+      if (rawCatParam) {
+        setActiveCategory(sanitizeCategory(rawCatParam));
       } else {
         setActiveCategory('todos');
       }
@@ -1027,49 +1039,17 @@ export default function App() {
     }
   };
 
-  // Sync browser back/forward buttons (popstate)
-  useEffect(() => {
-    const handlePopState = () => {
-      const path = window.location.pathname.toLowerCase();
-      const hash = window.location.hash.toLowerCase();
-      const params = new URLSearchParams(window.location.search);
-      const productSlug = params.get('producto');
-      const catParam = params.get('categoria');
-
-      if (catParam) {
-        setActiveCategory(catParam);
-      }
-
-      if (productSlug && productsList.length > 0) {
-        const found = productsList.find(p => getProductSlug(p) === productSlug || p.id === productSlug || p.slug === productSlug);
-        if (found) {
-          setSelectedItem(found);
-          setCurrentPage('catalogo');
-          return;
-        }
-      } else {
-        setSelectedItem(null);
-      }
-
-      if (path.includes('catalogo') || hash.includes('catalogo')) {
-        setCurrentPage('catalogo');
-      } else {
-        setCurrentPage('inicio');
-      }
-    };
-    window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
-  }, [productsList]);
-
   // Filter products by search text and category (supports array category matching)
   const filteredProducts = productsList.filter(p => {
-    const productCategories = p.categories || [p.category];
-    const matchesCategory = activeCategory === 'todos' || 
-                            p.category === activeCategory || 
-                            productCategories.includes(activeCategory);
+    const productCategories = (p.categories && Array.isArray(p.categories)) ? p.categories : [p.category];
+    const cleanActive = sanitizeCategory(activeCategory);
+    const matchesCategory = cleanActive === 'todos' || 
+                            p.category === cleanActive || 
+                            productCategories.some(c => c && c.toLowerCase() === cleanActive);
                             
-    const matchesSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          p.description.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesSearch = !searchQuery.trim() || 
+                          p.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                          (p.description && p.description.toLowerCase().includes(searchQuery.toLowerCase()));
     return matchesCategory && matchesSearch;
   });
 

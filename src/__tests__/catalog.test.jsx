@@ -119,4 +119,14 @@ describe('Florería Rouss - Catálogo & Componentes', () => {
     expect(screen.getByText(/Identificación del Bien Contratado/i)).toBeInTheDocument()
     expect(screen.getByText(/Detalle de la Reclamación y Pedido/i)).toBeInTheDocument()
   })
+
+  it('sanitizeCategory cleans malformed category URLs with brackets or punctuation', async () => {
+    const { sanitizeCategory } = await import('../App')
+    expect(sanitizeCategory('rosas>')).toBe('rosas')
+    expect(sanitizeCategory('tulipanes/')).toBe('tulipanes')
+    expect(sanitizeCategory('buchon')).toBe('buchones')
+    expect(sanitizeCategory('rosa')).toBe('rosas')
+    expect(sanitizeCategory('invalido123')).toBe('todos')
+    expect(sanitizeCategory(null)).toBe('todos')
+  })
 })
