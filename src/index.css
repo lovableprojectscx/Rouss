@@ -362,43 +362,84 @@ h1, h2, h3, h4 {
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.75rem;
 }
 
 .feature-card-image {
   background: var(--bg-surface);
-  padding: 2.25rem 1.5rem;
+  padding: 2.25rem 1.75rem;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-light);
   box-shadow: var(--shadow-sm);
   text-align: center;
-  transition: var(--transition-smooth);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
 }
 
 .feature-card-image:hover {
   border-color: var(--brand-gold);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
 }
 
 .feature-img-thumb {
-  width: 78px;
-  height: 78px;
+  width: 84px;
+  height: 84px;
   border-radius: 50%;
   object-fit: cover;
-  margin: 0 auto 1rem;
+  margin: 0 auto 1.15rem;
   border: 3px solid var(--brand-gold);
   display: block;
+  transition: transform 0.3s ease;
+}
+
+.feature-card-image:hover .feature-img-thumb {
+  transform: scale(1.08);
 }
 
 .feature-title {
   font-size: 1.3rem;
   font-weight: 600;
   margin-bottom: 0.4rem;
+  color: var(--text-primary);
 }
 
 .feature-desc {
   font-size: 0.9rem;
   color: var(--text-secondary);
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.btn-feature-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  margin-top: 1.25rem;
+  padding: 0.6rem 1.35rem;
+  background: rgba(197, 155, 39, 0.08);
+  color: var(--brand-gold-dark);
+  border: 1px solid var(--brand-gold);
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  width: 100%;
+  max-width: 220px;
+}
+
+.btn-feature-link:hover {
+  background: var(--brand-gold);
+  color: #121110;
+  box-shadow: 0 4px 15px rgba(197, 155, 39, 0.3);
+  transform: translateY(-1px);
 }
 
 /* CATALOG CALLOUT PARALLAX */

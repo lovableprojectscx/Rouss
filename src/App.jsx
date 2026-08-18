@@ -885,15 +885,19 @@ export default function App() {
     return () => { isMounted = false; };
   }, []);
 
-  // Switch page and update browser address bar URL cleanly (/catalogo)
-  const navigateToPage = (page) => {
+  // Switch page and update browser address bar URL cleanly (/catalogo) with optional category filter
+  const navigateToPage = (page, category = 'todos') => {
     setCurrentPage(page);
     setMobileMenuOpen(false);
     setSelectedItem(null);
+    if (category) {
+      setActiveCategory(category);
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
     if (page === 'catalogo') {
-      window.history.pushState({ page: 'catalogo' }, '', '/catalogo');
+      const url = category && category !== 'todos' ? `/catalogo?categoria=${category}` : '/catalogo';
+      window.history.pushState({ page: 'catalogo', category }, '', url);
     } else {
       window.history.pushState({ page: 'inicio' }, '', '/');
     }
@@ -956,6 +960,11 @@ export default function App() {
       const hash = window.location.hash.toLowerCase();
       const params = new URLSearchParams(window.location.search);
       const productSlug = params.get('producto');
+      const catParam = params.get('categoria');
+
+      if (catParam) {
+        setActiveCategory(catParam);
+      }
 
       if (productSlug && productsList.length > 0) {
         const found = productsList.find(p => getProductSlug(p) === productSlug || p.id === productSlug || p.slug === productSlug);
@@ -1201,48 +1210,89 @@ export default function App() {
             </div>
           </section>
 
-          {/* SECTION 2: FEATURES WITH HIGH-RES THUMBNAILS */}
+          {/* SECTION 2: FEATURES WITH DIRECT CATEGORY FILTER BUTTONS */}
           <section className="features-section">
             <div className="container">
               <div className="features-grid">
-                <div className="feature-card-image">
+                
+                {/* 1. TULIPANES */}
+                <div 
+                  className="feature-card-image"
+                  onClick={() => navigateToPage('catalogo', 'tulipanes')}
+                  title="Ver Colección de Tulipanes Holandeses"
+                >
                   <picture>
                     <source srcSet="/images/products/maxi-bouquet-imperial-12-tulipanes-rosa-holandes.webp" type="image/webp" />
                     <img 
                       src="/images/products/maxi-bouquet-imperial-12-tulipanes-rosa-holandes.jpg" 
                       alt="Tulipanes Holandeses de Lujo" 
                       className="feature-img-thumb"
+                      loading="lazy"
                     />
                   </picture>
                   <h3 className="feature-title">Tulipanes Holandeses</h3>
                   <p className="feature-desc">Arreglos exclusivos de tulipanes importados en tonalidades rosa, rojo, amarillo, morado y blanco.</p>
+                  <button 
+                    className="btn-feature-link"
+                    onClick={(e) => { e.stopPropagation(); navigateToPage('catalogo', 'tulipanes'); }}
+                  >
+                    <span>Ver Tulipanes</span>
+                    <ArrowRightGoldIcon size={14} color="#96761A" />
+                  </button>
                 </div>
 
-                <div className="feature-card-image">
+                {/* 2. RAMOS BUCHONES */}
+                <div 
+                  className="feature-card-image"
+                  onClick={() => navigateToPage('catalogo', 'buchones')}
+                  title="Ver Colección de Ramos Buchones & Girasoles"
+                >
                   <picture>
                     <source srcSet="/images/products/ramo-buchon-12-girasoles-sol-radiante.webp" type="image/webp" />
                     <img 
                       src="/images/products/ramo-buchon-12-girasoles-sol-radiante.jpg" 
                       alt="Ramos Buchones de Lujo" 
                       className="feature-img-thumb"
+                      loading="lazy"
                     />
                   </picture>
                   <h3 className="feature-title">Ramos Buchones de Lujo</h3>
                   <p className="feature-desc">Creaciones monumentales desde 12 hasta 80 rosas y girasoles con envoltura coreana de alta costura.</p>
+                  <button 
+                    className="btn-feature-link"
+                    onClick={(e) => { e.stopPropagation(); navigateToPage('catalogo', 'buchones'); }}
+                  >
+                    <span>Ver Ramos Buchones</span>
+                    <ArrowRightGoldIcon size={14} color="#96761A" />
+                  </button>
                 </div>
 
-                <div className="feature-card-image">
+                {/* 3. DISENOS DE AUTOR */}
+                <div 
+                  className="feature-card-image"
+                  onClick={() => navigateToPage('catalogo', 'coronas')}
+                  title="Ver Diseños de Autor & Coronas"
+                >
                   <picture>
                     <source srcSet="/images/products/ramo-princesa-12-rosas-durazno-tiara-cristal.webp" type="image/webp" />
                     <img 
                       src="/images/products/ramo-princesa-12-rosas-durazno-tiara-cristal.jpg" 
                       alt="Diseños de Autor Únicos" 
                       className="feature-img-thumb"
+                      loading="lazy"
                     />
                   </picture>
                   <h3 className="feature-title">Diseños de Autor Únicos</h3>
                   <p className="feature-desc">Creaciones exclusivas firmadas por Jharol Baldeón con tiaras imperiales, gerberas y cajas florales.</p>
+                  <button 
+                    className="btn-feature-link"
+                    onClick={(e) => { e.stopPropagation(); navigateToPage('catalogo', 'coronas'); }}
+                  >
+                    <span>Ver Diseños de Autor</span>
+                    <ArrowRightGoldIcon size={14} color="#96761A" />
+                  </button>
                 </div>
+
               </div>
             </div>
           </section>

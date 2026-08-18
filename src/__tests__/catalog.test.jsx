@@ -7,6 +7,7 @@ describe('Florería Rouss - Catálogo & Componentes', () => {
   beforeEach(() => {
     vi.clearAllMocks()
     window.location.hash = ''
+    window.history.pushState({}, '', '/')
   })
 
   it('renders home page and header correctly', () => {
@@ -86,12 +87,12 @@ describe('Florería Rouss - Catálogo & Componentes', () => {
     expect(screen.getAllByRole('button', { name: /Compartir/i }).length).toBeGreaterThanOrEqual(1)
   })
 
-  it('opens Privacy Policy modal when clicking privacy links', async () => {
+  it('navigates to catalog with pre-selected category filter when clicking on feature card buttons', async () => {
     render(<App />)
-    const privacyBtn = screen.getByRole('button', { name: /Políticas de Privacidad \(Ley N° 29733\)/i })
-    fireEvent.click(privacyBtn)
+    const tulipanesBtn = screen.getByRole('button', { name: /Ver Tulipanes/i })
+    fireEvent.click(tulipanesBtn)
 
-    expect(screen.getByText(/Políticas de Privacidad y Términos de Servicio/i)).toBeInTheDocument()
-    expect(screen.getAllByText(/Ley N° 29733/i).length).toBeGreaterThanOrEqual(1)
+    expect(screen.getByText('Colección Imperial Rouss')).toBeInTheDocument()
+    expect(screen.getByText(/Maxi Bouquet Imperial 12 Tulipanes Rosa Holandés/i)).toBeInTheDocument()
   })
 })
