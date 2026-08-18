@@ -2,20 +2,35 @@
 
 ---
 
-## 1. 🏗️ Arquitectura Técnica del Frontend
+## 1. 🏢 Información Oficial del Negocio Integrada
 
-### 1.1 Stack Tecnológico Core
+| Atributo | Detalle Oficial Registrado |
+| :--- | :--- |
+| **Marca / Razón Comercial** | Florería Rouss by Jharol Baldeón |
+| **Teléfono / WhatsApp** | `+51 941 493 471` (`941493471`) |
+| **Dirección Física** | Av. Alameda Sur cruce con Av. Los Incas, Chorrillos, Lima, Perú |
+| **Años en el Rubro** | 3 Años de Trayectoria en Alta Floristería |
+| **Pedidos Entregados** | +1,000 Pedidos Seguros Entregados |
+| **Zonas de Delivery** | Envíos a todo Lima Metropolitana y Callao (tarifa acorde a la distancia) |
+| **Instagram Oficial** | [@rouss8439](https://instagram.com/rouss8439) |
+| **Facebook Oficial** | [Florería Rouss](https://www.facebook.com/share/18MDdziT14/) |
+
+---
+
+## 2. 🏗️ Arquitectura Técnica del Frontend
+
+### 2.1 Stack Tecnológico Core
 - **Framework**: React 18 + Vite (SPA de alto rendimiento con Hot Module Replacement).
 - **Estilos**: **Vanilla CSS nativo** estructurado mediante CSS Custom Properties (`:root`), sin frameworks CSS invasivos ni dependencias pesadas.
 - **Tipografía**: **Poppins** (Google Fonts: 400, 500, 600, 700) aplicada globalmente.
-- **Iconografía**: Módulo vectorial SVG nativo parametrizable en color dorado champagne (`PremiumIcons.jsx`), escalable y sin pérdida de nitidez. **Sin emojis informales para preservar una línea gráfica de alta gama.**
+- **Iconografía**: Módulo vectorial SVG nativo parametrizable en color dorado champagne (`PremiumIcons.jsx` con iconos de WhatsApp, Instagram, Facebook, Ubicación, etc.), escalable y sin pérdida de nitidez. **Sin emojis informales para preservar una línea gráfica de alta gama.**
 - **Enrutamiento**: HTML5 History API (`window.history.pushState` y escucha `popstate`) sincronizado con rutas `/` e `/catalogo`.
 - **Optimización de Imágenes**: Convertidor de imágenes de alta fidelidad **WebP** (`imageOptimizer.js` y scripts de optimización `sharp`) 100% compatible con **iOS (Safari iOS 14+)**, **Android** y navegadores de escritorio.
 - **Testing**: Suite completa de pruebas con **Vitest** (pruebas unitarias y de componentes) y **Playwright** (pruebas End-to-End en Desktop Chromium y Mobile Safari iOS).
 
 ---
 
-## 2. 🌹 Catálogo Oficial en Supabase (`mypes`)
+## 3. 🌹 Catálogo Oficial en Supabase (`mypes`)
 
 Se cargaron los **56 arreglos florales oficiales** enviados directamente por el dueño vía WhatsApp (Tandas 1, 2, 3 y 4), estructurados con descripciones profesionales de alta costura:
 
@@ -93,7 +108,7 @@ Se cargaron los **56 arreglos florales oficiales** enviados directamente por el 
 
 ---
 
-## 3. 🖼️ Módulo Convertidor y Optimizador WebP
+## 4. 🖼️ Módulo Convertidor y Optimizador WebP
 
 1. **Scripts CLI Automatizados**:
    - `npm run optimize:images` y scripts de tandas procesan lotes a **WebP 88% sRGB** con respaldos JPG.
@@ -102,7 +117,7 @@ Se cargaron los **56 arreglos florales oficiales** enviados directamente por el 
 
 ---
 
-## 4. 🧪 Suite de Pruebas Automatizadas
+## 5. 🧪 Suite de Pruebas Automatizadas
 
 - **Vitest**: `npm test` ejecuta 7 pruebas unitarias (100% pasadas).
 - **Playwright (E2E)**: `npx playwright test` ejecuta 6 pruebas en Desktop Chromium y Mobile Safari iOS (100% pasadas).
