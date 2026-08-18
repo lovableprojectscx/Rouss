@@ -699,32 +699,36 @@ const INITIAL_PRODUCTS = [
   }
 ];
 
-// CLIENT GALLERY
+// CLIENT GALLERY (WebP optimized)
 const INITIAL_CLIENT_GALLERY = [
   {
     id: 'fa000001-0000-4000-a000-000000000001',
-    image: '/images/client-4.jpg',
+    image: '/images/client-4.webp',
+    imageFallback: '/images/client-4.jpg',
     title: 'Momentos de Alegría Rouss',
     quote: '"Donde florece el amor, la sonrisa ilumina cada instante."',
     arrangement: 'Combo Girasoles & Oso'
   },
   {
     id: 'fa000001-0000-4000-a000-000000000002',
-    image: '/images/client-1.jpg',
+    image: '/images/client-1.webp',
+    imageFallback: '/images/client-1.jpg',
     title: 'Entregas Románticas Inolvidables',
     quote: '"Expresando los sentimientos más profundos con la elegancia de nuestras rosas de autor."',
     arrangement: 'Maxi Ramo de Rosas'
   },
   {
     id: 'fa000001-0000-4000-a000-000000000003',
-    image: '/images/client-2.jpg',
+    image: '/images/client-2.webp',
+    imageFallback: '/images/client-2.jpg',
     title: 'Detalles Exclusivos & Únicos',
     quote: '"Arreglos de alta costura diseñados para celebrar momentos inolvidables."',
     arrangement: 'Rosas Azules Royal'
   },
   {
     id: 'fa000001-0000-4000-a000-000000000004',
-    image: '/images/client-3.jpg',
+    image: '/images/client-3.webp',
+    imageFallback: '/images/client-3.jpg',
     title: 'Sonrisas & Flores de Autor',
     quote: '"El regalo perfecto para llenar de luz y calidez el día de alguien especial."',
     arrangement: 'Bouquet Radiante de Girasoles'
@@ -769,7 +773,8 @@ export default function App() {
   const [toastMessage, setToastMessage] = useState('');
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [heroBanner, setHeroBanner] = useState({
-    imagen: '/images/banner.png',
+    imagen: '/images/banner.webp',
+    imagenFallback: '/images/banner.png',
     subtitulo: '"Cada pétalo cuenta una historia inolvidable" · Explora la Colección Imperial',
     link: '/catalogo'
   });
@@ -1064,11 +1069,16 @@ export default function App() {
       <header className="site-header">
         <div className="container header-container">
           <div className="logo-link" onClick={() => navigateToPage('inicio')}>
-            <img 
-              src="/images/logo-header.png" 
-              alt="Florería Rouss Logo" 
-              className="logo-img" 
-            />
+            <picture>
+              <source srcSet="/images/logo-header.webp" type="image/webp" />
+              <img 
+                src="/images/logo-header.png" 
+                alt="Florería Rouss Logo" 
+                className="logo-img" 
+                width="190"
+                height="55"
+              />
+            </picture>
           </div>
 
           {/* Desktop Navigation */}
@@ -1166,11 +1176,16 @@ export default function App() {
               title="Explorar Colección de Productos"
               onKeyDown={(e) => e.key === 'Enter' && navigateToPage('catalogo')}
             >
-              <img 
-                src={heroBanner.imagen} 
-                alt="Florería Rouss Banner Full Width" 
-                className="hero-banner-full-img"
-              />
+              <picture>
+                <source srcSet="/images/banner.webp" type="image/webp" />
+                <img 
+                  src={heroBanner.imagenFallback || heroBanner.imagen} 
+                  alt="Florería Rouss Banner Full Width" 
+                  className="hero-banner-full-img"
+                  fetchpriority="high"
+                  decoding="async"
+                />
+              </picture>
             </div>
 
             {/* CLEAN POETIC BANNER BAR - DYNAMIC FROM SUPABASE */}
@@ -1283,11 +1298,16 @@ export default function App() {
                         title="Haz clic para ampliar la foto"
                       >
                         <div className="client-img-wrapper">
-                          <img 
-                            src={item.image} 
-                            alt={item.title} 
-                            className="client-img" 
-                          />
+                          <picture>
+                            <source srcSet={item.image.endsWith('.webp') ? item.image : item.image.replace(/\.(jpg|png)$/, '.webp')} type="image/webp" />
+                            <img 
+                              src={item.imageFallback || item.image} 
+                              alt={item.title} 
+                              className="client-img" 
+                              loading="lazy"
+                              decoding="async"
+                            />
+                          </picture>
                           <div className="client-card-overlay-solid">
                             <span className="client-tag">{item.arrangement}</span>
                             <p className="client-quote">{item.quote}</p>

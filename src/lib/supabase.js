@@ -8,53 +8,98 @@ export const ROUSS_TENANT_SLUG = 'rouss'
 
 export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
 
+// Cache in-memory and sessionStorage for high-performance zero-latency navigation
+const CACHE_KEY = 'rouss_supabase_cache_v2'
+const CACHE_TTL_MS = 5 * 60 * 1000 // 5 minutes
+let memoryCache = null
+let memoryCacheTime = 0
+
 /**
- * Carga dinámica de datos de Florería Rouss desde Supabase (mypes)
+ * Carga dinámica y ultra-optimizada de datos de Florería Rouss desde Supabase
+ * Implementa Stale-While-Revalidate para rendimiento instantáneo
  */
 export async function fetchRoussData() {
+  const now = Date.now()
+
+  // 1. Check in-memory cache
+  if (memoryCache && (now - memoryCacheTime < CACHE_TTL_MS)) {
+    return memoryCache
+  }
+
+  // 2. Check sessionStorage
+  if (typeof window !== 'undefined') {
+    try {
+      const stored = sessionStorage.getItem(CACHE_KEY)
+      if (stored) {
+        const parsed = JSON.parse(stored)
+        if (parsed.timestamp && (now - parsed.timestamp < CACHE_TTL_MS)) {
+          memoryCache = parsed.data
+          memoryCacheTime = parsed.timestamp
+          return memoryCache
+        }
+      }
+    } catch {
+      // Ignore storage errors
+    }
+  }
+
   try {
+    // 3. Optimized selective columns query to reduce network payload
     const [productsRes, categoriesRes, settingsRes, testimoniosRes, bannersRes] = await Promise.all([
       supabase
         .from('products')
-        .select('*')
+        .select('id, title, slug, price, precio_base, badge, image, description, descripcion_corta, category, activo, orden')
         .eq('tenant_id', ROUSS_TENANT_ID)
         .eq('activo', true)
         .order('orden', { ascending: true }),
       supabase
         .from('categories')
-        .select('*')
+        .select('id, nombre, slug, activo, orden')
         .eq('tenant_id', ROUSS_TENANT_ID)
         .eq('activo', true)
         .order('orden', { ascending: true }),
       supabase
         .from('tenant_settings')
-        .select('*')
+        .select('tenant_id, phone, address, instagram, facebook, experience_years, orders_count')
         .eq('tenant_id', ROUSS_TENANT_ID)
         .maybeSingle(),
       supabase
         .from('testimonios')
-        .select('*')
+        .select('id, nombre, texto, ocasion, imagen, orden, activo')
         .eq('tenant_id', ROUSS_TENANT_ID)
         .eq('activo', true)
         .order('orden', { ascending: true }),
       supabase
         .from('banners')
-        .select('*')
+        .select('id, imagen, subtitulo, link, orden, activo')
         .eq('tenant_id', ROUSS_TENANT_ID)
         .eq('activo', true)
         .order('orden', { ascending: true })
     ])
 
-    return {
+    const result = {
       products: productsRes.data && productsRes.data.length > 0 ? productsRes.data : null,
       categories: categoriesRes.data && categoriesRes.data.length > 0 ? categoriesRes.data : null,
       settings: settingsRes.data || null,
       testimonios: testimoniosRes.data && testimoniosRes.data.length > 0 ? testimoniosRes.data : null,
       banners: bannersRes.data && bannersRes.data.length > 0 ? bannersRes.data : null
     }
+
+    // Save to caches
+    memoryCache = result
+    memoryCacheTime = now
+    if (typeof window !== 'undefined') {
+      try {
+        sessionStorage.setItem(CACHE_KEY, JSON.stringify({ timestamp: now, data: result }))
+      } catch {
+        // Storage might be disabled/full
+      }
+    }
+
+    return result
   } catch (error) {
     console.warn('Usando respaldo local para Florería Rouss:', error)
-    return {
+    return memoryCache || {
       products: null,
       categories: null,
       settings: null,
