@@ -127,3 +127,134 @@ export const CheckMinimalIcon = ({ size = 24, color = "#C59B27", strokeWidth = 1
   </svg>
 );
 
+/**
+ * High-elegance SVG Botanical Vines and Blooming Roses for Backgrounds
+ * Ultra lightweight (0 KB external payload, pure inline vector graphics)
+ */
+export const FloralCornerVine = ({ position = 'top-left', className = '', ...props }) => {
+  const isLeft = position.includes('left');
+  const isTop = position.includes('top');
+
+  const transformStyle = {
+    transform: `${!isLeft ? 'scaleX(-1)' : ''} ${!isTop ? 'scaleY(-1)' : ''}`,
+    transformOrigin: 'center'
+  };
+
+  return (
+    <div 
+      className={`floral-vine-wrapper ${position} ${className}`}
+      style={{
+        position: 'absolute',
+        [isTop ? 'top' : 'bottom']: '-10px',
+        [isLeft ? 'left' : 'right']: '-10px',
+        width: '240px',
+        height: '240px',
+        pointerEvents: 'none',
+        zIndex: 1,
+        ...transformStyle
+      }}
+      aria-hidden="true"
+      {...props}
+    >
+      <svg 
+        viewBox="0 0 200 200" 
+        fill="none" 
+        xmlns="http://www.w3.org/2000/svg"
+        style={{ width: '100%', height: '100%', opacity: 0.35 }}
+      >
+        {/* Main curved botanical stems */}
+        <path 
+          d="M10 10 C 60 40, 90 90, 110 170" 
+          stroke="#C59B27" 
+          strokeWidth="2" 
+          strokeLinecap="round" 
+        />
+        <path 
+          d="M10 10 C 40 60, 90 90, 170 110" 
+          stroke="#C59B27" 
+          strokeWidth="1.6" 
+          strokeLinecap="round" 
+        />
+
+        {/* Blooming Rose Blossom */}
+        <g transform="translate(65, 65)">
+          <circle cx="0" cy="0" r="16" stroke="#C59B27" strokeWidth="1.6" fill="rgba(197, 155, 39, 0.08)" />
+          <path d="M-8 -6 C-4 -14, 4 -14, 8 -6 C14 -4, 14 4, 8 8 C4 14, -4 14, -8 8 C-14 4, -14 -4, -8 -6 Z" stroke="#C59B27" strokeWidth="1.4" fill="rgba(232, 180, 184, 0.22)" />
+          <path d="M-5 -3 C-2 -7, 2 -7, 5 -3 C8 -2, 8 2, 5 5 C2 8, -2 8, -5 5 C-8 2, -8 -2, -5 -3 Z" stroke="#C59B27" strokeWidth="1.2" />
+          <circle cx="0" cy="0" r="3" fill="#C59B27" />
+        </g>
+
+        {/* Secondary Rose Bud */}
+        <g transform="translate(135, 105)">
+          <circle cx="0" cy="0" r="11" stroke="#C59B27" strokeWidth="1.4" fill="rgba(197, 155, 39, 0.08)" />
+          <path d="M-5 -4 C-2 -9, 3 -9, 6 -4 C10 -2, 10 3, 6 6 C3 10, -2 10, -5 6 C-9 3, -9 -2, -5 -4 Z" stroke="#C59B27" strokeWidth="1.1" fill="rgba(232, 180, 184, 0.18)" />
+        </g>
+
+        {/* Third Flower Bud */}
+        <g transform="translate(105, 145)">
+          <circle cx="0" cy="0" r="10" stroke="#C59B27" strokeWidth="1.3" fill="rgba(197, 155, 39, 0.08)" />
+          <path d="M-4 -3 C-1 -7, 2 -7, 5 -3 C8 -1, 8 3, 5 5 C2 8, -1 8, -4 5 C-7 3, -7 -1, -4 -3 Z" stroke="#C59B27" strokeWidth="1" fill="rgba(232, 180, 184, 0.18)" />
+        </g>
+
+        {/* Delicate Leaves */}
+        <path d="M35 30 C 25 15, 45 10, 50 25 C 45 35, 38 35, 35 30 Z" stroke="#96761A" strokeWidth="1.3" fill="rgba(197, 155, 39, 0.1)" />
+        <path d="M30 45 C 15 40, 12 60, 26 62 C 34 56, 33 48, 30 45 Z" stroke="#96761A" strokeWidth="1.3" fill="rgba(197, 155, 39, 0.1)" />
+        <path d="M90 55 C 105 45, 115 60, 102 70 C 92 68, 88 60, 90 55 Z" stroke="#96761A" strokeWidth="1.3" fill="rgba(197, 155, 39, 0.1)" />
+        <path d="M75 110 C 60 120, 55 100, 70 95 C 78 100, 78 107, 75 110 Z" stroke="#96761A" strokeWidth="1.3" fill="rgba(197, 155, 39, 0.1)" />
+        <path d="M140 85 C 155 75, 165 90, 152 98 C 144 95, 140 89, 140 85 Z" stroke="#96761A" strokeWidth="1.3" fill="rgba(197, 155, 39, 0.1)" />
+
+        {/* Golden Sparkles */}
+        <path d="M25 85 L27 90 L32 92 L27 94 L25 99 L23 94 L18 92 L23 90 Z" fill="#C59B27" opacity="0.75" />
+        <path d="M85 25 L87 30 L92 32 L87 34 L85 39 L83 34 L78 32 L83 30 Z" fill="#C59B27" opacity="0.75" />
+        <path d="M145 50 L146 53 L149 54 L146 55 L145 58 L144 55 L141 54 L144 53 Z" fill="#C59B27" opacity="0.65" />
+      </svg>
+    </div>
+  );
+};
+
+/**
+ * Floating Rose Petals scattered across sections
+ */
+export const FloatingPetalsLayer = () => {
+  return (
+    <div className="floating-petals-container" aria-hidden="true">
+      <svg className="petal-floating p-1" viewBox="0 0 30 30" fill="none">
+        <path d="M15 2 C8 8, 4 18, 15 28 C26 18, 22 8, 15 2 Z" fill="rgba(232, 180, 184, 0.45)" stroke="#C59B27" strokeWidth="0.8" />
+        <path d="M15 4 L15 26" stroke="#C59B27" strokeWidth="0.5" strokeDasharray="1 2" />
+      </svg>
+
+      <svg className="petal-floating p-2" viewBox="0 0 30 30" fill="none">
+        <path d="M15 2 C8 8, 4 18, 15 28 C26 18, 22 8, 15 2 Z" fill="rgba(197, 155, 39, 0.35)" stroke="#C59B27" strokeWidth="0.8" />
+      </svg>
+
+      <svg className="petal-floating p-3" viewBox="0 0 30 30" fill="none">
+        <path d="M15 2 C8 8, 4 18, 15 28 C26 18, 22 8, 15 2 Z" fill="rgba(232, 180, 184, 0.4)" stroke="#C59B27" strokeWidth="0.8" />
+      </svg>
+
+      <svg className="petal-floating p-4" viewBox="0 0 30 30" fill="none">
+        <path d="M15 2 C8 8, 4 18, 15 28 C26 18, 22 8, 15 2 Z" fill="rgba(197, 155, 39, 0.32)" stroke="#C59B27" strokeWidth="0.8" />
+      </svg>
+
+      <svg className="petal-floating p-5" viewBox="0 0 30 30" fill="none">
+        <path d="M15 2 C8 8, 4 18, 15 28 C26 18, 22 8, 15 2 Z" fill="rgba(232, 180, 184, 0.42)" stroke="#C59B27" strokeWidth="0.8" />
+      </svg>
+    </div>
+  );
+};
+
+/**
+ * Elegant Golden Botanical Divider with delicate rose emblem
+ */
+export const FloralDivider = ({ className = '' }) => (
+  <div className={`floral-divider-row ${className}`} aria-hidden="true">
+    <div className="divider-line" />
+    <svg width="28" height="28" viewBox="0 0 30 30" fill="none" className="divider-flower">
+      <circle cx="15" cy="15" r="10" stroke="#C59B27" strokeWidth="1.2" fill="rgba(197, 155, 39, 0.08)" />
+      <path d="M15 5 C10 10, 10 20, 15 25 C20 20, 20 10, 15 5 Z" stroke="#C59B27" strokeWidth="1" fill="rgba(232, 180, 184, 0.35)" />
+      <path d="M5 15 C10 10, 20 10, 25 15 C20 20, 10 20, 5 15 Z" stroke="#C59B27" strokeWidth="1" fill="rgba(232, 180, 184, 0.35)" />
+      <circle cx="15" cy="15" r="2.5" fill="#C59B27" />
+    </svg>
+    <div className="divider-line" />
+  </div>
+);
+

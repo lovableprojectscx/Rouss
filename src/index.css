@@ -366,35 +366,99 @@ h1, h2, h3, h4 {
   overflow: hidden;
 }
 
-/* DECORATIVE FLOATING FLORAL PETAL WATERMARKS */
-.features-deco-petal {
+/* FLORAL BACKGROUND DECORATIONS & VINES */
+.floral-vine-wrapper {
   position: absolute;
   pointer-events: none;
-  opacity: 0.16;
-  color: var(--brand-gold);
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.floating-petals-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
   z-index: 1;
 }
 
-.petal-top-left {
-  top: -20px;
-  left: 2%;
-  width: 140px;
-  height: 140px;
-  animation: floatFloralSlow 10s ease-in-out infinite alternate;
+.petal-floating {
+  position: absolute;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 4px rgba(197, 155, 39, 0.15));
 }
 
-.petal-bottom-right {
-  bottom: -30px;
-  right: 2%;
-  width: 160px;
-  height: 160px;
-  animation: floatFloralSlow 12s ease-in-out infinite alternate-reverse;
+.petal-floating.p-1 {
+  top: 10%;
+  left: 12%;
+  width: 26px;
+  height: 26px;
+  animation: floatPetal 9s ease-in-out infinite alternate;
 }
 
-@keyframes floatFloralSlow {
-  0% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-12px) rotate(6deg); }
-  100% { transform: translateY(0px) rotate(0deg); }
+.petal-floating.p-2 {
+  top: 28%;
+  right: 14%;
+  width: 22px;
+  height: 22px;
+  animation: floatPetal 11s ease-in-out infinite alternate-reverse;
+}
+
+.petal-floating.p-3 {
+  bottom: 22%;
+  left: 18%;
+  width: 30px;
+  height: 30px;
+  animation: floatPetal 13s ease-in-out infinite alternate;
+}
+
+.petal-floating.p-4 {
+  bottom: 12%;
+  right: 12%;
+  width: 24px;
+  height: 24px;
+  animation: floatPetal 10s ease-in-out infinite alternate-reverse;
+}
+
+.petal-floating.p-5 {
+  top: 55%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  animation: floatPetal 14s ease-in-out infinite alternate;
+}
+
+@keyframes floatPetal {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-16px) translateX(8px) rotate(15deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* FLORAL BOTANICAL DIVIDER */
+.floral-divider-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 420px;
+  margin: 1.25rem auto 0;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--brand-gold), transparent);
+}
+
+.divider-flower {
+  flex-shrink: 0;
+  animation: rotateSlow 25s linear infinite;
+}
+
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .section-header-centered {
@@ -769,6 +833,8 @@ h1, h2, h3, h4 {
 
 /* ABOUT SECTION */
 .about-section {
+  position: relative;
+  overflow: hidden;
   padding: 4.5rem 0;
   background: var(--bg-surface);
 }
@@ -778,6 +844,8 @@ h1, h2, h3, h4 {
   grid-template-columns: 1fr 1fr;
   gap: 3.5rem;
   align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
 .about-showcase-frame {
@@ -800,6 +868,10 @@ h1, h2, h3, h4 {
   display: block;
 }
 
+.about-text {
+  text-align: left;
+}
+
 .about-text h2 {
   font-size: clamp(1.75rem, 4.5vw, 2.75rem);
   margin: 0.4rem 0 0.85rem;
@@ -808,6 +880,7 @@ h1, h2, h3, h4 {
 .about-text p {
   font-size: 0.95rem;
   color: var(--text-secondary);
+  line-height: 1.6;
   margin-bottom: 0.85rem;
 }
 
@@ -845,6 +918,8 @@ h1, h2, h3, h4 {
 
 /* DEDICATED EXCLUSIVE CATALOG PAGE */
 .catalog-page-wrapper {
+  position: relative;
+  overflow: hidden;
   padding: 2.5rem 0 5rem;
   background: var(--bg-main);
 }
