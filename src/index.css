@@ -1153,6 +1153,98 @@ h1, h2, h3, h4 {
   }
 }
 
+/* SHARE BUTTON & TOAST NOTIFICATION */
+.modal-actions-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.btn-share-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(197, 155, 39, 0.05);
+  color: #8A6D1C;
+  border: 1px solid var(--brand-gold);
+  border-radius: var(--radius-full);
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  width: 100%;
+}
+
+.btn-share-outline:hover {
+  background: rgba(197, 155, 39, 0.15);
+  color: #6E5410;
+  border-color: #96761A;
+  transform: translateY(-1px);
+}
+
+.product-card-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.btn-card-share {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--brand-gold);
+  background: #FFFFFF;
+  color: var(--brand-gold);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.btn-card-share:hover {
+  background: rgba(197, 155, 39, 0.12);
+  border-color: #96761A;
+  transform: scale(1.05);
+}
+
+.share-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #121110;
+  color: #FFFFFF;
+  border: 1px solid var(--brand-gold);
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  z-index: 9999;
+  animation: toastFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes toastFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 15px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
 @media (max-width: 640px) {
   .promo-ticker-track {
     font-size: 0.725rem;
@@ -1200,3 +1292,4 @@ h1, h2, h3, h4 {
     font-size: 1.15rem;
   }
 }
+

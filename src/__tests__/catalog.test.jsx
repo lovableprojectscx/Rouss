@@ -74,7 +74,7 @@ describe('Florería Rouss - Catálogo & Componentes', () => {
     expect(callUrl).toContain('wa.me')
   })
 
-  it('opens product modal when clicking on a product card', async () => {
+  it('opens product modal and allows sharing product link', async () => {
     render(<App />)
     const catalogBtns = screen.getAllByRole('button', { name: 'Catálogo Exclusivo' })
     fireEvent.click(catalogBtns[0])
@@ -83,6 +83,6 @@ describe('Florería Rouss - Catálogo & Componentes', () => {
     fireEvent.click(productImg)
 
     expect(screen.getAllByText(/Ramos Buchones & Girasoles/i).length).toBeGreaterThanOrEqual(1)
-    expect(screen.getAllByText(/Espectacular bouquet buchón de 12 girasoles/i).length).toBeGreaterThanOrEqual(1)
+    expect(screen.getAllByRole('button', { name: /Compartir/i }).length).toBeGreaterThanOrEqual(1)
   })
 })

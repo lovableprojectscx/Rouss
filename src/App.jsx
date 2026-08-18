@@ -10,7 +10,9 @@ import {
   FacebookGoldIcon,
   MapPinGoldIcon,
   PhoneGoldIcon,
-  WhatsAppGoldIcon
+  WhatsAppGoldIcon,
+  ShareMinimalIcon,
+  CheckMinimalIcon
 } from './components/PremiumIcons'
 import { fetchRoussData, createReservation } from './lib/supabase'
 
@@ -750,10 +752,21 @@ const CATEGORIES_TABS = [
   { id: 'propuestas', label: 'Propuestas & Bodas' }
 ];
 
+// Helper to get slug for URL sharing
+function getProductSlug(product) {
+  if (product.slug) return product.slug;
+  if (product.image) {
+    const filename = product.image.split('/').pop().replace(/\.(webp|jpg|jpeg|png)$/, '');
+    if (filename) return filename;
+  }
+  return product.id;
+}
+
 export default function App() {
   // Dynamic State synchronized with Supabase
   const [productsList, setProductsList] = useState(INITIAL_PRODUCTS);
   const [galleryList, setGalleryList] = useState(INITIAL_CLIENT_GALLERY);
+  const [toastMessage, setToastMessage] = useState('');
   const [heroBanner, setHeroBanner] = useState({
     imagen: '/images/banner.png',
     subtitulo: '"Cada pétalo cuenta una historia inolvidable" · Explora la Colección Imperial',
@@ -765,7 +778,8 @@ export default function App() {
     if (typeof window !== 'undefined') {
       const path = window.location.pathname.toLowerCase();
       const hash = window.location.hash.toLowerCase();
-      if (path.includes('catalogo') || hash.includes('catalogo')) {
+      const params = new URLSearchParams(window.location.search);
+      if (path.includes('catalogo') || hash.includes('catalogo') || params.has('producto')) {
         return 'catalogo';
       }
     }
@@ -776,6 +790,20 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedItem, setSelectedItem] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Auto-open product modal if URL has ?producto=slug
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const params = new URLSearchParams(window.location.search);
+    const productSlug = params.get('producto');
+    if (productSlug && productsList.length > 0) {
+      const found = productsList.find(p => getProductSlug(p) === productSlug || p.id === productSlug || p.slug === productSlug);
+      if (found) {
+        setSelectedItem(found);
+        setCurrentPage('catalogo');
+      }
+    }
+  }, [productsList]);
 
   // Form State
   const [formData, setFormData] = useState({
@@ -855,6 +883,7 @@ export default function App() {
   const navigateToPage = (page) => {
     setCurrentPage(page);
     setMobileMenuOpen(false);
+    setSelectedItem(null);
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
     if (page === 'catalogo') {
@@ -864,11 +893,75 @@ export default function App() {
     }
   };
 
+  // Open & Close Modal with URL synchronization
+  const openProductModal = (product) => {
+    setSelectedItem(product);
+    const slug = getProductSlug(product);
+    window.history.pushState({ page: 'catalogo', producto: slug }, '', `/catalogo?producto=${slug}`);
+  };
+
+  const closeProductModal = () => {
+    setSelectedItem(null);
+    if (currentPage === 'catalogo') {
+      window.history.pushState({ page: 'catalogo' }, '', '/catalogo');
+    } else {
+      window.history.pushState({ page: 'inicio' }, '', '/');
+    }
+  };
+
+  // Share Product via Web Share API or Clipboard Fallback
+  const handleShareProduct = async (product, e) => {
+    if (e) e.stopPropagation();
+    const slug = getProductSlug(product);
+    const shareUrl = `${window.location.origin}/catalogo?producto=${slug}`;
+    const shareTitle = `${product.title} | Florería Rouss`;
+    const shareText = `Mira este hermoso arreglo de Florería Rouss: ${product.title} (${product.price})`;
+
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: shareTitle,
+          text: shareText,
+          url: shareUrl
+        });
+        return;
+      } catch (err) {
+        if (err.name !== 'AbortError') {
+          console.log('Share canceled or failed:', err);
+        }
+      }
+    }
+
+    // Fallback: Copy to Clipboard
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setToastMessage('¡Enlace del arreglo copiado al portapapeles!');
+      setTimeout(() => setToastMessage(''), 3000);
+    } catch (err) {
+      setToastMessage('Enlace: ' + shareUrl);
+      setTimeout(() => setToastMessage(''), 4000);
+    }
+  };
+
   // Sync browser back/forward buttons (popstate)
   useEffect(() => {
     const handlePopState = () => {
       const path = window.location.pathname.toLowerCase();
       const hash = window.location.hash.toLowerCase();
+      const params = new URLSearchParams(window.location.search);
+      const productSlug = params.get('producto');
+
+      if (productSlug && productsList.length > 0) {
+        const found = productsList.find(p => getProductSlug(p) === productSlug || p.id === productSlug || p.slug === productSlug);
+        if (found) {
+          setSelectedItem(found);
+          setCurrentPage('catalogo');
+          return;
+        }
+      } else {
+        setSelectedItem(null);
+      }
+
       if (path.includes('catalogo') || hash.includes('catalogo')) {
         setCurrentPage('catalogo');
       } else {
@@ -877,7 +970,7 @@ export default function App() {
     };
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
-  }, []);
+  }, [productsList]);
 
   // Filter products by search text and category (supports array category matching)
   const filteredProducts = productsList.filter(p => {
@@ -1439,7 +1532,7 @@ export default function App() {
             <div className="products-grid-minimal">
               {filteredProducts.map((product) => (
                 <div key={product.id} className="product-card-minimal">
-                  <div className="product-img-wrapper" onClick={() => setSelectedItem(product)}>
+                  <div className="product-img-wrapper" onClick={() => openProductModal(product)}>
                     <picture>
                       {product.image && product.image.endsWith('.webp') && (
                         <source srcSet={product.image} type="image/webp" />
@@ -1465,13 +1558,23 @@ export default function App() {
                       </div>
                     </div>
 
-                    <button 
-                      onClick={() => handleWhatsAppOrder(product.title)}
-                      className="btn-order-wa-solid"
-                    >
-                      <WhatsAppGoldIcon size={18} color="#FFFFFF" />
-                      <span>Pedir por WhatsApp</span>
-                    </button>
+                    <div className="product-card-actions">
+                      <button 
+                        onClick={() => handleWhatsAppOrder(product.title)}
+                        className="btn-order-wa-solid"
+                        style={{ flexGrow: 1 }}
+                      >
+                        <WhatsAppGoldIcon size={18} color="#FFFFFF" />
+                        <span>Pedir por WhatsApp</span>
+                      </button>
+                      <button 
+                        onClick={(e) => handleShareProduct(product, e)}
+                        className="btn-card-share"
+                        title="Compartir este arreglo"
+                      >
+                        <ShareMinimalIcon size={18} color="#C59B27" />
+                      </button>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -1599,9 +1702,9 @@ export default function App() {
 
       {/* LIGHTBOX MODAL */}
       {selectedItem && (
-        <div className="modal-backdrop" onClick={() => setSelectedItem(null)}>
+        <div className="modal-backdrop" onClick={closeProductModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close-btn" onClick={() => setSelectedItem(null)}>
+            <button className="modal-close-btn" onClick={closeProductModal}>
               <CloseMinimalIcon size={18} color="#FFFFFF" />
             </button>
             
@@ -1638,16 +1741,36 @@ export default function App() {
                 </>
               )}
 
-              <button 
-                onClick={() => handleWhatsAppOrder(selectedItem.title)} 
-                className="btn-whatsapp-solid"
-                style={{ padding: '0.8rem 1.5rem', fontSize: '0.9rem', width: '100%', justifyContent: 'center' }}
-              >
-                <WhatsAppGoldIcon size={20} color="#FFFFFF" />
-                <span style={{ display: 'inline' }}>Pedir este arreglo por WhatsApp</span>
-              </button>
+              <div className="modal-actions-grid">
+                <button 
+                  onClick={() => handleWhatsAppOrder(selectedItem.title)} 
+                  className="btn-whatsapp-solid"
+                  style={{ padding: '0.8rem 1.5rem', fontSize: '0.9rem', width: '100%', justifyContent: 'center' }}
+                >
+                  <WhatsAppGoldIcon size={20} color="#FFFFFF" />
+                  <span style={{ display: 'inline' }}>Pedir este arreglo por WhatsApp</span>
+                </button>
+
+                {!selectedItem.quote && (
+                  <button 
+                    onClick={(e) => handleShareProduct(selectedItem, e)} 
+                    className="btn-share-outline"
+                  >
+                    <ShareMinimalIcon size={18} color="#8A6D1C" />
+                    <span>Compartir este Arreglo / Copiar Enlace</span>
+                  </button>
+                )}
+              </div>
             </div>
           </div>
+        </div>
+      )}
+
+      {/* FLOATING TOAST NOTIFICATION */}
+      {toastMessage && (
+        <div className="share-toast">
+          <CheckMinimalIcon size={18} color="#D4AF37" />
+          <span>{toastMessage}</span>
         </div>
       )}
 
