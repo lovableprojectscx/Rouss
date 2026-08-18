@@ -1120,6 +1120,26 @@ export default function App() {
           </nav>
 
           <div className="header-actions">
+            <a 
+              href="https://www.instagram.com/rouss8439/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="header-social-link"
+              title="Seguir en Instagram @rouss8439"
+            >
+              <InstagramGoldIcon size={18} color="#C59B27" />
+            </a>
+
+            <a 
+              href="https://www.facebook.com/share/18MDdziT14/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="header-social-link"
+              title="Seguir en Facebook Florería Rouss"
+            >
+              <FacebookGoldIcon size={18} color="#C59B27" />
+            </a>
+
             <button 
               onClick={() => handleWhatsAppOrder('Consulta General')} 
               className="btn-whatsapp-solid"
@@ -1734,22 +1754,39 @@ export default function App() {
             <div>
               <h4 className="footer-title">Atención Directa</h4>
               <div className="contact-info">
-                <div className="contact-item">
+                <a 
+                  href="https://wa.me/51941493471?text=Hola%20Florer%C3%ADa%20Rouss,%20deseo%20consultar%20por%20sus%20arreglos" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="contact-item contact-link"
+                  title="Contactar al WhatsApp Oficial"
+                >
                   <PhoneGoldIcon size={18} color="#C59B27" />
-                  <span>+51 941 493 471 (WhatsApp)</span>
-                </div>
-                <div className="contact-item">
+                  <span>+51 941 493 471 (WhatsApp Oficial)</span>
+                </a>
+
+                <a 
+                  href="https://www.instagram.com/rouss8439/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="contact-item contact-link"
+                  title="Visitar Instagram @rouss8439"
+                >
                   <InstagramGoldIcon size={18} color="#C59B27" />
-                  <a href="https://instagram.com/rouss8439" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
-                    @rouss8439 (Instagram)
-                  </a>
-                </div>
-                <div className="contact-item">
+                  <span>@rouss8439 (Instagram)</span>
+                </a>
+
+                <a 
+                  href="https://www.facebook.com/share/18MDdziT14/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="contact-item contact-link"
+                  title="Visitar Facebook Florería Rouss"
+                >
                   <FacebookGoldIcon size={18} color="#C59B27" />
-                  <a href="https://www.facebook.com/share/18MDdziT14/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
-                    Florería Rouss (Facebook)
-                  </a>
-                </div>
+                  <span>Florería Rouss (Facebook)</span>
+                </a>
+
                 <div className="contact-item">
                   <MapPinGoldIcon size={18} color="#C59B27" />
                   <span>Av. Alameda Sur cruce con Av. Los Incas, Chorrillos, Lima</span>

@@ -1099,6 +1099,53 @@ h1, h2, h3, h4 {
   color: rgba(255, 255, 255, 0.8);
 }
 
+.contact-item.contact-link {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: var(--radius-sm);
+  padding: 0.25rem 0.4rem;
+  margin: -0.25rem -0.4rem;
+}
+
+.contact-item.contact-link:hover {
+  color: #D4AF37;
+  background: rgba(197, 155, 39, 0.1);
+  transform: translateX(4px);
+}
+
+.contact-item.contact-link svg {
+  transition: transform 0.2s ease;
+}
+
+.contact-item.contact-link:hover svg {
+  transform: scale(1.15);
+}
+
+.header-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border-gold);
+  background: rgba(197, 155, 39, 0.05);
+  color: var(--brand-gold);
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.header-social-link:hover {
+  background: var(--brand-gold);
+  color: #121110;
+  border-color: var(--brand-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(197, 155, 39, 0.25);
+}
+
+
 .footer-bottom {
   padding-top: 1.75rem;
   display: flex;
