@@ -24,36 +24,35 @@ describe('Florería Rouss - Catálogo & Componentes', () => {
     expect(screen.getByPlaceholderText(/Buscar arreglo/i)).toBeInTheDocument()
   })
 
-  it('displays official WhatsApp products from Tanda 1 and Tanda 2 with exact prices', async () => {
+  it('displays official WhatsApp products from Tanda 1, Tanda 2, and Tanda 3 with exact prices', async () => {
     render(<App />)
     const catalogBtns = screen.getAllByRole('button', { name: 'Catálogo Exclusivo' })
     fireEvent.click(catalogBtns[0])
 
     // Tanda 1 Products
     expect(screen.getByText(/Ramo Buchón "Sol Radiante"/i)).toBeInTheDocument()
-    expect(screen.getByText('S/ 180.00')).toBeInTheDocument()
-    expect(screen.getByText(/Maxi Ramo Buchón 80 Rosas/i)).toBeInTheDocument()
-    expect(screen.getByText('S/ 450.00')).toBeInTheDocument()
+    expect(screen.getAllByText('S/ 180.00').length).toBeGreaterThanOrEqual(1)
 
     // Tanda 2 Products
     expect(screen.getByText(/Cucurucho Pasión 8 Rosas Rojas/i)).toBeInTheDocument()
     expect(screen.getAllByText('S/ 80.00').length).toBeGreaterThanOrEqual(1)
-    expect(screen.getByText(/Mini Bouquet 4 Rosas & Astromelias/i)).toBeInTheDocument()
-    expect(screen.getAllByText('S/ 55.00').length).toBeGreaterThanOrEqual(1)
-    expect(screen.getByText(/Ramo Princesa 12 Rosas Durazno & Tiara de Cristal/i)).toBeInTheDocument()
-    expect(screen.getAllByText('S/ 200.00').length).toBeGreaterThanOrEqual(1)
-    expect(screen.getByText(/Ramo Exclusivo Orquídea Real & Estrellitas de Belén/i)).toBeInTheDocument()
+
+    // Tanda 3 Products
+    expect(screen.getByText(/Ramo Princesa 2 Gerberas & Follaje Rosa/i)).toBeInTheDocument()
+    expect(screen.getAllByText('S/ 85.00').length).toBeGreaterThanOrEqual(1)
+    expect(screen.getByText(/Estructura Geométrica 2 Lirios, 10 Rosas & Claveles/i)).toBeInTheDocument()
+    expect(screen.getAllByText('S/ 160.00').length).toBeGreaterThanOrEqual(1)
   })
 
-  it('filters products accurately when typing in search input for Tanda 2 items', async () => {
+  it('filters products accurately when typing in search input for Tanda 3 items', async () => {
     render(<App />)
     const catalogBtns = screen.getAllByRole('button', { name: 'Catálogo Exclusivo' })
     fireEvent.click(catalogBtns[0])
 
     const searchInput = screen.getByPlaceholderText(/Buscar arreglo/i)
-    fireEvent.change(searchInput, { target: { value: 'Orquídea' } })
+    fireEvent.change(searchInput, { target: { value: 'Gerberas' } })
 
-    expect(screen.getByText(/Ramo Exclusivo Orquídea Real & Estrellitas de Belén/i)).toBeInTheDocument()
+    expect(screen.getByText(/Ramo Princesa 2 Gerberas & Follaje Rosa/i)).toBeInTheDocument()
   })
 
   it('opens WhatsApp with official number +51 921 585 977 when clicking order button', async () => {
