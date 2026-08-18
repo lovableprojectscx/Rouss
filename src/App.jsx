@@ -13,57 +13,187 @@ import {
 } from './components/PremiumIcons'
 import { fetchRoussData, createReservation } from './lib/supabase'
 
-// Fallback & Initial State Data - PURE PRODUCT CLOSE-UPS ONLY
+// 14 Official Products from Florería Rouss Owner + Signature Models
 const INITIAL_PRODUCTS = [
+  {
+    id: 'ba000001-0000-4000-a000-000000000011',
+    title: 'Ramo Buchón "Sol Radiante" (12 Girasoles)',
+    category: 'buchones',
+    categories: ['buchones'],
+    categoryName: 'Ramos Buchones & Girasoles',
+    price: 'S/ 180.00',
+    tag: 'Más Vendido',
+    image: '/images/products/ramo-buchon-12-girasoles-sol-radiante.webp',
+    imageFallback: '/images/products/ramo-buchon-12-girasoles-sol-radiante.jpg',
+    description: 'Espectacular bouquet buchón de 12 girasoles frescos seleccionados de tallo largo, envueltos en papel coreano negro de alta costura con cinta satinada y dedicatoria personalizada.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000012',
+    title: 'Ramo Buchón Imperial 50 Rosas & Trío de Helio',
+    category: 'buchones',
+    categories: ['buchones', 'rosas'],
+    categoryName: 'Ramos Buchones & Girasoles',
+    price: 'S/ 300.00',
+    tag: 'Edición Especial',
+    image: '/images/products/ramo-buchon-50-rosas-globos-helio.webp',
+    imageFallback: '/images/products/ramo-buchon-50-rosas-globos-helio.jpg',
+    description: 'Imponente ramo buchón compuesto por 50 rosas rojas de exportación en cúpula perfecta, acompañado por tres globos metalizados con helio premium y lazo de gala.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000013',
+    title: 'Maxi Ramo Buchón 80 Rosas & 6 Girasoles',
+    category: 'buchones',
+    categories: ['buchones', 'rosas'],
+    categoryName: 'Ramos Buchones & Girasoles',
+    price: 'S/ 450.00',
+    tag: 'Formato Maxi',
+    image: '/images/products/maxi-ramo-buchon-80-rosas-6-girasoles.webp',
+    imageFallback: '/images/products/maxi-ramo-buchon-80-rosas-6-girasoles.jpg',
+    description: 'Creación monumental de alta floristería que fusiona 80 rosas rojas aterciopeladas con 6 radiantes girasoles centrales en envoltura coreana plisada de máxima elegancia.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000014',
+    title: 'Ramo Buchón "Reina Imperial" (80 Rosas)',
+    category: 'buchones',
+    categories: ['buchones', 'rosas'],
+    categoryName: 'Ramos Buchones & Girasoles',
+    price: 'S/ 400.00',
+    tag: 'Alta Gama',
+    image: '/images/products/ramo-buchon-reina-imperial-80-rosas.webp',
+    imageFallback: '/images/products/ramo-buchon-reina-imperial-80-rosas.jpg',
+    description: 'Majestuoso arreglo buchón de 80 rosas rojas premium en estructura esférica perfecta, decorado con delicadas mariposas doradas y fina envoltura en tono blanco marfil.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000022',
+    title: 'Ramo Buchón "Corona de Reina" (50 Rosas)',
+    category: 'coronas',
+    categories: ['coronas', 'buchones'],
+    categoryName: 'Cumpleaños & Coronales',
+    price: 'S/ 300.00',
+    tag: 'Corona Imperial',
+    image: '/images/products/ramo-buchon-corona-reina-50-rosas.webp',
+    imageFallback: '/images/products/ramo-buchon-corona-reina-50-rosas.jpg',
+    description: 'Ramo buchón de 50 rosas rojas seleccionadas con tiara imperial dorada de cristal brillante, cinta personalizada y acabado de alta gama.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000017',
+    title: 'Ramo Buchón Élite 50 Rosas',
+    category: 'buchones',
+    categories: ['buchones', 'rosas'],
+    categoryName: 'Ramos Buchones & Girasoles',
+    price: 'S/ 250.00',
+    tag: 'Personalizable',
+    image: '/images/products/ramo-buchon-elite-50-rosas.webp',
+    imageFallback: '/images/products/ramo-buchon-elite-50-rosas.jpg',
+    description: 'Distinguido ramo esférico de 50 rosas selectas en armoniosa combinación de tonalidades, diseñado para celebraciones de alto impacto (personalización de billetes opcional).'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000018',
+    title: 'Ramo Buchón 40 Rosas & Mariposas de Oro',
+    category: 'buchones',
+    categories: ['buchones', 'rosas'],
+    categoryName: 'Ramos Buchones & Girasoles',
+    price: 'S/ 200.00',
+    tag: 'Detalle Dorado',
+    image: '/images/products/ramo-buchon-40-rosas-mariposas-oro.webp',
+    imageFallback: '/images/products/ramo-buchon-40-rosas-mariposas-oro.jpg',
+    description: 'Exclusivo bouquet de 40 rosas rojas de invernadero con detalles de mariposas troqueladas en pan de oro y envoltura de seda blanca.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000021',
+    title: 'Ramo Buchón Pasión 30 Rosas',
+    category: 'rosas',
+    categories: ['rosas', 'buchones'],
+    categoryName: 'Rosas Premium',
+    price: 'S/ 170.00',
+    tag: 'Pasión Rouss',
+    image: '/images/products/ramo-buchon-pasion-30-rosas.webp',
+    imageFallback: '/images/products/ramo-buchon-pasion-30-rosas.jpg',
+    description: 'Clásico y apasionado arreglo de 30 rosas rojas frescas con follaje fino, envuelto en papel negro de alta densidad y lazo satinado.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000019',
+    title: 'Combo Ternura 20 Rosas, Peluche & Lirio',
+    category: 'combos',
+    categories: ['combos', 'pastel'],
+    categoryName: 'Detalles & Combos Especiales',
+    price: 'S/ 230.00',
+    tag: 'Combo Exclusivo',
+    image: '/images/products/combo-ternura-20-rosas-peluche-lirio.webp',
+    imageFallback: '/images/products/combo-ternura-20-rosas-peluche-lirio.jpg',
+    description: 'Exquisito arreglo en tonalidades pastel con 20 rosas frescas, un lirio aromático y un tierno oso de peluche de colección en envoltura lila.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000020',
+    title: 'Bouquet Conservación 20 Rosas & Hidratación',
+    category: 'rosas',
+    categories: ['rosas'],
+    categoryName: 'Rosas Premium',
+    price: 'S/ 150.00',
+    tag: 'Larga Duración',
+    image: '/images/products/bouquet-conservacion-20-rosas-hidratacion.webp',
+    imageFallback: '/images/products/bouquet-conservacion-20-rosas-hidratacion.jpg',
+    description: 'Arreglo de 20 rosas rojas con tecnología de esponja floral hidratante en la base para prolongar la vida y frescura de cada pétalo.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000016',
+    title: 'Bouquet Armonía 12 Rosas & Astromelias',
+    category: 'rosas',
+    categories: ['rosas'],
+    categoryName: 'Rosas Premium',
+    price: 'S/ 160.00',
+    tag: 'Diseño Fresco',
+    image: '/images/products/bouquet-armonia-12-rosas-astromelias.webp',
+    imageFallback: '/images/products/bouquet-armonia-12-rosas-astromelias.jpg',
+    description: 'Combinación fresca y vibrante de 12 rosas rojas selectas enmarcada por un delicado contorno de astromelias y follaje silvestre.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000023',
+    title: 'Bouquet Esencial 15 Rosas Hidratadas',
+    category: 'rosas',
+    categories: ['rosas'],
+    categoryName: 'Rosas Premium',
+    price: 'S/ 100.00',
+    tag: 'Detalle Ideal',
+    image: '/images/products/bouquet-esencial-15-rosas-hidratadas.webp',
+    imageFallback: '/images/products/bouquet-esencial-15-rosas-hidratadas.jpg',
+    description: 'Detalle compacto y distinguido de 15 rosas rojas con base de agua absorbente que garantiza frescura continua en todo momento.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000015',
+    title: 'Bouquet Imperial de Lirios Blancos',
+    category: 'pastel',
+    categories: ['pastel'],
+    categoryName: 'Delicadeza Pastel & Lirios',
+    price: 'S/ 150.00',
+    tag: 'Fragancia Sublime',
+    image: '/images/products/bouquet-imperial-lirios-blancos.webp',
+    imageFallback: '/images/products/bouquet-imperial-lirios-blancos.jpg',
+    description: 'Elegante bouquet de 4 varas de lirios orientales blancos de intenso aroma, acompañados de follaje fino y envoltura estructural en papel coreano.'
+  },
+  {
+    id: 'ba000001-0000-4000-a000-000000000024',
+    title: 'Bouquet Romance 3 Lirios & Rosas Pastel',
+    category: 'pastel',
+    categories: ['pastel'],
+    categoryName: 'Delicadeza Pastel & Lirios',
+    price: 'S/ 160.00',
+    tag: 'Romance Soft',
+    image: '/images/products/bouquet-romance-3-lirios-rosas-pastel.webp',
+    imageFallback: '/images/products/bouquet-romance-3-lirios-rosas-pastel.jpg',
+    description: 'Romántica sinfonía floral compuesta por 3 lirios orientales rosados y rosas en tonos suaves, envueltas en pliegues de papel de seda marfil.'
+  },
   {
     id: 'ba000001-0000-4000-a000-000000000001',
     title: 'Ramo Propuesta "Corazón & Corona"',
     category: 'propuestas',
+    categories: ['propuestas', 'coronas'],
     categoryName: 'Propuestas & Bodas',
     price: 'S/ 280.00',
-    tag: 'Más Vendido',
+    tag: 'Firma Rouss',
     image: '/images/product-proposal-crown.jpg',
+    imageFallback: '/images/product-proposal-crown.jpg',
     description: 'Espectacular domo de rosas rojas seleccionadas con cinta personalizada "¿Quieres casarte conmigo?", tiara imperial dorada y mariposas de oro refinadas.'
-  },
-  {
-    id: 'ba000001-0000-4000-a000-000000000002',
-    title: 'Ramo de Cumpleaños Imperial',
-    category: 'coronas',
-    categoryName: 'Cumpleaños & Coronales',
-    price: 'S/ 240.00',
-    tag: 'Edición Especial',
-    image: '/images/product-birthday-crown.jpg',
-    description: 'Arreglo estelar en rosas rojas intensas y flores blancas finas, coronado con una tiara de cristal brillante y lazo con dedicatoria "Feliz Cumpleaños".'
-  },
-  {
-    id: 'ba000001-0000-4000-a000-000000000003',
-    title: 'Ramo Bouquet Rouss Clásico',
-    category: 'rosas',
-    categoryName: 'Rosas Premium',
-    price: 'S/ 190.00',
-    tag: 'Clásico Exclusivo',
-    image: '/images/product-red-roses.jpg',
-    description: 'Bouquet de rosas rojas de exportación con envoltura de alta costura en tonos oscuros, detalles en baby breath y tarjeta distintiva Rouss.'
-  },
-  {
-    id: 'ba000001-0000-4000-a000-000000000004',
-    title: 'Ramo Temático "Gol de Amor"',
-    category: 'tematicos',
-    categoryName: 'Diseños Únicos',
-    price: 'S/ 220.00',
-    tag: 'Diseño Exclusivo',
-    image: '/images/product-soccer-roses.jpg',
-    description: 'Creación original que combina el espíritu del fútbol con la elegancia de rosas rojas premium y follaje amarillo en envoltura geométrica negra.'
-  },
-  {
-    id: 'ba000001-0000-4000-a000-000000000005',
-    title: 'Bouquet Delicadeza de Lirios & Rosas',
-    category: 'pastel',
-    categoryName: 'Delicadeza Pastel',
-    price: 'S/ 185.00',
-    tag: 'Elegancia Soft',
-    image: '/images/product-pastel-lilies.jpg',
-    description: 'Combinación armoniosa de lirios orientales rosados, rosas pastel, gypsophila y fina envoltura en tono rosa rubor con lazo blanco de seda.'
   }
 ];
 
@@ -100,12 +230,23 @@ const INITIAL_CLIENT_GALLERY = [
 ];
 
 const CATEGORY_NAMES_MAP = {
-  'propuestas': 'Propuestas & Bodas',
+  'buchones': 'Ramos Buchones & Girasoles',
   'coronas': 'Cumpleaños & Coronales',
   'rosas': 'Rosas Premium',
-  'tematicos': 'Diseños Únicos',
-  'pastel': 'Delicadeza Pastel'
+  'pastel': 'Delicadeza Pastel & Lirios',
+  'combos': 'Detalles & Combos Especiales',
+  'propuestas': 'Propuestas & Bodas'
 };
+
+const CATEGORIES_TABS = [
+  { id: 'todos', label: 'Todos los Arreglos' },
+  { id: 'buchones', label: 'Ramos Buchones' },
+  { id: 'coronas', label: 'Cumpleaños & Coronas' },
+  { id: 'rosas', label: 'Rosas Premium' },
+  { id: 'pastel', label: 'Lirios & Pastel' },
+  { id: 'combos', label: 'Combos & Peluches' },
+  { id: 'propuestas', label: 'Propuestas & Bodas' }
+];
 
 export default function App() {
   // Dynamic State synchronized with Supabase
@@ -138,8 +279,8 @@ export default function App() {
   const [formData, setFormData] = useState({
     nombre: '',
     telefono: '',
-    ocasion: 'Propuesta de Matrimonio',
-    presupuesto: 'S/ 250 - S/ 400',
+    ocasion: 'Ramo Buchón de Impacto',
+    presupuesto: 'S/ 200 - S/ 350',
     fechaEntrega: '',
     mensaje: ''
   });
@@ -173,15 +314,18 @@ export default function App() {
       // Update Products from Supabase
       if (data.products && data.products.length > 0) {
         const mappedProducts = data.products.map(p => {
-          const catKey = Array.isArray(p.category) && p.category.length > 0 ? p.category[0] : (p.slug || 'rosas');
+          const catArray = Array.isArray(p.category) && p.category.length > 0 ? p.category : [p.slug || 'rosas'];
+          const primaryCat = catArray[0];
           return {
             id: p.id,
             title: p.title,
-            category: catKey,
-            categoryName: CATEGORY_NAMES_MAP[catKey] || 'Colección Rouss',
+            category: primaryCat,
+            categories: catArray,
+            categoryName: CATEGORY_NAMES_MAP[primaryCat] || 'Colección Rouss',
             price: `S/ ${parseFloat(p.price || p.precio_base || 0).toFixed(2)}`,
             tag: p.badge || 'Exclusivo',
-            image: p.image || '/images/product-red-roses.jpg',
+            image: p.image || '/images/products/ramo-buchon-12-girasoles-sol-radiante.webp',
+            imageFallback: p.image ? p.image.replace('.webp', '.jpg') : '/images/product-red-roses.jpg',
             description: p.description || p.descripcion_corta || ''
           };
         });
@@ -233,9 +377,13 @@ export default function App() {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
-  // Filter products
+  // Filter products by search text and category (supports array category matching)
   const filteredProducts = productsList.filter(p => {
-    const matchesCategory = activeCategory === 'todos' || p.category === activeCategory;
+    const productCategories = p.categories || [p.category];
+    const matchesCategory = activeCategory === 'todos' || 
+                            p.category === activeCategory || 
+                            productCategories.includes(activeCategory);
+                            
     const matchesSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
                           p.description.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
@@ -277,7 +425,7 @@ export default function App() {
             </div>
             <span className="promo-divider">|</span>
             <div className="promo-item">
-              <span>👑 Arreglos Imperiales con Tiaras de Cristal</span>
+              <span>👑 Ramos Buchones & Arreglos Imperiales con Tiaras</span>
             </div>
             <span className="promo-divider">|</span>
             <div className="promo-item">
@@ -291,7 +439,7 @@ export default function App() {
             </div>
             <span className="promo-divider">|</span>
             <div className="promo-item">
-              <span>👑 Arreglos Imperiales con Tiaras de Cristal</span>
+              <span>👑 Ramos Buchones & Arreglos Imperiales con Tiaras</span>
             </div>
             <span className="promo-divider">|</span>
             <div className="promo-item">
@@ -430,33 +578,42 @@ export default function App() {
             <div className="container">
               <div className="features-grid">
                 <div className="feature-card-image">
-                  <img 
-                    src="/images/product-red-roses.jpg" 
-                    alt="Flores Selectas Premium" 
-                    className="feature-img-thumb"
-                  />
-                  <h3 className="feature-title">Flores Selectas Premium</h3>
-                  <p className="feature-desc">Rosas de exportación de máxima frescura con garantía de durabilidad y fragancia sublime.</p>
+                  <picture>
+                    <source srcSet="/images/products/ramo-buchon-12-girasoles-sol-radiante.webp" type="image/webp" />
+                    <img 
+                      src="/images/products/ramo-buchon-12-girasoles-sol-radiante.jpg" 
+                      alt="Ramos Buchones de Lujo" 
+                      className="feature-img-thumb"
+                    />
+                  </picture>
+                  <h3 className="feature-title">Ramos Buchones de Lujo</h3>
+                  <p className="feature-desc">Arreglos monumentales desde 12 hasta 80 rosas y girasoles con envoltura coreana de alta costura.</p>
                 </div>
 
                 <div className="feature-card-image">
-                  <img 
-                    src="/images/product-proposal-crown.jpg" 
-                    alt="Diseños de Autor Únicos" 
-                    className="feature-img-thumb"
-                  />
+                  <picture>
+                    <source srcSet="/images/products/ramo-buchon-corona-reina-50-rosas.webp" type="image/webp" />
+                    <img 
+                      src="/images/products/ramo-buchon-corona-reina-50-rosas.jpg" 
+                      alt="Diseños de Autor Únicos" 
+                      className="feature-img-thumb"
+                    />
+                  </picture>
                   <h3 className="feature-title">Diseños de Autor Únicos</h3>
-                  <p className="feature-desc">Creaciones exclusivas firmadas por Jharol Baldeón con tiaras imperiales, mariposas y finos detalles.</p>
+                  <p className="feature-desc">Creaciones exclusivas firmadas por Jharol Baldeón con tiaras imperiales, mariposas doradas y globos de helio.</p>
                 </div>
 
                 <div className="feature-card-image">
-                  <img 
-                    src="/images/product-pastel-lilies.jpg" 
-                    alt="Envío Express Puntual" 
-                    className="feature-img-thumb"
-                  />
-                  <h3 className="feature-title">Envío Express Puntual</h3>
-                  <p className="feature-desc">Entregas personalizadas cuidadosas con tarjetas de dedicatoria impresas a mano.</p>
+                  <picture>
+                    <source srcSet="/images/products/bouquet-conservacion-20-rosas-hidratacion.webp" type="image/webp" />
+                    <img 
+                      src="/images/products/bouquet-conservacion-20-rosas-hidratacion.jpg" 
+                      alt="Envío Express Puntual" 
+                      className="feature-img-thumb"
+                    />
+                  </picture>
+                  <h3 className="feature-title">Envío Express & Hidratación</h3>
+                  <p className="feature-desc">Tecnología de esponja absorbente para máxima conservación y entregas cuidadosas en Lima y Callao.</p>
                 </div>
               </div>
             </div>
@@ -471,14 +628,14 @@ export default function App() {
                 </span>
                 <h2>Alta Floristería a tu Alcance</h2>
                 <p>
-                  Explora nuestra selección exclusiva de arreglos imperiales y creaciones de autor.
+                  Explora nuestra colección oficial de ramos buchones, coronas de cristal y arreglos de autor.
                 </p>
                 
                 <button 
                   onClick={() => navigateToPage('catalogo')} 
                   className="btn-solid-gold"
                 >
-                  <span>Ver Catálogo Exclusivo</span>
+                  <span>Ver Catálogo Completo ({productsList.length} Arreglos)</span>
                   <ArrowRightGoldIcon size={18} color="#121110" />
                 </button>
               </div>
@@ -585,17 +742,18 @@ export default function App() {
                     </div>
 
                     <div className="form-group">
-                      <label className="form-label">Ocasión Especial</label>
+                      <label className="form-label">Tipo de Arreglo u Ocasión</label>
                       <select 
                         value={formData.ocasion}
                         onChange={(e) => setFormData({...formData, ocasion: e.target.value})}
                         className="form-select"
                       >
+                        <option value="Ramo Buchón de Rosas & Girasoles">Ramo Buchón de Rosas & Girasoles</option>
+                        <option value="Cumpleaños con Tiara de Cristal">Cumpleaños con Tiara de Cristal</option>
                         <option value="Propuesta de Matrimonio">Propuesta de Matrimonio</option>
-                        <option value="Cumpleaños Imperial">Cumpleaños Imperial</option>
                         <option value="Aniversario Romántico">Aniversario Romántico</option>
-                        <option value="Graduación / Evento Social">Graduación / Evento Social</option>
-                        <option value="Detalle Sorpresa Exclusivo">Detalle Sorpresa Exclusivo</option>
+                        <option value="Bouquet de Lirios & Rosas Pastel">Bouquet de Lirios & Rosas Pastel</option>
+                        <option value="Combo Especial con Peluche">Combo Especial con Peluche</option>
                       </select>
                     </div>
 
@@ -606,9 +764,10 @@ export default function App() {
                         onChange={(e) => setFormData({...formData, presupuesto: e.target.value})}
                         className="form-select"
                       >
-                        <option value="S/ 150 - S/ 250">S/ 150 - S/ 250</option>
-                        <option value="S/ 250 - S/ 400">S/ 250 - S/ 400</option>
-                        <option value="S/ 400+ Formato Maxi Exclusivo">S/ 400+ Formato Maxi Exclusivo</option>
+                        <option value="S/ 100 - S/ 180">S/ 100 - S/ 180</option>
+                        <option value="S/ 180 - S/ 300">S/ 180 - S/ 300</option>
+                        <option value="S/ 300 - S/ 450 (Formato Maxi)">S/ 300 - S/ 450 (Formato Maxi)</option>
+                        <option value="S/ 450+ Arreglo Monumental">S/ 450+ Arreglo Monumental</option>
                       </select>
                     </div>
 
@@ -626,7 +785,7 @@ export default function App() {
                       <label className="form-label">Mensaje / Dedicatoria / Detalles Especiales</label>
                       <textarea 
                         rows="3"
-                        placeholder="Escribe aquí si deseas incluir una frase especial en la cinta dorada, globos o una nota personalizada..." 
+                        placeholder="Escribe aquí si deseas incluir una frase especial en la cinta satinada, globos de helio o una nota personalizada..." 
                         value={formData.mensaje}
                         onChange={(e) => setFormData({...formData, mensaje: e.target.value})}
                         className="form-textarea"
@@ -650,11 +809,14 @@ export default function App() {
             <div className="container">
               <div className="about-grid">
                 <div className="about-showcase-frame">
-                  <img 
-                    src="/images/product-proposal-crown.jpg" 
-                    alt="Arreglo de Autor Rouss by Jharol Baldeón" 
-                    className="about-img"
-                  />
+                  <picture>
+                    <source srcSet="/images/products/ramo-buchon-reina-imperial-80-rosas.webp" type="image/webp" />
+                    <img 
+                      src="/images/products/ramo-buchon-reina-imperial-80-rosas.jpg" 
+                      alt="Arreglo de Autor Rouss by Jharol Baldeón" 
+                      className="about-img"
+                    />
+                  </picture>
                 </div>
 
                 <div className="about-text">
@@ -663,10 +825,10 @@ export default function App() {
                   </span>
                   <h2>Elegancia & Sofisticación en Cada Pétalo</h2>
                   <p>
-                    <strong>Florería Rouss by Jharol Baldeón</strong> es una marca registrada de alta floristería especializada en rosas de exportación y arreglos con tiaras imperiales de cristal.
+                    <strong>Florería Rouss by Jharol Baldeón</strong> es una marca registrada de alta floristería especializada en ramos buchones, rosas de exportación y arreglos con tiaras imperiales de cristal.
                   </p>
                   <p>
-                    Cada obra floral es concebida con técnicas exclusivas de diseño para propuestas de matrimonio, bodas y eventos románticos que perduran en el recuerdo.
+                    Cada obra floral es concebida con técnicas exclusivas de diseño para aniversarios, cumpleaños, propuestas de matrimonio y momentos que perduran para siempre.
                   </p>
 
                   <div className="about-stats">
@@ -699,7 +861,7 @@ export default function App() {
               </span>
               <h1>Colección Imperial Rouss</h1>
               <p>
-                Diseños de autor elaborados con las mejores rosas de exportación. Selecciona tu arreglo favorito para solicitarlo directamente vía WhatsApp.
+                {productsList.length} diseños de autor elaborados con las mejores rosas y flores frescas. Selecciona tu arreglo favorito para solicitarlo directamente vía WhatsApp.
               </p>
             </div>
 
@@ -709,7 +871,7 @@ export default function App() {
                 <SearchMinimalIcon size={18} color="#C59B27" />
                 <input 
                   type="text" 
-                  placeholder="Buscar arreglo (ej. Corona, Rosas, Girasoles)..." 
+                  placeholder="Buscar arreglo (ej. Buchón, Girasoles, Corona, Lirios)..." 
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="search-input"
@@ -723,14 +885,7 @@ export default function App() {
 
               {/* Desktop Filter Pills */}
               <div className="catalog-filter-pills desktop-pills-flex">
-                {[
-                  { id: 'todos', label: 'Todos' },
-                  { id: 'propuestas', label: 'Propuestas & Bodas' },
-                  { id: 'coronas', label: 'Cumpleaños & Coronales' },
-                  { id: 'rosas', label: 'Rosas Premium' },
-                  { id: 'tematicos', label: 'Diseños Únicos' },
-                  { id: 'pastel', label: 'Pastel' }
-                ].map(cat => (
+                {CATEGORIES_TABS.map(cat => (
                   <button 
                     key={cat.id}
                     className={`pill-btn ${activeCategory === cat.id ? 'active' : ''}`}
@@ -748,12 +903,13 @@ export default function App() {
                   onChange={(e) => setActiveCategory(e.target.value)}
                   className="mobile-category-select"
                 >
-                  <option value="todos">🌹 Todas las Categorías</option>
-                  <option value="propuestas">💍 Propuestas & Bodas</option>
-                  <option value="coronas">👑 Cumpleaños & Coronales</option>
+                  <option value="todos">🌹 Todos los Arreglos ({productsList.length})</option>
+                  <option value="buchones">👑 Ramos Buchones & Girasoles</option>
+                  <option value="coronas">💎 Cumpleaños & Coronas</option>
                   <option value="rosas">💐 Rosas Premium</option>
-                  <option value="tematicos">⚽ Diseños Únicos</option>
-                  <option value="pastel">🌸 Delicadeza Pastel</option>
+                  <option value="pastel">🌸 Lirios & Pastel</option>
+                  <option value="combos">🧸 Combos & Peluches</option>
+                  <option value="propuestas">💍 Propuestas & Bodas</option>
                 </select>
               </div>
 
@@ -764,11 +920,17 @@ export default function App() {
               {filteredProducts.map((product) => (
                 <div key={product.id} className="product-card-minimal">
                   <div className="product-img-wrapper" onClick={() => setSelectedItem(product)}>
-                    <img 
-                      src={product.image} 
-                      alt={product.title} 
-                      className="product-img" 
-                    />
+                    <picture>
+                      {product.image && product.image.endsWith('.webp') && (
+                        <source srcSet={product.image} type="image/webp" />
+                      )}
+                      <img 
+                        src={product.imageFallback || product.image} 
+                        alt={product.title} 
+                        className="product-img" 
+                        loading="lazy"
+                      />
+                    </picture>
                     <span className="product-badge">{product.tag}</span>
                   </div>
                   
@@ -795,6 +957,21 @@ export default function App() {
               ))}
             </div>
 
+            {filteredProducts.length === 0 && (
+              <div style={{ textAlign: 'center', padding: '3rem 1rem' }}>
+                <p style={{ fontSize: '1.1rem', color: '#8C857B', marginBottom: '1rem' }}>
+                  No se encontraron arreglos para "{searchQuery}".
+                </p>
+                <button 
+                  onClick={() => { setSearchQuery(''); setActiveCategory('todos'); }}
+                  className="btn-solid-gold"
+                  style={{ fontSize: '0.875rem', padding: '0.6rem 1.5rem' }}
+                >
+                  Ver Todos los Arreglos
+                </button>
+              </div>
+            )}
+
           </div>
         </div>
       )}
@@ -806,7 +983,7 @@ export default function App() {
             <div className="footer-brand">
               <img src="/images/logo-footer.png" alt="Rouss Logo" className="footer-logo" />
               <p className="footer-desc">
-                Florería Rouss - Especialistas en rosas y flores premium. Creación de arreglos y decoraciones únicas para momentos inolvidables.
+                Florería Rouss - Especialistas en ramos buchones, rosas de exportación y flores premium. Diseños de alta costura para momentos inolvidables.
               </p>
             </div>
 
@@ -833,18 +1010,23 @@ export default function App() {
               <h4 className="footer-title">Colecciones</h4>
               <ul className="footer-links">
                 <li>
-                  <button onClick={() => { navigateToPage('catalogo'); setActiveCategory('propuestas'); }}>
-                    Propuestas & Bodas
+                  <button onClick={() => { navigateToPage('catalogo'); setActiveCategory('buchones'); }}>
+                    Ramos Buchones
                   </button>
                 </li>
                 <li>
                   <button onClick={() => { navigateToPage('catalogo'); setActiveCategory('coronas'); }}>
-                    Cumpleaños Imperiales
+                    Cumpleaños & Coronas
                   </button>
                 </li>
                 <li>
                   <button onClick={() => { navigateToPage('catalogo'); setActiveCategory('rosas'); }}>
-                    Rosas Azules & Exclusivas
+                    Rosas Premium
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => { navigateToPage('catalogo'); setActiveCategory('pastel'); }}>
+                    Lirios & Pastel
                   </button>
                 </li>
               </ul>
@@ -898,15 +1080,20 @@ export default function App() {
             </button>
             
             <div className="modal-img-wrapper">
-              <img src={selectedItem.image} alt={selectedItem.title} className="modal-img" />
+              <picture>
+                {selectedItem.image && selectedItem.image.endsWith('.webp') && (
+                  <source srcSet={selectedItem.image} type="image/webp" />
+                )}
+                <img src={selectedItem.imageFallback || selectedItem.image} alt={selectedItem.title} className="modal-img" />
+              </picture>
             </div>
 
             <div className="modal-info">
               <span className="section-tag" style={{ marginBottom: '0.85rem' }}>
-                <FlowerSparkleIcon size={14} color="#C59B27" /> Detalle de Fotografía
+                <FlowerSparkleIcon size={14} color="#C59B27" /> {selectedItem.categoryName || 'Detalle Exclusivo'}
               </span>
               
-              <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>
+              <h3 style={{ fontSize: '1.4rem', marginBottom: '0.5rem', lineHeight: 1.25 }}>
                 {selectedItem.title}
               </h3>
               
@@ -916,10 +1103,10 @@ export default function App() {
                 </p>
               ) : (
                 <>
-                  <p style={{ color: '#57534E', marginBottom: '0.85rem', fontSize: '0.9rem' }}>
+                  <p style={{ color: '#57534E', marginBottom: '0.85rem', fontSize: '0.9rem', lineHeight: 1.5 }}>
                     {selectedItem.description}
                   </p>
-                  <p style={{ fontSize: '1.35rem', fontWeight: 700, color: '#C59B27', marginBottom: '1.25rem' }}>
+                  <p style={{ fontSize: '1.4rem', fontWeight: 700, color: '#96761A', marginBottom: '1.25rem' }}>
                     {selectedItem.price}
                   </p>
                 </>
