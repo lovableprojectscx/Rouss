@@ -1253,9 +1253,33 @@ export default function App() {
             </div>
           </section>
 
-          {/* SECTION 2: FEATURES WITH DIRECT CATEGORY FILTER BUTTONS */}
+          {/* SECTION 2: FEATURES WITH DIRECT CATEGORY FILTER BUTTONS & BOTANICAL DESIGN */}
           <section className="features-section">
+            {/* FLOATING BOTANICAL VECTOR ACCENTS */}
+            <svg className="features-deco-petal petal-top-left" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1.2">
+              <path d="M50 10 C30 30, 20 60, 50 90 C80 60, 70 30, 50 10 Z" />
+              <path d="M50 10 L50 90" strokeDasharray="3 3" />
+              <path d="M50 35 C40 45, 40 55, 50 65" />
+              <path d="M50 35 C60 45, 60 55, 50 65" />
+            </svg>
+
+            <svg className="features-deco-petal petal-bottom-right" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1.2">
+              <circle cx="50" cy="50" r="35" strokeDasharray="2 4" />
+              <path d="M50 15 C35 35, 35 65, 50 85 C65 65, 65 35, 50 15 Z" />
+              <path d="M15 50 C35 35, 65 35, 85 50 C65 65, 35 65, 15 50 Z" />
+            </svg>
+
             <div className="container">
+              <div className="section-header-centered">
+                <span className="section-tag">
+                  <FlowerSparkleIcon size={14} color="#C59B27" /> Especialidades de Temporada
+                </span>
+                <h2>Alta Floristería & Diseños de Autor</h2>
+                <p>
+                  Arreglos exclusivos elaborados a mano con flores frescas seleccionadas del día y envolturas de alta costura.
+                </p>
+              </div>
+
               <div className="features-grid">
                 
                 {/* 1. TULIPANES */}
