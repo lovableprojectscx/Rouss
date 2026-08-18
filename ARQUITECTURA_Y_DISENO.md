@@ -12,8 +12,8 @@
 | **Años en el Rubro** | 3 Años de Trayectoria en Alta Floristería |
 | **Pedidos Entregados** | +1,000 Pedidos Seguros Entregados |
 | **Zonas de Delivery** | Envíos a todo Lima Metropolitana y Callao (tarifa acorde a la distancia) |
-| **Instagram Oficial** | [@rouss8439](https://instagram.com/rouss8439) |
-| **Facebook Oficial** | [Florería Rouss](https://www.facebook.com/share/18MDdziT14/) |
+| **Instagram Oficial** | [@rouss8439](https://www.instagram.com/rouss8439/) |
+| **Facebook Oficial** | [Florería Rouss](https://www.facebook.com/rouss.floristeria.2025) |
 
 ---
 

@@ -1131,7 +1131,7 @@ export default function App() {
             </a>
 
             <a 
-              href="https://www.facebook.com/share/18MDdziT14/" 
+              href="https://www.facebook.com/rouss.floristeria.2025" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="header-social-link"
@@ -1777,7 +1777,7 @@ export default function App() {
                 </a>
 
                 <a 
-                  href="https://www.facebook.com/share/18MDdziT14/" 
+                  href="https://www.facebook.com/rouss.floristeria.2025" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="contact-item contact-link"
