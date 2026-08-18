@@ -11,11 +11,12 @@ import {
   PhoneGoldIcon,
   WhatsAppGoldIcon
 } from './components/PremiumIcons'
+import { fetchRoussData, createReservation } from './lib/supabase'
 
-// Data Catalog Products - PURE PRODUCT CLOSE-UPS ONLY
-const PRODUCTS = [
+// Fallback & Initial State Data - PURE PRODUCT CLOSE-UPS ONLY
+const INITIAL_PRODUCTS = [
   {
-    id: 'propuesta-matrimonio-crown',
+    id: 'ba000001-0000-4000-a000-000000000001',
     title: 'Ramo Propuesta "Corazón & Corona"',
     category: 'propuestas',
     categoryName: 'Propuestas & Bodas',
@@ -25,7 +26,7 @@ const PRODUCTS = [
     description: 'Espectacular domo de rosas rojas seleccionadas con cinta personalizada "¿Quieres casarte conmigo?", tiara imperial dorada y mariposas de oro refinadas.'
   },
   {
-    id: 'cumpleanos-corona-princesa',
+    id: 'ba000001-0000-4000-a000-000000000002',
     title: 'Ramo de Cumpleaños Imperial',
     category: 'coronas',
     categoryName: 'Cumpleaños & Coronales',
@@ -35,7 +36,7 @@ const PRODUCTS = [
     description: 'Arreglo estelar en rosas rojas intensas y flores blancas finas, coronado con una tiara de cristal brillante y lazo con dedicatoria "Feliz Cumpleaños".'
   },
   {
-    id: 'ramo-imperial-rosas-rojas',
+    id: 'ba000001-0000-4000-a000-000000000003',
     title: 'Ramo Bouquet Rouss Clásico',
     category: 'rosas',
     categoryName: 'Rosas Premium',
@@ -45,7 +46,7 @@ const PRODUCTS = [
     description: 'Bouquet de rosas rojas de exportación con envoltura de alta costura en tonos oscuros, detalles en baby breath y tarjeta distintiva Rouss.'
   },
   {
-    id: 'ramo-futbol-tematico',
+    id: 'ba000001-0000-4000-a000-000000000004',
     title: 'Ramo Temático "Gol de Amor"',
     category: 'tematicos',
     categoryName: 'Diseños Únicos',
@@ -55,7 +56,7 @@ const PRODUCTS = [
     description: 'Creación original que combina el espíritu del fútbol con la elegancia de rosas rojas premium y follaje amarillo en envoltura geométrica negra.'
   },
   {
-    id: 'ramo-lirios-pastel-delicado',
+    id: 'ba000001-0000-4000-a000-000000000005',
     title: 'Bouquet Delicadeza de Lirios & Rosas',
     category: 'pastel',
     categoryName: 'Delicadeza Pastel',
@@ -67,30 +68,30 @@ const PRODUCTS = [
 ];
 
 // CLIENT GALLERY
-const CLIENT_GALLERY = [
+const INITIAL_CLIENT_GALLERY = [
   {
-    id: 4,
+    id: 'fa000001-0000-4000-a000-000000000001',
     image: '/images/client-4.jpg',
     title: 'Momentos de Alegría Rouss',
     quote: '"Donde florece el amor, la sonrisa ilumina cada instante."',
     arrangement: 'Combo Girasoles & Oso'
   },
   {
-    id: 1,
+    id: 'fa000001-0000-4000-a000-000000000002',
     image: '/images/client-1.jpg',
     title: 'Entregas Románticas Inolvidables',
     quote: '"Expresando los sentimientos más profundos con la elegancia de nuestras rosas de autor."',
     arrangement: 'Maxi Ramo de Rosas'
   },
   {
-    id: 2,
+    id: 'fa000001-0000-4000-a000-000000000003',
     image: '/images/client-2.jpg',
     title: 'Detalles Exclusivos & Únicos',
     quote: '"Arreglos de alta costura diseñados para celebrar momentos inolvidables."',
     arrangement: 'Rosas Azules Royal'
   },
   {
-    id: 3,
+    id: 'fa000001-0000-4000-a000-000000000004',
     image: '/images/client-3.jpg',
     title: 'Sonrisas & Flores de Autor',
     quote: '"El regalo perfecto para llenar de luz y calidez el día de alguien especial."',
@@ -98,7 +99,19 @@ const CLIENT_GALLERY = [
   }
 ];
 
+const CATEGORY_NAMES_MAP = {
+  'propuestas': 'Propuestas & Bodas',
+  'coronas': 'Cumpleaños & Coronales',
+  'rosas': 'Rosas Premium',
+  'tematicos': 'Diseños Únicos',
+  'pastel': 'Delicadeza Pastel'
+};
+
 export default function App() {
+  // Dynamic State synchronized with Supabase
+  const [productsList, setProductsList] = useState(INITIAL_PRODUCTS);
+  const [galleryList, setGalleryList] = useState(INITIAL_CLIENT_GALLERY);
+
   // Page state initialized from URL path / hash
   const [currentPage, setCurrentPage] = useState(() => {
     if (typeof window !== 'undefined') {
@@ -135,6 +148,46 @@ export default function App() {
     }
   };
 
+  // Fetch real-time data from Supabase 'mypes' database
+  useEffect(() => {
+    let isMounted = true;
+    async function loadSupabaseData() {
+      const data = await fetchRoussData();
+      if (!isMounted) return;
+
+      if (data.products && data.products.length > 0) {
+        const mappedProducts = data.products.map(p => {
+          const catKey = Array.isArray(p.category) && p.category.length > 0 ? p.category[0] : (p.slug || 'rosas');
+          return {
+            id: p.id,
+            title: p.title,
+            category: catKey,
+            categoryName: CATEGORY_NAMES_MAP[catKey] || 'Colección Rouss',
+            price: `S/ ${parseFloat(p.price || p.precio_base || 0).toFixed(2)}`,
+            tag: p.badge || 'Exclusivo',
+            image: p.image || '/images/product-red-roses.jpg',
+            description: p.description || p.descripcion_corta || ''
+          };
+        });
+        setProductsList(mappedProducts);
+      }
+
+      if (data.testimonios && data.testimonios.length > 0) {
+        const mappedTestimonios = data.testimonios.map(t => ({
+          id: t.id,
+          image: t.imagen || '/images/client-1.jpg',
+          title: t.nombre || 'Momento Rouss',
+          quote: t.texto || '',
+          arrangement: t.ocasion || 'Arreglo de Autor'
+        }));
+        setGalleryList(mappedTestimonios);
+      }
+    }
+
+    loadSupabaseData();
+    return () => { isMounted = false; };
+  }, []);
+
   // Switch page and update browser address bar URL cleanly (/catalogo)
   const navigateToPage = (page) => {
     setCurrentPage(page);
@@ -164,7 +217,7 @@ export default function App() {
   }, []);
 
   // Filter products
-  const filteredProducts = PRODUCTS.filter(p => {
+  const filteredProducts = productsList.filter(p => {
     const matchesCategory = activeCategory === 'todos' || p.category === activeCategory;
     const matchesSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
                           p.description.toLowerCase().includes(searchQuery.toLowerCase());
@@ -177,10 +230,13 @@ export default function App() {
     window.open(`https://wa.me/51921585977?text=${message}`, '_blank');
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
     const { nombre, telefono, ocasion, presupuesto, fechaEntrega, mensaje } = formData;
     
+    // Save to Supabase 'reservations' asynchronously
+    createReservation({ nombre, telefono, ocasion, presupuesto, fechaEntrega, mensaje });
+
     const messageText = `Hola Florería Rouss, solicito una cotización personalizada:
 📌 *Nombre*: ${nombre || 'No especificado'}
 📱 *Teléfono*: ${telefono || 'No especificado'}
@@ -325,7 +381,7 @@ export default function App() {
       {/* RENDER PAGE: INICIO VS DEDICATED CATALOG PAGE */}
       {currentPage === 'inicio' ? (
         <main>
-          {/* FULL-WIDTH HERO BANNER WITH CLEAN POETIC BANNER BAR (NO FLOWER ICON) */}
+          {/* FULL-WIDTH HERO BANNER WITH CLEAN POETIC BANNER BAR */}
           <section className="hero-banner-section-full">
             <div 
               className="hero-banner-full-card"
@@ -342,7 +398,7 @@ export default function App() {
               />
             </div>
 
-            {/* CLEAN POETIC BANNER BAR WITHOUT FLOWER ICON */}
+            {/* CLEAN POETIC BANNER BAR */}
             <div 
               className="banner-hint-bar" 
               onClick={() => navigateToPage('catalogo')}
@@ -435,7 +491,7 @@ export default function App() {
                 </button>
 
                 <div className="slider-wrapper-flex" ref={sliderRef}>
-                  {CLIENT_GALLERY.map((item) => (
+                  {galleryList.map((item) => (
                     <div key={item.id} className="slider-item-card">
                       <div 
                         className="client-card-solid"
