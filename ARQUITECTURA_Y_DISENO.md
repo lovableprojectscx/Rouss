@@ -8,7 +8,7 @@
 - **Framework**: React 18 + Vite (SPA de alto rendimiento con Hot Module Replacement).
 - **Estilos**: **Vanilla CSS nativo** estructurado mediante CSS Custom Properties (`:root`), sin frameworks CSS invasivos ni dependencias pesadas.
 - **Tipografía**: **Poppins** (Google Fonts: 400, 500, 600, 700) aplicada globalmente.
-- **Iconografía**: Módulo vectorial SVG nativo parametrizable (`PremiumIcons.jsx`), escalable y sin pérdida de nitidez.
+- **Iconografía**: Módulo vectorial SVG nativo parametrizable en color dorado champagne (`PremiumIcons.jsx`), escalable y sin pérdida de nitidez. **Sin emojis informales para preservar una línea gráfica de alta gama.**
 - **Enrutamiento**: HTML5 History API (`window.history.pushState` y escucha `popstate`) sincronizado con rutas `/` e `/catalogo`.
 - **Optimización de Imágenes**: Convertidor de imágenes de alta fidelidad **WebP** (`imageOptimizer.js` y scripts de optimización `sharp`) 100% compatible con **iOS (Safari iOS 14+)**, **Android** y navegadores de escritorio.
 - **Testing**: Suite completa de pruebas con **Vitest** (pruebas unitarias y de componentes) y **Playwright** (pruebas End-to-End en Desktop Chromium y Mobile Safari iOS).
@@ -17,7 +17,7 @@
 
 ## 2. 🌹 Catálogo Oficial en Supabase (`mypes`)
 
-Se cargaron los **56 arreglos florales oficiales** enviados directamente por el dueño vía WhatsApp (Tanda 1, Tanda 2, Tanda 3 y Tanda 4), estructurados con descripciones profesionales de alta gama sin emojis informales:
+Se cargaron los **56 arreglos florales oficiales** enviados directamente por el dueño vía WhatsApp (Tandas 1, 2, 3 y 4), estructurados con descripciones profesionales de alta costura:
 
 ### Tanda 1 (14 Arreglos de Alta Gama & Formato Buchón)
 | # | Título Oficial del Arreglo | Categoría | Precio (S/) | Formato |
