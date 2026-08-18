@@ -1166,6 +1166,9 @@ export default function App() {
       {/* RENDER PAGE: INICIO VS DEDICATED CATALOG PAGE */}
       {currentPage === 'inicio' ? (
         <main>
+          {/* SEMANTIC H1 FOR GOOGLE SEO & ACCESSIBILITY */}
+          <h1 className="sr-only">Florería Rouss — Ramos Buchones, Tulipanes Holandeses y Arreglos Florales en Lima con Delivery</h1>
+
           {/* FULL-WIDTH HERO BANNER - DYNAMIC FROM SUPABASE */}
           <section className="hero-banner-section-full">
             <div 

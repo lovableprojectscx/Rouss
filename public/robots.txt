@@ -1,0 +1,6 @@
+# robots.txt for Florería Rouss (https://floreriarouss.com)
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://floreriarouss.com/sitemap.xml
