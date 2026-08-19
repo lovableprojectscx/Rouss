@@ -1,11 +1,11 @@
 # Florería Rouss — Alta Floristería en Lima (llms.txt)
 
-> Florería Rouss by Jharol Baldeón es una boutique de alta floristería en Chorrillos, Lima - Perú. Especialistas en ramos buchones de rosas, tulipanes holandeses frescos, coronas con tiaras de cristal y arreglos de autor con delivery garantizado a todo Lima Metropolitana y Callao. Pedidos directos vía WhatsApp: +51 941 493 471.
+> Florería Rouss by Jharol Baldeón es una boutique de alta floristería en Chorrillos, Lima - Perú. Especialistas en ramos buchones de rosas, tulipanes frescos seleccionados, coronas con tiaras de cristal y arreglos de autor con delivery garantizado a todo Lima Metropolitana y Callao. Pedidos directos vía WhatsApp: +51 941 493 471.
 
 ## Enlaces Principales & Catálogo
 
 - [Catálogo Exclusivo](https://floreriarouss.com/catalogo): Catálogo completo con más de 56 modelos de autor y precios actualizados en Soles (PEN).
-- [Colección de Tulipanes](https://floreriarouss.com/catalogo?categoria=tulipanes): Bouquets de tulipanes holandeses en tonos rosa, rojo, amarillo, morado y blanco.
+- [Colección de Tulipanes](https://floreriarouss.com/catalogo?categoria=tulipanes): Bouquets de tulipanes frescos en tonos rosa, rojo, amarillo, morado y blanco.
 - [Ramos Buchones & Girasoles](https://floreriarouss.com/catalogo?categoria=buchones): Creaciones monumentales de 12 a 80 rosas y girasoles con envoltura coreana.
 - [Cumpleaños & Coronas de Reina](https://floreriarouss.com/catalogo?categoria=coronas): Arreglos coronados con tiaras de cristal, mariposas y cintas satinadas.
 - [Rosas Premium](https://floreriarouss.com/catalogo?categoria=rosas): Bouquets clásicos de 8, 12, 18 y 24 rosas de exportación.

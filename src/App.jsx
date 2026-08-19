@@ -890,7 +890,7 @@ export default function App() {
   const [formData, setFormData] = useState({
     nombre: '',
     telefono: '',
-    ocasion: 'Tulipanes Holandeses de Lujo',
+    ocasion: 'Tulipanes Selectos',
     presupuesto: 'S/ 85 - S/ 200',
     fechaEntrega: '',
     mensaje: ''
@@ -1275,7 +1275,7 @@ export default function App() {
       {currentPage === 'inicio' ? (
         <main>
           {/* SEMANTIC H1 FOR GOOGLE SEO & ACCESSIBILITY */}
-          <h1 className="sr-only">Florería Rouss — Ramos Buchones, Tulipanes Holandeses y Arreglos Florales en Lima con Delivery</h1>
+          <h1 className="sr-only">Florería Rouss — Ramos Buchones, Tulipanes y Arreglos Florales en Lima con Delivery</h1>
 
           {/* FULL-WIDTH HERO BANNER - DYNAMIC FROM SUPABASE */}
           <section className="hero-banner-section-full">
