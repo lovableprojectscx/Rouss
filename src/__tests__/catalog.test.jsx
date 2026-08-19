@@ -129,4 +129,12 @@ describe('Florería Rouss - Catálogo & Componentes', () => {
     expect(sanitizeCategory('invalido123')).toBe('todos')
     expect(sanitizeCategory(null)).toBe('todos')
   })
+
+  it('renders local SEO delivery coverage section with districts and workshop location', () => {
+    render(<App />)
+    expect(screen.getByText(/Delivery de Flores en Todo Lima/i)).toBeInTheDocument()
+    expect(screen.getByText(/Chorrillos, Surco & Barranco/i)).toBeInTheDocument()
+    expect(screen.getByText(/Miraflores, San Isidro & San Borja/i)).toBeInTheDocument()
+    expect(screen.getByText(/La Molina, Ate & Callao/i)).toBeInTheDocument()
+  })
 })

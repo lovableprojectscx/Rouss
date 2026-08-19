@@ -1168,6 +1168,7 @@ export default function App() {
                   <li><a href="#clientes" className="nav-button">Galería Rouss</a></li>
                   <li><a href="#cotizacion" className="nav-button">Cotizar a Medida</a></li>
                   <li><a href="#nosotros" className="nav-button">Sobre Rouss</a></li>
+                  <li><a href="#cobertura" className="nav-button">Zonas de Delivery</a></li>
                 </>
               )}
             </ul>
@@ -1234,6 +1235,7 @@ export default function App() {
             <a href="#clientes" className="mobile-drawer-link" onClick={() => setMobileMenuOpen(false)}>Galería Rouss</a>
             <a href="#cotizacion" className="mobile-drawer-link" onClick={() => setMobileMenuOpen(false)}>Cotizar a Medida</a>
             <a href="#nosotros" className="mobile-drawer-link" onClick={() => setMobileMenuOpen(false)}>Sobre Rouss</a>
+            <a href="#cobertura" className="mobile-drawer-link" onClick={() => setMobileMenuOpen(false)}>Zonas de Delivery</a>
           </>
         )}
 
@@ -1683,6 +1685,80 @@ export default function App() {
                       <span className="stat-number">Todo Lima</span>
                       <span className="stat-label">Zonas de Delivery</span>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* SECTION 6: LOCAL DELIVERY COVERAGE IN LIMA & SEDE CHORRILLOS */}
+          <section id="cobertura" className="delivery-coverage-section">
+            <div className="container">
+              <div className="text-center" style={{ marginBottom: '2.5rem' }}>
+                <span className="section-tag">
+                  <MapPinGoldIcon size={14} color="#735308" /> Cobertura & Entregas
+                </span>
+                <h2 className="section-title">Delivery de Flores en Todo Lima</h2>
+                <p className="section-subtitle">
+                  Taller y boutique con sede en <strong>Chorrillos</strong> (Av. Alameda Sur cruce con Av. Los Incas). Envíos puntuales el mismo día con chofer exclusivo y cuidado de alta costura floral.
+                </p>
+              </div>
+
+              <div className="coverage-zones-grid">
+                <div className="zone-card">
+                  <div className="zone-badge">Sede Sur · Entrega Express</div>
+                  <h3 className="zone-title">Chorrillos, Surco & Barranco</h3>
+                  <p className="zone-desc">Salidas directas y entregas ágiles desde nuestro taller principal:</p>
+                  <ul className="zone-districts-list">
+                    <li>🌸 <strong>Chorrillos</strong> (Cedros de Villa, Huertos, La Encantada, Matellini)</li>
+                    <li>🌸 <strong>Santiago de Surco</strong> (Chacarilla, Monterrico, Casuarinas, Higuereta)</li>
+                    <li>🌸 <strong>Barranco</strong>, San Juan de Miraflores & Villa El Salvador</li>
+                  </ul>
+                </div>
+
+                <div className="zone-card featured-zone">
+                  <div className="zone-badge gold">Lima Moderna & Centro</div>
+                  <h3 className="zone-title">Miraflores, San Isidro & San Borja</h3>
+                  <p className="zone-desc">Envíos programados para aniversarios, oficinas y ocasiones de autor:</p>
+                  <ul className="zone-districts-list">
+                    <li>🌹 <strong>Miraflores</strong> & <strong>San Isidro</strong> (Zona Financiera y Residencial)</li>
+                    <li>🌹 <strong>San Borja</strong>, Surquillo & Magdalena del Mar</li>
+                    <li>🌹 <strong>Jesús María</strong>, Lince, Pueblo Libre, San Miguel & Cercado</li>
+                  </ul>
+                </div>
+
+                <div className="zone-card">
+                  <div className="zone-badge">Lima Este, Norte & Callao</div>
+                  <h3 className="zone-title">La Molina, Ate & Callao</h3>
+                  <p className="zone-desc">Cobertura garantizada con transporte seguro para ramos monumentales:</p>
+                  <ul className="zone-districts-list">
+                    <li>🌷 <strong>La Molina</strong> (La Planicie, Rinconada, Camacho)</li>
+                    <li>🌷 <strong>Ate</strong>, Santa Anita, Los Olivos & San Martín de Porres</li>
+                    <li>🌷 <strong>Bellavista</strong>, La Perla, La Punta & Callao</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="delivery-perks-bar">
+                <div className="perk-item">
+                  <span className="perk-icon">🚗</span>
+                  <div>
+                    <strong>Transporte Protegido</strong>
+                    <p>Base fija antivuelco para preservar coronas, tiaras y envoltorios intactos.</p>
+                  </div>
+                </div>
+                <div className="perk-item">
+                  <span className="perk-icon">📸</span>
+                  <div>
+                    <strong>Confirmación con Foto & Video</strong>
+                    <p>Te mostramos el arreglo terminado por WhatsApp antes de enviarlo.</p>
+                  </div>
+                </div>
+                <div className="perk-item">
+                  <span className="perk-icon">⏱️</span>
+                  <div>
+                    <strong>Entregas de Lunes a Domingo</strong>
+                    <p>Horario continuo de 8:00 AM a 10:00 PM con chofer particular.</p>
                   </div>
                 </div>
               </div>

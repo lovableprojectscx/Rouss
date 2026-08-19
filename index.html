@@ -67,20 +67,22 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" />
     </noscript>
 
-    <!-- JSON-LD STRUCTURED DATA SCHEMA (FLORIST / LOCAL BUSINESS) -->
+    <!-- JSON-LD STRUCTURED DATA SCHEMA (FLORIST / LOCAL BUSINESS SEO) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Florist",
+      "@id": "https://floreriarouss.com/#florist",
       "name": "Florería Rouss by Jharol Baldeón",
-      "alternateName": "Florería Rouss",
+      "alternateName": ["Florería Rouss", "Florería Rouss Lima", "Florería Rouss Chorrillos"],
+      "description": "Florería boutique de alta gama en Chorrillos, Lima - Perú. Especialistas en ramos buchones de rosas, tulipanes holandeses, cajas florales y arreglos de autor con delivery garantizado el mismo día a todo Lima.",
       "image": "https://floreriarouss.com/images/banner.webp",
-      "logo": "https://floreriarouss.com/images/logo.webp",
+      "logo": "https://floreriarouss.com/images/logo-header.webp",
       "url": "https://floreriarouss.com",
       "telephone": "+51941493471",
       "priceRange": "S/ 55.00 - S/ 450.00",
       "currenciesAccepted": "PEN",
-      "paymentAccepted": "Cash, Bank Transfer, Mobile Payment (Yape, Plin), WhatsApp Order",
+      "paymentAccepted": "Cash, Bank Transfer (BCP, BBVA, Interbank), Mobile Payment (Yape, Plin), WhatsApp Order",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Av. Alameda Sur cruce con Av. Los Incas",
@@ -94,6 +96,7 @@
         "latitude": -12.1812,
         "longitude": -77.0142
       },
+      "hasMap": "https://maps.google.com/?q=-12.1812,-77.0142",
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
@@ -102,62 +105,69 @@
           "closes": "22:00"
         }
       ],
+      "knowsAbout": [
+        "Florerías en Chorrillos",
+        "Florería en Santiago de Surco",
+        "Florería en Barranco",
+        "Delivery de flores en Miraflores",
+        "Florerías en San Isidro",
+        "Florerías en San Borja",
+        "Florería en La Molina",
+        "Ramos buchones en Lima",
+        "Tulipanes frescos en Lima",
+        "Arreglos florales para cumpleaños",
+        "Rosas rojas de exportación",
+        "Envío de flores a domicilio en Lima"
+      ],
       "areaServed": [
-        {
-          "@type": "City",
-          "name": "Lima"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Chorrillos"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Miraflores"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "San Isidro"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Santiago de Surco"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "San Borja"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Barranco"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "La Molina"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Callao"
-        }
+        { "@type": "City", "name": "Lima Metropolitana" },
+        { "@type": "AdministrativeArea", "name": "Chorrillos", "postalCode": "15067" },
+        { "@type": "AdministrativeArea", "name": "Santiago de Surco", "postalCode": "15038" },
+        { "@type": "AdministrativeArea", "name": "Barranco", "postalCode": "15063" },
+        { "@type": "AdministrativeArea", "name": "Miraflores", "postalCode": "15074" },
+        { "@type": "AdministrativeArea", "name": "San Isidro", "postalCode": "15046" },
+        { "@type": "AdministrativeArea", "name": "San Borja", "postalCode": "15037" },
+        { "@type": "AdministrativeArea", "name": "Surquillo", "postalCode": "15047" },
+        { "@type": "AdministrativeArea", "name": "La Molina", "postalCode": "15024" },
+        { "@type": "AdministrativeArea", "name": "San Miguel", "postalCode": "15086" },
+        { "@type": "AdministrativeArea", "name": "Magdalena del Mar", "postalCode": "15086" },
+        { "@type": "AdministrativeArea", "name": "Jesús María", "postalCode": "15072" },
+        { "@type": "AdministrativeArea", "name": "Lince", "postalCode": "15073" },
+        { "@type": "AdministrativeArea", "name": "Pueblo Libre", "postalCode": "15084" },
+        { "@type": "AdministrativeArea", "name": "San Juan de Miraflores", "postalCode": "15801" },
+        { "@type": "AdministrativeArea", "name": "Villa El Salvador", "postalCode": "15831" },
+        { "@type": "AdministrativeArea", "name": "Villa María del Triunfo", "postalCode": "15816" },
+        { "@type": "AdministrativeArea", "name": "Ate", "postalCode": "15012" },
+        { "@type": "AdministrativeArea", "name": "Santa Anita", "postalCode": "15008" },
+        { "@type": "AdministrativeArea", "name": "Los Olivos", "postalCode": "15301" },
+        { "@type": "AdministrativeArea", "name": "San Martín de Porres", "postalCode": "15108" },
+        { "@type": "AdministrativeArea", "name": "Callao", "postalCode": "07001" },
+        { "@type": "AdministrativeArea", "name": "Bellavista", "postalCode": "07011" },
+        { "@type": "AdministrativeArea", "name": "La Perla", "postalCode": "07016" }
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Colección Imperial Rouss",
+        "name": "Catálogo de Arreglos Florales Rouss",
         "itemListElement": [
           {
             "@type": "OfferCatalog",
+            "name": "Tulipanes Holandeses Frescos",
+            "description": "Bouquets de 5 a 12 tulipanes holandeses en tonos rosa, rojo, amarillo y blanco."
+          },
+          {
+            "@type": "OfferCatalog",
             "name": "Ramos Buchones & Girasoles",
-            "description": "Ramos buchones de 12 a 80 rosas con cúpula perfecta y envoltura coreana de alta costura."
+            "description": "Creaciones monumentales de 12 a 80 rosas con envoltorio coreano y globos de helio."
           },
           {
             "@type": "OfferCatalog",
-            "name": "Tulipanes Holandeses & Flores de Lujo",
-            "description": "Exclusiva colección de tulipanes holandeses de importación en tonos rosas, rojos y bicolores."
+            "name": "Cumpleaños & Coronas de Autor",
+            "description": "Arreglos florales de autor acompañados de tiaras de cristal, coronas imperiales y mariposas doradas."
           },
           {
             "@type": "OfferCatalog",
-            "name": "Cumpleaños & Coronales",
-            "description": "Arreglos florales de autor acompañados de tiaras de cristal, coronas y cintas personalizadas."
+            "name": "Rosas Premium de Exportación",
+            "description": "Ramos de rosas rojas, rosadas y blancas con cinta satinada personalizada."
           }
         ]
       },
