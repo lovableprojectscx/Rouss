@@ -43,7 +43,7 @@ describe('Florería Rouss - Catálogo & Componentes', () => {
     expect(screen.getAllByText('S/ 85.00').length).toBeGreaterThanOrEqual(1)
 
     // Tanda 4 (Tulipanes)
-    expect(screen.getByText(/Maxi Bouquet Imperial 12 Tulipanes Rosa/i)).toBeInTheDocument()
+    expect(screen.getByText(/Maxi Bouquet 12 Tulipanes Rosados/i)).toBeInTheDocument()
     expect(screen.getAllByText('S/ 350.00').length).toBeGreaterThanOrEqual(1)
     expect(screen.getByText(/Bouquet Alta Costura 6 Tulipanes Rojos/i)).toBeInTheDocument()
     expect(screen.getAllByText('S/ 190.00').length).toBeGreaterThanOrEqual(1)
@@ -57,7 +57,7 @@ describe('Florería Rouss - Catálogo & Componentes', () => {
     const searchInput = screen.getByPlaceholderText(/Buscar arreglo/i)
     fireEvent.change(searchInput, { target: { value: 'Tulipanes' } })
 
-    expect(screen.getByText(/Maxi Bouquet Imperial 12 Tulipanes Rosa/i)).toBeInTheDocument()
+    expect(screen.getByText(/Maxi Bouquet 12 Tulipanes Rosados/i)).toBeInTheDocument()
   })
 
   it('opens WhatsApp with official number +51 941 493 471 when clicking order button', async () => {
@@ -93,7 +93,7 @@ describe('Florería Rouss - Catálogo & Componentes', () => {
     fireEvent.click(tulipanesBtn)
 
     expect(screen.getByText('Colección Exclusiva Rouss')).toBeInTheDocument()
-    expect(screen.getByText(/Maxi Bouquet Imperial 12 Tulipanes Rosa/i)).toBeInTheDocument()
+    expect(screen.getByText(/Maxi Bouquet 12 Tulipanes Rosados/i)).toBeInTheDocument()
     expect(window.location.search).toContain('categoria=tulipanes')
   })
 

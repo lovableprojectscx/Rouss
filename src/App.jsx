@@ -38,15 +38,15 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 'ba000001-0000-4000-a000-000000000012',
-    title: 'Ramo Buchón Imperial 50 Rosas & Trío de Helio',
+    title: 'Ramo Buchón 50 Rosas & Globos de Helio',
     category: 'buchones',
     categories: ['buchones', 'rosas'],
     categoryName: 'Ramos Buchones & Girasoles',
     price: 'S/ 300.00',
-    tag: 'Edición Especial',
+    tag: '50 Rosas + Helio',
     image: '/images/products/ramo-buchon-50-rosas-globos-helio.webp',
     imageFallback: '/images/products/ramo-buchon-50-rosas-globos-helio.jpg',
-    description: 'Imponente ramo buchón compuesto por 50 rosas rojas de exportación en cúpula perfecta, acompañado por tres globos metalizados con helio premium y lazo de gala.'
+    description: 'Imponente ramo buchón compuesto por 50 rosas rojas de exportación en cúpula perfecta, acompañado por tres globos metalizados con helio y lazo de gala.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000013',
@@ -62,27 +62,27 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 'ba000001-0000-4000-a000-000000000014',
-    title: 'Ramo Buchón "Reina Imperial" (80 Rosas)',
+    title: 'Ramo Buchón 80 Rosas',
     category: 'buchones',
     categories: ['buchones', 'rosas'],
     categoryName: 'Ramos Buchones & Girasoles',
     price: 'S/ 400.00',
-    tag: 'Alta Gama',
+    tag: '80 Rosas',
     image: '/images/products/ramo-buchon-reina-imperial-80-rosas.webp',
     imageFallback: '/images/products/ramo-buchon-reina-imperial-80-rosas.jpg',
     description: 'Majestuoso arreglo buchón de 80 rosas rojas premium en estructura esférica perfecta, decorado con delicadas mariposas doradas y fina envoltura en tono blanco marfil.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000022',
-    title: 'Ramo Buchón "Corona de Reina" (50 Rosas)',
+    title: '50 Rosas más Corona',
     category: 'coronas',
     categories: ['coronas', 'buchones'],
     categoryName: 'Cumpleaños & Coronales',
     price: 'S/ 300.00',
-    tag: 'Corona Imperial',
+    tag: 'Corona 👑',
     image: '/images/products/ramo-buchon-corona-reina-50-rosas.webp',
     imageFallback: '/images/products/ramo-buchon-corona-reina-50-rosas.jpg',
-    description: 'Ramo buchón de 50 rosas rojas seleccionadas con tiara imperial dorada de cristal brillante, cinta personalizada y acabado de alta gama.'
+    description: 'Ramo buchón de 50 rosas rojas seleccionadas con tiara dorada de cristal brillante, cinta personalizada y acabado de alta gama.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000017',
@@ -170,7 +170,7 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 'ba000001-0000-4000-a000-000000000015',
-    title: 'Bouquet Imperial de Lirios Blancos',
+    title: 'Bouquet de Lirios Blancos',
     category: 'pastel',
     categories: ['pastel'],
     categoryName: 'Delicadeza Pastel & Lirios',
@@ -256,7 +256,7 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 'ba000001-0000-4000-a000-000000000036',
-    title: 'Bouquet Imperial 20 Rosas & Doble Anturio',
+    title: 'Bouquet 20 Rosas & Doble Anturio',
     category: 'rosas',
     categories: ['rosas', 'pastel'],
     categoryName: 'Rosas Premium',
@@ -414,7 +414,7 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 'ba000001-0000-4000-a000-000000000054',
-    title: 'Bouquet Dúo Imperial de Lirios Orientales',
+    title: 'Bouquet Dúo de Lirios Orientales',
     category: 'pastel',
     categories: ['pastel'],
     categoryName: 'Delicadeza Pastel & Lirios',
@@ -584,12 +584,12 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 'ba000001-0000-4000-a000-000000000073',
-    title: 'Maxi Bouquet Imperial 12 Tulipanes Rosa',
+    title: 'Maxi Bouquet 12 Tulipanes Rosados',
     category: 'tulipanes',
     categories: ['tulipanes', 'pastel'],
     categoryName: 'Tulipanes',
     price: 'S/ 350.00',
-    tag: 'Tulipán Imperial',
+    tag: '12 Tulipanes',
     image: '/images/products/maxi-bouquet-imperial-12-tulipanes-rosa-holandes.webp',
     imageFallback: '/images/products/maxi-bouquet-imperial-12-tulipanes-rosa-holandes.jpg',
     description: 'Lujoso bouquet de 12 tulipanes frescos en tonalidad rosa suave, cuidadosamente envueltos en papel coreano plisado y cinta con sello de autor Rouss.'
@@ -668,12 +668,12 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 'ba000001-0000-4000-a000-000000000080',
-    title: 'Bouquet Imperial 10 Tulipanes Bicolores Rojo & Rosa',
+    title: 'Bouquet 10 Tulipanes Bicolores Rojo & Rosa',
     category: 'tulipanes',
     categories: ['tulipanes', 'pastel'],
     categoryName: 'Tulipanes',
     price: 'S/ 280.00',
-    tag: 'Tulipán Bicolor',
+    tag: '10 Tulipanes',
     image: '/images/products/bouquet-imperial-10-tulipanes-bicolores-rojo-rosa.webp',
     imageFallback: '/images/products/bouquet-imperial-10-tulipanes-bicolores-rojo-rosa.jpg',
     description: 'Exclusivo arreglo esférico de 10 tulipanes en degradé rojo y rosa con fino lazo de seda en tono plata.'
@@ -692,12 +692,12 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 'ba000001-0000-4000-a000-000000000082',
-    title: 'Bouquet Royal 8 Tulipanes Púrpura Imperial',
+    title: 'Bouquet 8 Tulipanes Púrpura',
     category: 'tulipanes',
     categories: ['tulipanes', 'pastel'],
     categoryName: 'Tulipanes',
     price: 'S/ 200.00',
-    tag: 'Tulipán Púrpura',
+    tag: '8 Tulipanes',
     image: '/images/products/bouquet-royal-8-tulipanes-purpura-imperial.webp',
     imageFallback: '/images/products/bouquet-royal-8-tulipanes-purpura-imperial.jpg',
     description: 'Raro y sofisticado bouquet con 8 tulipanes morados en envoltura rosa con lazo de satén.'
@@ -792,7 +792,7 @@ export default function App() {
   const [heroBanner, setHeroBanner] = useState({
     imagen: '/images/banner.webp',
     imagenFallback: '/images/banner.png',
-    subtitulo: '"Cada pétalo cuenta una historia inolvidable" · Explora la Colección Imperial',
+    subtitulo: '"Cada pétalo cuenta una historia inolvidable" · Explora el Catálogo Exclusivo',
     link: '/catalogo'
   });
 
@@ -917,7 +917,7 @@ export default function App() {
         const primaryBanner = data.banners[0];
         setHeroBanner({
           imagen: primaryBanner.imagen || '/images/banner.png',
-          subtitulo: primaryBanner.subtitulo || '"Cada pétalo cuenta una historia inolvidable" · Explora la Colección Imperial',
+          subtitulo: primaryBanner.subtitulo || '"Cada pétalo cuenta una historia inolvidable" · Explora el Catálogo Exclusivo',
           link: primaryBanner.link || '/catalogo'
         });
       }
@@ -1305,7 +1305,7 @@ export default function App() {
             <div 
               className="banner-hint-bar" 
               onClick={() => navigateToPage('catalogo')}
-              title="Explorar la Colección Imperial Rouss"
+              title="Explorar el Catálogo Exclusivo Rouss"
             >
               <span>{heroBanner.subtitulo}</span>
             </div>
@@ -1409,7 +1409,7 @@ export default function App() {
                     />
                   </picture>
                   <h3 className="feature-title">Diseños de Autor Únicos</h3>
-                  <p className="feature-desc">Creaciones exclusivas firmadas por Jharol Baldeón con tiaras imperiales, gerberas y cajas florales.</p>
+                  <p className="feature-desc">Creaciones exclusivas firmadas por Jharol Baldeón con tiaras de cristal, gerberas y cajas florales.</p>
                   <button 
                     className="btn-feature-link"
                     onClick={(e) => { e.stopPropagation(); navigateToPage('catalogo', 'coronas'); }}
@@ -1432,7 +1432,7 @@ export default function App() {
                 </span>
                 <h2>Alta Floristería a tu Alcance</h2>
                 <p>
-                  Explora nuestra exclusiva colección de diseños de autor, tulipanes frescos, ramos buchones y coronas imperiales.
+                  Explora nuestra exclusiva colección de diseños de autor, tulipanes frescos, ramos buchones y coronas de reina.
                 </p>
                 
                 <button 
@@ -1590,7 +1590,7 @@ export default function App() {
                       >
                         <option value="S/ 55 - S/ 100 (Detalle Accesible)">S/ 55 - S/ 100 (Detalle Accesible)</option>
                         <option value="S/ 100 - S/ 200 (Tulipanes & Rosas)">S/ 100 - S/ 200 (Tulipanes & Rosas)</option>
-                        <option value="S/ 200 - S/ 350 (Tulipanes Imperial / Buchón)">S/ 200 - S/ 350 (Tulipanes Imperial / Buchón)</option>
+                        <option value="S/ 200 - S/ 350 (Tulipanes / Ramos Buchones)">S/ 200 - S/ 350 (Tulipanes / Ramos Buchones)</option>
                         <option value="S/ 350 - S/ 450+ (Formato Maxi Monumental)">S/ 350 - S/ 450+ (Formato Maxi Monumental)</option>
                       </select>
                     </div>
@@ -1650,7 +1650,7 @@ export default function App() {
                     <source srcSet="/images/products/ramo-buchon-corona-reina-50-rosas.webp" type="image/webp" />
                     <img 
                       src="/images/products/ramo-buchon-corona-reina-50-rosas.jpg" 
-                      alt="Ramo Buchón Corona Imperial Rouss by Jharol Baldeón" 
+                      alt="50 Rosas más Corona Florería Rouss by Jharol Baldeón" 
                       className="about-img"
                       width="480"
                       height="600"
@@ -1666,7 +1666,7 @@ export default function App() {
                   </span>
                   <h2>Elegancia & Sofisticación en Cada Pétalo</h2>
                   <p>
-                    <strong>Florería Rouss by Jharol Baldeón</strong> cuenta con 3 años de trayectoria en el rubro de alta floristería en Lima, especializada en ramos buchones, tulipanes frescos, rosas de exportación y coronas de autor con tiaras imperiales.
+                    <strong>Florería Rouss by Jharol Baldeón</strong> cuenta con 3 años de trayectoria en el rubro de alta floristería en Lima, especializada en ramos buchones, tulipanes frescos, rosas y coronas de autor con tiaras de cristal.
                   </p>
                   <p>
                     Ubicados en Chorrillos (Av. Alameda Sur cruce con Av. Los Incas), realizamos envíos seguros y garantizados a todo Lima Metropolitana con más de 1,000 entregas exitosas.
