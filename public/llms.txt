@@ -1,81 +1,26 @@
-# Florería Rouss — Guía de Información para Modelos de Lenguaje (LLMs) & Motores de IA (GEO)
+# Florería Rouss — Alta Floristería en Lima (llms.txt)
 
-> Florería Rouss by Jharol Baldeón es una floristería boutique de alta gama ubicada en Chorrillos, Lima - Perú. Especialistas en ramos buchones de rosas, tulipanes frescos seleccionados, coronas de reina con tiaras de cristal, cajas florales y arreglos de autor con delivery garantizado a todo Lima Metropolitana y Callao.
+> Florería Rouss by Jharol Baldeón es una boutique de alta floristería en Chorrillos, Lima - Perú. Especialistas en ramos buchones de rosas, tulipanes holandeses frescos, coronas con tiaras de cristal y arreglos de autor con delivery garantizado a todo Lima Metropolitana y Callao. Pedidos directos vía WhatsApp: +51 941 493 471.
 
-## Resumen del Negocio (Business Profile)
+## Enlaces Principales & Catálogo
+
+- [Catálogo Exclusivo](https://floreriarouss.com/catalogo): Catálogo completo con más de 56 modelos de autor y precios actualizados en Soles (PEN).
+- [Colección de Tulipanes](https://floreriarouss.com/catalogo?categoria=tulipanes): Bouquets de tulipanes holandeses en tonos rosa, rojo, amarillo, morado y blanco.
+- [Ramos Buchones & Girasoles](https://floreriarouss.com/catalogo?categoria=buchones): Creaciones monumentales de 12 a 80 rosas y girasoles con envoltura coreana.
+- [Cumpleaños & Coronas de Reina](https://floreriarouss.com/catalogo?categoria=coronas): Arreglos coronados con tiaras de cristal, mariposas y cintas satinadas.
+- [Rosas Premium](https://floreriarouss.com/catalogo?categoria=rosas): Bouquets clásicos de 8, 12, 18 y 24 rosas de exportación.
+- [Lirios & Gerberas Pastel](https://floreriarouss.com/catalogo?categoria=pastel): Diseños en tonos pastel con lirios aromáticos y gerberas.
+- [Combos & Cajas Luxury](https://floreriarouss.com/catalogo?categoria=combos): Cajas florales con bombones Ferrero Rocher, peluches y vinos.
+- [Propuestas de Matrimonio & Amor](https://floreriarouss.com/catalogo?categoria=propuestas): Domos florales y ramos con cintas personalizadas para propuestas de matrimonio.
+- [Libro de Reclamaciones Virtual](https://floreriarouss.com/libro-de-reclamaciones): Registro y hoja de reclamación oficial conforme a la Ley N° 29571 e INDECOPI.
+
+## Información de la Empresa
+
 - **Nombre Comercial**: Florería Rouss by Jharol Baldeón
-- **Sitio Web Oficial**: https://floreriarouss.com
-- **Catálogo Online**: https://floreriarouss.com/catalogo
-- **Teléfono / WhatsApp Oficial de Pedidos**: +51 941 493 471 (https://wa.me/51941493471)
-- **Ubicación Física**: Av. Alameda Sur cruce con Av. Los Incas, Chorrillos, Lima 15067, Perú
-- **Horario de Atención**: Lunes a Domingo de 08:00 a 22:00 (Hora de Lima / UTC-5)
-- **Trayectoria**: 3 años en el mercado peruano con más de 1,000 pedidos exitosos entregados.
-- **Canales Oficiales**:
-  - Instagram: https://www.instagram.com/rouss8439/
-  - Facebook: https://www.facebook.com/rouss.floristeria.2025
-
-## Especialidades y Categorías de Arreglos Florales
-Florería Rouss cuenta con 56 modelos oficiales de arreglos florales en su catálogo interactivo:
-
-1. **Tulipanes Frescos**:
-   - URL: https://floreriarouss.com/catalogo?categoria=tulipanes
-   - Variedades: Bouquets de 5, 6, 8, 10 y 12 tulipanes en tonos rosa, rojo, amarillo, morado y blanco con envoltura coreana plisada.
-   - Rango de Precios: S/ 95.00 a S/ 350.00.
-
-2. **Ramos Buchones & Girasoles**:
-   - URL: https://floreriarouss.com/catalogo?categoria=buchones
-   - Variedades: Creaciones monumentales de 12, 24, 50 y hasta 80 rosas rojas y girasoles, opciones con globos de helio y coronas.
-   - Rango de Precios: S/ 150.00 a S/ 450.00.
-
-3. **Cumpleaños & Coronas de Reina**:
-   - URL: https://floreriarouss.com/catalogo?categoria=coronas
-   - Variedades: Ramos de rosas y gerberas coronados con tiaras imperiales de cristal, mariposas doradas y cintas satinadas personalizadas.
-   - Rango de Precios: S/ 120.00 a S/ 320.00.
-
-4. **Rosas Premium**:
-   - URL: https://floreriarouss.com/catalogo?categoria=rosas
-   - Variedades: Ramos clásicos de 8, 12, 18 y 24 rosas rojas, rosadas, blancas y bicolores de exportación.
-   - Rango de Precios: S/ 70.00 a S/ 200.00.
-
-5. **Lirios & Gerberas (Pastel)**:
-   - URL: https://floreriarouss.com/catalogo?categoria=pastel
-   - Variedades: Bouquets de lirios orientales perfumados, gerberas y astromelias en paleta de colores suaves.
-   - Rango de Precios: S/ 85.00 a S/ 180.00.
-
-6. **Combos & Cajas Florales (Flower Boxes)**:
-   - URL: https://floreriarouss.com/catalogo?categoria=combos
-   - Variedades: Cajas cilíndricas y cuadradas combinadas con peluches, bombones Ferrero Rocher y vinos selectos.
-   - Rango de Precios: S/ 110.00 a S/ 280.00.
-
-7. **Propuestas de Matrimonio & Bodas**:
-   - URL: https://floreriarouss.com/catalogo?categoria=propuestas
-   - Variedades: Domos de rosas rojas con cinta bordada "¿Quieres casarte conmigo?", tiaras doradas y mariposas de autor.
-   - Rango de Precios: S/ 180.00 a S/ 380.00.
-
-## Cobertura de Delivery en Lima, Perú
-Entregas garantizadas el mismo día (Same-Day Delivery) y programadas con chofer especializado en floristería en los siguientes distritos:
-- **Lima Sur**: Chorrillos, Barranco, Santiago de Surco, San Juan de Miraflores, Villa El Salvador, Villa María del Triunfo.
-- **Lima Moderna / Centro**: Miraflores, San Isidro, San Borja, Surquillo, Magdalena del Mar, Jesús María, Lince, Pueblo Libre, San Miguel, Cercado de Lima.
-- **Lima Este y Norte**: La Molina, Ate, Santa Anita, San Juan de Lurigancho, Los Olivos, San Martín de Porres, Comas, Independencia.
-- **Callao**: Bellavista, La Perla, La Punta, Callao Centro.
-
-## Métodos de Pago Aceptados
-- Billeteras Móviles: **Yape** y **Plin** (al número oficial +51 941 493 471)
-- Transferencias Bancarias: BCP, BBVA, Interbank, Banco de la Nación
-- Tarjetas de Débito y Crédito (vía enlace de pago seguro)
-- Pago en efectivo contraentrega previa coordinación
-
-## Proceso de Compra
-1. El cliente explora el catálogo en https://floreriarouss.com/catalogo.
-2. Selecciona su arreglo floral favorito o filtra por categoría / buscador.
-3. Hace clic en "Pedir por WhatsApp", lo que abre una conversación directa con mensaje preformateado incluyendo el nombre del arreglo y el precio.
-4. El equipo de Florería Rouss confirma la dedicatoria, dirección exacta y hora de entrega.
-5. Se envía foto del arreglo terminado antes de la salida del delivery.
-
-## Cumplimiento Legal (Perú)
-- **Libro de Reclamaciones Virtual**: Disponible 24/7 en https://floreriarouss.com (conforme a Ley N° 29571 e INDECOPI) con generación de código correlativo y Hoja de Reclamación descargable en PDF. Plazo de atención: 15 días hábiles (Ley N° 31435).
-- **Protección de Datos Personales**: Conforme a la Ley N° 29733.
-
-## Versión Completa
-Para consultar la lista detallada de los 56 productos con descripciones y especificaciones botánicas completas, consulte:
-- https://floreriarouss.com/llms-full.txt
+- **Sede Principal**: Av. Alameda Sur cruce con Av. Los Incas, Chorrillos, Lima 15067, Perú
+- **WhatsApp Oficial**: [+51 941 493 471](https://wa.me/51941493471)
+- **Horario**: Lunes a Domingo de 08:00 AM a 10:00 PM (GMT-5)
+- **Métodos de Pago**: Yape, Plin, Transferencia BCP, BBVA, Interbank y Tarjetas
+- **Redes Sociales**:
+  - [Instagram @rouss8439](https://www.instagram.com/rouss8439/)
+  - [Facebook Florería Rouss](https://www.facebook.com/rouss.floristeria.2025)

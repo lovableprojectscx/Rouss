@@ -1291,6 +1291,8 @@ export default function App() {
                   src={heroBanner.imagenFallback || heroBanner.imagen} 
                   alt="Florería Rouss Banner Full Width" 
                   className="hero-banner-full-img"
+                  width="1200"
+                  height="600"
                   fetchpriority="high"
                   decoding="async"
                 />
@@ -1340,7 +1342,10 @@ export default function App() {
                       src="/images/products/maxi-bouquet-imperial-12-tulipanes-rosa-holandes.jpg" 
                       alt="Tulipanes de Lujo" 
                       className="feature-img-thumb"
+                      width="280"
+                      height="280"
                       loading="lazy"
+                      decoding="async"
                     />
                   </picture>
                   <h3 className="feature-title">Tulipanes</h3>
@@ -1366,7 +1371,10 @@ export default function App() {
                       src="/images/products/ramo-buchon-12-girasoles-sol-radiante.jpg" 
                       alt="Ramos Buchones de Lujo" 
                       className="feature-img-thumb"
+                      width="280"
+                      height="280"
                       loading="lazy"
+                      decoding="async"
                     />
                   </picture>
                   <h3 className="feature-title">Ramos Buchones de Lujo</h3>
@@ -1392,7 +1400,10 @@ export default function App() {
                       src="/images/products/ramo-princesa-12-rosas-durazno-tiara-cristal.jpg" 
                       alt="Diseños de Autor Únicos" 
                       className="feature-img-thumb"
+                      width="280"
+                      height="280"
                       loading="lazy"
+                      decoding="async"
                     />
                   </picture>
                   <h3 className="feature-title">Diseños de Autor Únicos</h3>
@@ -1470,6 +1481,8 @@ export default function App() {
                               src={item.imageFallback || item.image} 
                               alt={item.title} 
                               className="client-img" 
+                              width="320"
+                              height="400"
                               loading="lazy"
                               decoding="async"
                             />
@@ -1514,35 +1527,44 @@ export default function App() {
                   <div className="form-grid-2col">
                     
                     <div className="form-group">
-                      <label className="form-label">Nombre Completo *</label>
+                      <label htmlFor="quote-nombre" className="form-label">Nombre Completo *</label>
                       <input 
+                        id="quote-nombre"
+                        name="nombre"
                         type="text" 
                         required
                         placeholder="Ej. Luciana García" 
                         value={formData.nombre}
                         onChange={(e) => setFormData({...formData, nombre: e.target.value})}
                         className="form-input"
+                        aria-label="Nombre Completo"
                       />
                     </div>
 
                     <div className="form-group">
-                      <label className="form-label">Teléfono / WhatsApp *</label>
+                      <label htmlFor="quote-telefono" className="form-label">Teléfono / WhatsApp *</label>
                       <input 
+                        id="quote-telefono"
+                        name="telefono"
                         type="tel" 
                         required
                         placeholder="Ej. +51 987 654 321" 
                         value={formData.telefono}
                         onChange={(e) => setFormData({...formData, telefono: e.target.value})}
                         className="form-input"
+                        aria-label="Teléfono o WhatsApp"
                       />
                     </div>
 
                     <div className="form-group">
-                      <label className="form-label">Tipo de Arreglo u Ocasión</label>
+                      <label htmlFor="quote-ocasion" className="form-label">Tipo de Arreglo u Ocasión</label>
                       <select 
+                        id="quote-ocasion"
+                        name="ocasion"
                         value={formData.ocasion}
                         onChange={(e) => setFormData({...formData, ocasion: e.target.value})}
                         className="form-select"
+                        aria-label="Tipo de Arreglo u Ocasión"
                       >
                         <option value="Tulipanes Selectos">Tulipanes Selectos</option>
                         <option value="Ramo Buchón de Rosas & Girasoles">Ramo Buchón de Rosas & Girasoles</option>
@@ -1555,11 +1577,14 @@ export default function App() {
                     </div>
 
                     <div className="form-group">
-                      <label className="form-label">Presupuesto Estimado</label>
+                      <label htmlFor="quote-presupuesto" className="form-label">Presupuesto Estimado</label>
                       <select 
+                        id="quote-presupuesto"
+                        name="presupuesto"
                         value={formData.presupuesto}
                         onChange={(e) => setFormData({...formData, presupuesto: e.target.value})}
                         className="form-select"
+                        aria-label="Presupuesto Estimado"
                       >
                         <option value="S/ 55 - S/ 100 (Detalle Accesible)">S/ 55 - S/ 100 (Detalle Accesible)</option>
                         <option value="S/ 100 - S/ 200 (Tulipanes & Rosas)">S/ 100 - S/ 200 (Tulipanes & Rosas)</option>
@@ -1569,23 +1594,29 @@ export default function App() {
                     </div>
 
                     <div className="form-group full-width">
-                      <label className="form-label">Fecha Deseada de Entrega</label>
+                      <label htmlFor="quote-fecha-entrega" className="form-label">Fecha Deseada de Entrega</label>
                       <input 
+                        id="quote-fecha-entrega"
+                        name="fechaEntrega"
                         type="date" 
                         value={formData.fechaEntrega}
                         onChange={(e) => setFormData({...formData, fechaEntrega: e.target.value})}
                         className="form-input"
+                        aria-label="Fecha Deseada de Entrega"
                       />
                     </div>
 
                     <div className="form-group full-width">
-                      <label className="form-label">Mensaje / Dedicatoria / Detalles Especiales</label>
+                      <label htmlFor="quote-mensaje" className="form-label">Mensaje / Dedicatoria / Detalles Especiales</label>
                       <textarea 
+                        id="quote-mensaje"
+                        name="mensaje"
                         rows="3"
                         placeholder="Escribe aquí si deseas incluir una frase especial en la cinta satinada, globos de helio o una nota personalizada..." 
                         value={formData.mensaje}
                         onChange={(e) => setFormData({...formData, mensaje: e.target.value})}
                         className="form-textarea"
+                        aria-label="Mensaje o dedicatoria personalizada"
                       ></textarea>
                     </div>
 
@@ -1619,6 +1650,10 @@ export default function App() {
                       src="/images/products/ramo-buchon-corona-reina-50-rosas.jpg" 
                       alt="Ramo Buchón Corona Imperial Rouss by Jharol Baldeón" 
                       className="about-img"
+                      width="480"
+                      height="600"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </picture>
                 </div>
@@ -1810,14 +1845,25 @@ export default function App() {
         <div className="container">
           <div className="footer-grid">
             <div className="footer-brand">
-              <img src="/images/logo-footer.png" alt="Rouss Logo" className="footer-logo" />
+              <picture>
+                <source srcSet="/images/logo-footer.webp" type="image/webp" />
+                <img 
+                  src="/images/logo-footer.png" 
+                  alt="Florería Rouss Logo" 
+                  className="footer-logo" 
+                  width="52" 
+                  height="52" 
+                  loading="lazy" 
+                  decoding="async" 
+                />
+              </picture>
               <p className="footer-desc">
                 Florería Rouss - Especialistas en ramos buchones, tulipanes, rosas de exportación y flores premium. Diseños de autor para momentos inolvidables en Lima.
               </p>
             </div>
 
             <div>
-              <h4 className="footer-title">Navegación</h4>
+              <h3 className="footer-title">Navegación</h3>
               <ul className="footer-links">
                 <li>
                   <button onClick={() => navigateToPage('inicio')}>Inicio</button>
@@ -1836,7 +1882,7 @@ export default function App() {
             </div>
 
             <div>
-              <h4 className="footer-title">Colecciones</h4>
+              <h3 className="footer-title">Colecciones</h3>
               <ul className="footer-links">
                 <li>
                   <button onClick={() => { navigateToPage('catalogo', 'tulipanes'); }}>
@@ -1862,7 +1908,7 @@ export default function App() {
             </div>
 
             <div>
-              <h4 className="footer-title">Atención Directa</h4>
+              <h3 className="footer-title">Atención Directa</h3>
               <div className="contact-info">
                 <a 
                   href="https://wa.me/51941493471?text=Hola%20Florer%C3%ADa%20Rouss,%20deseo%20consultar%20por%20sus%20arreglos" 

@@ -54,13 +54,13 @@ export async function fetchRoussData() {
         .order('orden', { ascending: true }),
       supabase
         .from('categories')
-        .select('id, nombre, slug, activo, orden')
+        .select('id, name, slug, activo, orden')
         .eq('tenant_id', ROUSS_TENANT_ID)
         .eq('activo', true)
         .order('orden', { ascending: true }),
       supabase
         .from('tenant_settings')
-        .select('tenant_id, phone, address, instagram, facebook, experience_years, orders_count')
+        .select('tenant_id, store_name, whatsapp, schedule, zones, show_prices, hero_slides')
         .eq('tenant_id', ROUSS_TENANT_ID)
         .maybeSingle(),
       supabase

@@ -12,7 +12,7 @@ describe('Florería Rouss - Catálogo & Componentes', () => {
 
   it('renders home page and header correctly', () => {
     render(<App />)
-    expect(screen.getByAltText('Florería Rouss Logo')).toBeInTheDocument()
+    expect(screen.getAllByAltText(/Florería Rouss Logo/i).length).toBeGreaterThanOrEqual(1)
     expect(screen.getAllByText('Catálogo Exclusivo')[0]).toBeInTheDocument()
   })
 

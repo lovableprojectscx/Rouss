@@ -12,7 +12,7 @@
   
   --brand-gold: #C59B27;
   --brand-gold-bright: #D4AF37;
-  --brand-gold-dark: #96761A;
+  --brand-gold-dark: #735308;
   --brand-gold-light: #F8F3E6;
   
   /* Official Solid WhatsApp Green */
@@ -813,7 +813,7 @@ h1, h2, h3, h4 {
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  background-color: #25D366 !important;
+  background-color: #128C7E !important;
   color: #FFFFFF !important;
   font-weight: 600;
   font-size: 1rem;
@@ -828,7 +828,7 @@ h1, h2, h3, h4 {
 }
 
 .btn-submit-form:hover {
-  background-color: #1EBE5D !important;
+  background-color: #0E6B60 !important;
 }
 
 /* ABOUT SECTION */
@@ -909,8 +909,8 @@ h1, h2, h3, h4 {
 
 .stat-label {
   font-size: clamp(0.75rem, 2.2vw, 0.85rem);
-  color: var(--text-muted);
-  font-weight: 500;
+  color: #44403C;
+  font-weight: 600;
   display: block;
   margin-top: 0.25rem;
   white-space: nowrap;
