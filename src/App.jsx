@@ -1419,14 +1419,14 @@ export default function App() {
                 </span>
                 <h2>Alta Floristería a tu Alcance</h2>
                 <p>
-                  Explora nuestra colección de {productsList.length} arreglos exclusivos, tulipanes frescos, ramos buchones y coronas de autor.
+                  Explora nuestra exclusiva colección de diseños de autor, tulipanes frescos, ramos buchones y coronas imperiales.
                 </p>
                 
                 <button 
                   onClick={() => navigateToPage('catalogo')} 
                   className="btn-solid-gold"
                 >
-                  <span>Ver Catálogo Completo ({productsList.length} Arreglos)</span>
+                  <span>Explorar Catálogo Exclusivo</span>
                   <ArrowRightGoldIcon size={18} color="#121110" />
                 </button>
               </div>
