@@ -26,19 +26,19 @@ const INITIAL_PRODUCTS = [
   // TANDA 1 (14)
   {
     id: 'ba000001-0000-4000-a000-000000000011',
-    title: 'Ramo Buchón "Sol Radiante" (12 Girasoles)',
+    title: '12 Girasoles',
     category: 'buchones',
     categories: ['buchones'],
     categoryName: 'Ramos Buchones & Girasoles',
     price: 'S/ 180.00',
-    tag: 'Más Vendido',
+    tag: '12 Girasoles',
     image: '/images/products/ramo-buchon-12-girasoles-sol-radiante.webp',
     imageFallback: '/images/products/ramo-buchon-12-girasoles-sol-radiante.jpg',
-    description: 'Espectacular bouquet buchón de 12 girasoles frescos seleccionados de tallo largo, envueltos en papel coreano negro de alta costura con cinta satinada y dedicatoria personalizada.'
+    description: 'Ramo de 12 girasoles frescos seleccionados con envoltura en papel coreano negro y cinta satinada.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000012',
-    title: 'Ramo Buchón 50 Rosas & Globos de Helio',
+    title: '50 Rosas y 3 Globos con Helio',
     category: 'buchones',
     categories: ['buchones', 'rosas'],
     categoryName: 'Ramos Buchones & Girasoles',
@@ -46,23 +46,23 @@ const INITIAL_PRODUCTS = [
     tag: '50 Rosas + Helio',
     image: '/images/products/ramo-buchon-50-rosas-globos-helio.webp',
     imageFallback: '/images/products/ramo-buchon-50-rosas-globos-helio.jpg',
-    description: 'Imponente ramo buchón compuesto por 50 rosas rojas de exportación en cúpula perfecta, acompañado por tres globos metalizados con helio y lazo de gala.'
+    description: 'Ramo de 50 rosas rojas acompañado de 3 globos con helio y lazo decorativo.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000013',
-    title: 'Maxi Ramo Buchón 80 Rosas & 6 Girasoles',
+    title: '80 Rosas más 6 Girasoles',
     category: 'buchones',
     categories: ['buchones', 'rosas'],
     categoryName: 'Ramos Buchones & Girasoles',
     price: 'S/ 450.00',
-    tag: 'Formato Maxi',
+    tag: '80 Rosas + 6 Girasoles',
     image: '/images/products/maxi-ramo-buchon-80-rosas-6-girasoles.webp',
     imageFallback: '/images/products/maxi-ramo-buchon-80-rosas-6-girasoles.jpg',
-    description: 'Creación monumental de alta floristería que fusiona 80 rosas rojas aterciopeladas con 6 radiantes girasoles centrales en envoltura coreana plisada de máxima elegancia.'
+    description: 'Maxi ramo de 80 rosas rojas con 6 girasoles centrales en papel coreano plisado.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000014',
-    title: 'Ramo Buchón 80 Rosas',
+    title: '80 Rosas',
     category: 'buchones',
     categories: ['buchones', 'rosas'],
     categoryName: 'Ramos Buchones & Girasoles',
@@ -70,7 +70,7 @@ const INITIAL_PRODUCTS = [
     tag: '80 Rosas',
     image: '/images/products/ramo-buchon-reina-imperial-80-rosas.webp',
     imageFallback: '/images/products/ramo-buchon-reina-imperial-80-rosas.jpg',
-    description: 'Majestuoso arreglo buchón de 80 rosas rojas premium en estructura esférica perfecta, decorado con delicadas mariposas doradas y fina envoltura en tono blanco marfil.'
+    description: 'Ramo buchón de 80 rosas rojas seleccionadas con mariposas doradas decorativas.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000022',
@@ -82,509 +82,509 @@ const INITIAL_PRODUCTS = [
     tag: 'Corona 👑',
     image: '/images/products/ramo-buchon-corona-reina-50-rosas.webp',
     imageFallback: '/images/products/ramo-buchon-corona-reina-50-rosas.jpg',
-    description: 'Ramo buchón de 50 rosas rojas seleccionadas con tiara dorada de cristal brillante, cinta personalizada y acabado de alta gama.'
+    description: 'Ramo de 50 rosas rojas con corona de cumpleaños dorada y cinta personalizada.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000017',
-    title: 'Ramo Buchón Élite 50 Rosas',
+    title: '50 Rosas con Billetes (Opcional)',
     category: 'buchones',
     categories: ['buchones', 'rosas'],
     categoryName: 'Ramos Buchones & Girasoles',
     price: 'S/ 250.00',
-    tag: 'Personalizable',
+    tag: '50 Rosas',
     image: '/images/products/ramo-buchon-elite-50-rosas.webp',
     imageFallback: '/images/products/ramo-buchon-elite-50-rosas.jpg',
-    description: 'Distinguido ramo esférico de 50 rosas selectas en armoniosa combinación de tonalidades, diseñado para celebraciones de alto impacto (personalización de billetes opcional).'
+    description: 'Ramo de 50 rosas rojas. Billetes opcionales proporcionados por el cliente (+S/ 10 por colocación).'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000018',
-    title: 'Ramo Buchón 40 Rosas & Mariposas de Oro',
+    title: '40 Rosas con Mariposas',
     category: 'buchones',
     categories: ['buchones', 'rosas'],
     categoryName: 'Ramos Buchones & Girasoles',
     price: 'S/ 200.00',
-    tag: 'Detalle Dorado',
+    tag: '40 Rosas',
     image: '/images/products/ramo-buchon-40-rosas-mariposas-oro.webp',
     imageFallback: '/images/products/ramo-buchon-40-rosas-mariposas-oro.jpg',
-    description: 'Exclusivo bouquet de 40 rosas rojas de invernadero con detalles de mariposas troqueladas en pan de oro y envoltura de seda blanca.'
+    description: 'Ramo de 40 rosas rojas decorado con mariposas doradas y envoltura marfil.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000021',
-    title: 'Ramo Buchón Pasión 30 Rosas',
+    title: '30 Rosas Ramo',
     category: 'rosas',
     categories: ['rosas', 'buchones'],
     categoryName: 'Rosas Premium',
     price: 'S/ 170.00',
-    tag: 'Pasión Rouss',
+    tag: '30 Rosas',
     image: '/images/products/ramo-buchon-pasion-30-rosas.webp',
     imageFallback: '/images/products/ramo-buchon-pasion-30-rosas.jpg',
-    description: 'Clásico y apasionado arreglo de 30 rosas rojas frescas con follaje fino, envuelto en papel negro de alta densidad y lazo satinado.'
+    description: 'Ramo de 30 rosas rojas en envoltura negra coreana con lazo satinado.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000019',
-    title: 'Combo Ternura 20 Rosas, Peluche & Lirio',
+    title: '20 Rosas + Peluche + 1 Lirio',
     category: 'combos',
     categories: ['combos', 'pastel'],
     categoryName: 'Detalles & Combos Especiales',
     price: 'S/ 230.00',
-    tag: 'Combo Exclusivo',
+    tag: 'Combo Peluche',
     image: '/images/products/combo-ternura-20-rosas-peluche-lirio.webp',
     imageFallback: '/images/products/combo-ternura-20-rosas-peluche-lirio.jpg',
-    description: 'Exquisito arreglo en tonalidades pastel con 20 rosas frescas, un lirio aromático y un tierno oso de peluche de colección en envoltura lila.'
+    description: 'Combo especial de 20 rosas rosadas con peluche de oso y 1 lirio oriental.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000020',
-    title: 'Bouquet Conservación 20 Rosas & Hidratación',
+    title: '20 Rosas con Esponja Absorbente',
     category: 'rosas',
     categories: ['rosas'],
     categoryName: 'Rosas Premium',
     price: 'S/ 150.00',
-    tag: 'Larga Duración',
+    tag: '20 Rosas Hidratadas',
     image: '/images/products/bouquet-conservacion-20-rosas-hidratacion.webp',
     imageFallback: '/images/products/bouquet-conservacion-20-rosas-hidratacion.jpg',
-    description: 'Arreglo de 20 rosas rojas con tecnología de esponja floral hidratante en la base para prolongar la vida y frescura de cada pétalo.'
+    description: 'Arreglo de 20 rosas rojas con esponja absorbente de agua para máxima conservación.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000016',
-    title: 'Bouquet Armonía 12 Rosas & Astromelias',
+    title: '12 Rosas más Astromelias',
     category: 'rosas',
     categories: ['rosas'],
     categoryName: 'Rosas Premium',
     price: 'S/ 160.00',
-    tag: 'Diseño Fresco',
+    tag: '12 Rosas + Astromelias',
     image: '/images/products/bouquet-armonia-12-rosas-astromelias.webp',
     imageFallback: '/images/products/bouquet-armonia-12-rosas-astromelias.jpg',
-    description: 'Combinación fresca y vibrante de 12 rosas rojas selectas enmarcada por un delicado contorno de astromelias y follaje silvestre.'
+    description: 'Bouquet de 12 rosas rojas combinadas con astromelias frescas y envoltura marfil.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000023',
-    title: 'Bouquet Esencial 15 Rosas Hidratadas',
+    title: '15 Rosas con Esponja Absorbente',
     category: 'rosas',
     categories: ['rosas'],
     categoryName: 'Rosas Premium',
     price: 'S/ 100.00',
-    tag: 'Detalle Ideal',
+    tag: '15 Rosas',
     image: '/images/products/bouquet-esencial-15-rosas-hidratadas.webp',
     imageFallback: '/images/products/bouquet-esencial-15-rosas-hidratadas.jpg',
-    description: 'Detalle compacto y distinguido de 15 rosas rojas con base de agua absorbente que garantiza frescura continua en todo momento.'
+    description: 'Ramo cónico de 15 rosas rojas con esponja absorbente de agua para mayor frescura.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000015',
-    title: 'Bouquet de Lirios Blancos',
+    title: '4 Lirios y Papel Coreano',
     category: 'pastel',
     categories: ['pastel'],
     categoryName: 'Delicadeza Pastel & Lirios',
     price: 'S/ 150.00',
-    tag: 'Fragancia Sublime',
+    tag: '4 Lirios',
     image: '/images/products/bouquet-imperial-lirios-blancos.webp',
     imageFallback: '/images/products/bouquet-imperial-lirios-blancos.jpg',
-    description: 'Elegante bouquet de 4 varas de lirios orientales blancos de intenso aroma, acompañados de follaje fino y envoltura estructural en papel coreano.'
+    description: 'Bouquet de 4 lirios blancos con abundante papel coreano y follaje fino.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000024',
-    title: 'Bouquet Romance 3 Lirios & Rosas Pastel',
+    title: '3 Lirios más Rosas',
     category: 'pastel',
     categories: ['pastel'],
     categoryName: 'Delicadeza Pastel & Lirios',
     price: 'S/ 160.00',
-    tag: 'Romance Soft',
+    tag: '3 Lirios + Rosas',
     image: '/images/products/bouquet-romance-3-lirios-rosas-pastel.webp',
     imageFallback: '/images/products/bouquet-romance-3-lirios-rosas-pastel.jpg',
-    description: 'Romántica sinfonía floral compuesta por 3 lirios orientales rosados y rosas en tonos suaves, envueltas en pliegues de papel de seda marfil.'
+    description: 'Bouquet de 3 lirios orientales rosados acompañados de rosas en envoltura marfil.'
   },
 
   // TANDA 2 (15)
   {
     id: 'ba000001-0000-4000-a000-000000000031',
-    title: 'Cucurucho Pasión 8 Rosas Rojas',
+    title: '8 Rosas Cucurucho',
     category: 'rosas',
     categories: ['rosas'],
     categoryName: 'Rosas Premium',
     price: 'S/ 80.00',
-    tag: 'Económico & Chic',
+    tag: '8 Rosas',
     image: '/images/products/cucurucho-pasion-8-rosas-rojas.webp',
     imageFallback: '/images/products/cucurucho-pasion-8-rosas-rojas.jpg',
-    description: 'Delicado y moderno cucurucho en tono negro de alta costura con 8 rosas rojas selectas y detalles en baby breath.'
+    description: 'Cucurucho negro con 8 rosas rojas seleccionadas y detalles en flor blanca.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000032',
-    title: 'Bouquet Delicadeza 12 Rosas Rosa Pastel',
+    title: '12 Rosas Rosa Pastel',
     category: 'pastel',
     categories: ['pastel', 'rosas'],
     categoryName: 'Delicadeza Pastel & Lirios',
     price: 'S/ 90.00',
-    tag: 'Delicadeza Soft',
+    tag: '12 Rosas',
     image: '/images/products/bouquet-delicadeza-12-rosas-rosa-pastel.webp',
     imageFallback: '/images/products/bouquet-delicadeza-12-rosas-rosa-pastel.jpg',
-    description: 'Encantador bouquet de 12 rosas en tono rosa pastel envuelto en papel coreano translúcido con cinta satinada.'
+    description: 'Bouquet de 12 rosas en tono rosa pastel con envoltura translúcida y cinta.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000033',
-    title: 'Bouquet Multicolor Fiesta de Primavera',
+    title: 'Ramo Primavera',
     category: 'combos',
     categories: ['combos', 'pastel'],
     categoryName: 'Detalles & Combos Especiales',
     price: 'S/ 90.00',
-    tag: 'Primavera Rouss',
+    tag: 'Primavera',
     image: '/images/products/bouquet-multicolor-fiesta-primavera.webp',
     imageFallback: '/images/products/bouquet-multicolor-fiesta-primavera.jpg',
-    description: 'Vibrante arreglo floral primaveral con rosas, margaritas, follaje verde y flores variadas en papel coreano de diseñador.'
+    description: 'Ramo primaveral multicolor con rosas, flores variadas y papel de diseñador.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000034',
-    title: 'Mini Bouquet 4 Rosas & Astromelias',
+    title: '4 Rosas más Astromelias',
     category: 'rosas',
     categories: ['rosas'],
     categoryName: 'Rosas Premium',
     price: 'S/ 55.00',
-    tag: 'Detalle Accesible',
+    tag: '4 Rosas',
     image: '/images/products/mini-bouquet-4-rosas-astromelias.webp',
     imageFallback: '/images/products/mini-bouquet-4-rosas-astromelias.jpg',
-    description: 'Exquisito arreglo compacto de 4 rosas rojas seleccionadas rodeadas por astromelias blancas y envoltura cónica marfil.'
+    description: 'Mini bouquet de 4 rosas rojas con astromelias blancas y cono marfil.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000035',
-    title: 'Bouquet Exótico 5 Rosas & Anturio Rosa',
+    title: '5 Rosas más 1 Anturio',
     category: 'pastel',
     categories: ['pastel', 'rosas'],
     categoryName: 'Delicadeza Pastel & Lirios',
     price: 'S/ 85.00',
-    tag: 'Flor Exótica',
+    tag: '5 Rosas + Anturio',
     image: '/images/products/bouquet-exotico-5-rosas-anturio-rosa.webp',
     imageFallback: '/images/products/bouquet-exotico-5-rosas-anturio-rosa.jpg',
-    description: 'Sofisticada combinación de 5 rosas pastel con 1 anturio exótico rosado y follaje fino en envoltura de alta costura.'
+    description: 'Arreglo de 5 rosas pastel con 1 anturio rosado y envoltura suave.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000036',
-    title: 'Bouquet 20 Rosas & Doble Anturio',
+    title: '20 Rosas más 2 Anturios',
     category: 'rosas',
     categories: ['rosas', 'pastel'],
     categoryName: 'Rosas Premium',
     price: 'S/ 190.00',
-    tag: 'Diseño Exclusivo',
+    tag: '20 Rosas + 2 Anturios',
     image: '/images/products/bouquet-imperial-20-rosas-doble-anturio.webp',
     imageFallback: '/images/products/bouquet-imperial-20-rosas-doble-anturio.jpg',
-    description: 'Lujoso arreglo esférico de 20 rosas en tonalidades blush/durazno acompañadas de 2 majestuosos anturios en papel coreano rosado.'
+    description: 'Ramo de 20 rosas blush con 2 anturios en papel coreano rosado.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000037',
-    title: 'Bouquet Clásico 12 Rosas Rojas',
+    title: '12 Rosas Rojas',
     category: 'rosas',
     categories: ['rosas'],
     categoryName: 'Rosas Premium',
     price: 'S/ 80.00',
-    tag: 'Clásico Atemporal',
+    tag: '12 Rosas',
     image: '/images/products/bouquet-clasico-12-rosas-rojas.webp',
     imageFallback: '/images/products/bouquet-clasico-12-rosas-rojas.jpg',
-    description: 'Clásico y elegante arreglo de 12 rosas rojas de invernadero con corona de gypsophila blanca y cono marfil.'
+    description: 'Ramo de 12 rosas rojas envueltas en papel coreano con baby breath.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000038',
-    title: 'Mini Bouquet Lirio Oriental & Astromelias',
+    title: '1 Lirio más Astromelias',
     category: 'pastel',
     categories: ['pastel'],
     categoryName: 'Delicadeza Pastel & Lirios',
     price: 'S/ 55.00',
-    tag: 'Aroma Dulce',
+    tag: '1 Lirio',
     image: '/images/products/mini-bouquet-lirio-oriental-astromelias.webp',
     imageFallback: '/images/products/mini-bouquet-lirio-oriental-astromelias.jpg',
-    description: 'Luminoso bouquet que destaca 1 lirio oriental rosado perfumado enmarcado en alegres astromelias multicolores.'
+    description: 'Mini bouquet de 1 lirio oriental rosado con astromelias amarillas y follaje.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000039',
-    title: 'Bouquet Distinción 8 Claveles Importados',
+    title: '8 Claveles Importados',
     category: 'pastel',
     categories: ['pastel'],
     categoryName: 'Delicadeza Pastel & Lirios',
     price: 'S/ 90.00',
-    tag: 'Importado Especial',
+    tag: '8 Claveles',
     image: '/images/products/bouquet-distincion-8-claveles-importados.webp',
     imageFallback: '/images/products/bouquet-distincion-8-claveles-importados.jpg',
-    description: 'Fino ramo elaborado con 8 claveles importados de pétalos veteados en matices frambuesa y blanco, con envoltura de diseño oscuro.'
+    description: 'Ramo de 8 claveles importados en papel negro de alta textura con cinta.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000040',
-    title: 'Ramo Exclusivo Orquídea Real & Estrellitas de Belén',
+    title: '1 Orquídea más Ruscus y Estrellitas de Belén',
     category: 'propuestas',
     categories: ['propuestas', 'pastel'],
     categoryName: 'Propuestas & Bodas',
     price: 'S/ 150.00',
-    tag: 'Alta Costura',
+    tag: 'Orquídea',
     image: '/images/products/ramo-exclusivo-orquidea-real-estrellitas-belen.webp',
     imageFallback: '/images/products/ramo-exclusivo-orquidea-real-estrellitas-belen.jpg',
-    description: 'Creación de alta floristería con vara de orquídea blanca de lujo, estrellitas de Belén y hojas de ruscus en envoltura de seda blanca.'
+    description: 'Arreglo exclusivo de 1 vara de orquídea blanca con ruscus y estrellitas de Belén.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000041',
-    title: 'Bouquet Radiante 6 Girasoles & Margaritas',
+    title: '6 Girasoles más Margaritas',
     category: 'buchones',
     categories: ['buchones'],
     categoryName: 'Ramos Buchones & Girasoles',
     price: 'S/ 80.00',
-    tag: 'Energía Solar',
+    tag: '6 Girasoles',
     image: '/images/products/bouquet-radiante-6-girasoles-margaritas.webp',
     imageFallback: '/images/products/bouquet-radiante-6-girasoles-margaritas.jpg',
-    description: 'Radiante arreglo circular de 6 girasoles de exportación acompañados de margaritas silvestres y envoltura en tono rosa pastel.'
+    description: 'Bouquet de 6 girasoles frescos con margaritas silvestres y envoltura de gala.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000042',
-    title: 'Bouquet Silvestre Romance Pastel',
+    title: 'Bouquet Silvestre Romance',
     category: 'pastel',
     categories: ['pastel'],
     categoryName: 'Delicadeza Pastel & Lirios',
     price: 'S/ 65.00',
-    tag: 'Ternura Floral',
+    tag: 'Silvestre',
     image: '/images/products/bouquet-silvestre-romance-pastel.webp',
     imageFallback: '/images/products/bouquet-silvestre-romance-pastel.jpg',
-    description: 'Tierno bouquet alargado con flores silvestres y rosas en tonos suaves, atado con cinta dorada y papel coreano translúcido.'
+    description: 'Bouquet silvestre de flores variadas en tono pastel con envoltorio decorativo.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000043',
-    title: 'Sombrerera Floral Box Girasoles & Rosas',
+    title: 'Ramo Box Girasoles & Rosas',
     category: 'combos',
     categories: ['combos', 'buchones'],
     categoryName: 'Detalles & Combos Especiales',
     price: 'S/ 100.00',
-    tag: 'Floral Box',
+    tag: 'Ramo Box',
     image: '/images/products/sombrerera-floral-box-girasoles-rosas.webp',
     imageFallback: '/images/products/sombrerera-floral-box-girasoles-rosas.jpg',
-    description: 'Elegante sombrerera rígida con composición circular de girasoles brillantes, rosas rojas intensas y margaritas frescas.'
+    description: 'Arreglo en caja floral con girasoles, rosas rojas y lazo decorativo.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000044',
-    title: 'Bouquet Dulzura Lirio Rosado & Conejitos',
+    title: '1 Lirio más Conejitos',
     category: 'pastel',
     categories: ['pastel'],
     categoryName: 'Delicadeza Pastel & Lirios',
     price: 'S/ 120.00',
-    tag: 'Dulzura Pastel',
+    tag: '1 Lirio + Conejitos',
     image: '/images/products/bouquet-dulzura-lirio-rosado-conejitos.webp',
     imageFallback: '/images/products/bouquet-dulzura-lirio-rosado-conejitos.jpg',
-    description: 'Armoniosa composición de 1 lirio oriental rosa, conejitos (antirrinos) blancos y flores complementarias en papel coreano de seda.'
+    description: 'Bouquet con 1 lirio rosado, conejitos y flores finas en papel marfil.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000045',
-    title: 'Ramo Princesa 12 Rosas Durazno & Tiara de Cristal',
+    title: '12 Rosas + Corona de Cristal',
     category: 'coronas',
     categories: ['coronas', 'pastel'],
     categoryName: 'Cumpleaños & Coronales',
     price: 'S/ 200.00',
-    tag: 'Tiara de Cristal',
+    tag: 'Corona de Cristal',
     image: '/images/products/ramo-princesa-12-rosas-durazno-tiara-cristal.webp',
     imageFallback: '/images/products/ramo-princesa-12-rosas-durazno-tiara-cristal.jpg',
-    description: 'Distinguido bouquet de 12 rosas en tono durazno/pastel coronado con una tiara de cristal brillante y envoltura de alta costura.'
+    description: 'Ramo de 12 rosas durazno con tiara/corona de cristal brillante y cinta personalizada.'
   },
 
   // TANDA 3 (15)
   {
     id: 'ba000001-0000-4000-a000-000000000051',
-    title: 'Ramo Princesa 2 Gerberas & Follaje Rosa',
+    title: '2 Gerberas Ramo Princesa',
     category: 'pastel',
     categories: ['pastel'],
     categoryName: 'Delicadeza Pastel & Lirios',
     price: 'S/ 85.00',
-    tag: 'Princesa Chic',
+    tag: '2 Gerberas',
     image: '/images/products/ramo-princesa-2-gerberas-follaje-rosa.webp',
     imageFallback: '/images/products/ramo-princesa-2-gerberas-follaje-rosa.jpg',
-    description: 'Delicado y femenino bouquet en tonos rosa pastel con 2 gerberas centrales, flores complementarias y envoltura de alta costura con lazo satinado.'
+    description: 'Ramo de 2 gerberas rosadas con follaje fino y papel coreano rosa.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000052',
-    title: 'Bouquet Armonía 1 Lirio & 3 Rosas Lilas',
+    title: '1 Lirio más 3 Rosas Lilas',
     category: 'pastel',
     categories: ['pastel', 'rosas'],
     categoryName: 'Delicadeza Pastel & Lirios',
     price: 'S/ 55.00',
-    tag: 'Detalle Romántico',
+    tag: '1 Lirio + 3 Rosas',
     image: '/images/products/bouquet-armonia-1-lirio-3-rosas-lilas.webp',
     imageFallback: '/images/products/bouquet-armonia-1-lirio-3-rosas-lilas.jpg',
-    description: 'Romántico ramo con 1 lirio oriental aromático y 3 rosas selectas en elegante papel coreano en tonos lila y morado suave.'
+    description: 'Arreglo de 1 lirio oriental con 3 rosas lilas en envoltura marfil.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000053',
-    title: 'Bouquet Silvestre 1 Lirio & 3 Rosas',
+    title: '1 Lirio más 3 Rosas Silvestre',
     category: 'pastel',
     categories: ['pastel', 'rosas'],
     categoryName: 'Delicadeza Pastel & Lirios',
     price: 'S/ 65.00',
-    tag: 'Frescura Silvestre',
+    tag: '1 Lirio + 3 Rosas',
     image: '/images/products/bouquet-silvestre-1-lirio-3-rosas.webp',
     imageFallback: '/images/products/bouquet-silvestre-1-lirio-3-rosas.jpg',
-    description: 'Fresca composición floral con 1 lirio oriental rosado, 3 rosas y follaje silvestre en envoltura marfil.'
+    description: 'Bouquet de 1 lirio rosado con 3 rosas y follaje silvestre.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000054',
-    title: 'Bouquet Dúo de Lirios Orientales',
+    title: '2 Lirios',
     category: 'pastel',
     categories: ['pastel'],
     categoryName: 'Delicadeza Pastel & Lirios',
     price: 'S/ 80.00',
-    tag: 'Aroma Intenso',
+    tag: '2 Lirios',
     image: '/images/products/bouquet-duo-imperial-lirios-orientales.webp',
     imageFallback: '/images/products/bouquet-duo-imperial-lirios-orientales.jpg',
-    description: 'Elegante bouquet protagonizado por 2 varas de lirios orientales abiertos con fina lluvia de gypsophila y envoltura amarilla pastel.'
+    description: 'Bouquet de 2 varas de lirios orientales con gypsophila y envoltura amarilla.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000055',
-    title: 'Bouquet Fusión 6 Rosas & 4 Girasoles',
+    title: '6 Rosas + 4 Girasoles',
     category: 'buchones',
     categories: ['buchones', 'rosas'],
     categoryName: 'Ramos Buchones & Girasoles',
     price: 'S/ 90.00',
-    tag: 'Fusión Radiante',
+    tag: '6 Rosas + 4 Girasoles',
     image: '/images/products/bouquet-fusion-6-rosas-4-girasoles.webp',
     imageFallback: '/images/products/bouquet-fusion-6-rosas-4-girasoles.jpg',
-    description: 'Combinación equilibrada de 6 rosas y 4 radiantes girasoles con follaje de eucalipto en papel coreano blanco y lazo de gala.'
+    description: 'Combinación de 6 rosas con 4 girasoles y follaje de eucalipto.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000056',
-    title: 'Estructura Geométrica 2 Lirios, 10 Rosas & Claveles',
+    title: '2 Lirios + 10 Rosas + Claveles',
     category: 'coronas',
     categories: ['coronas', 'pastel'],
     categoryName: 'Cumpleaños & Coronales',
     price: 'S/ 160.00',
-    tag: 'Diseño Geométrico',
+    tag: '2 Lirios + 10 Rosas',
     image: '/images/products/estructura-geometrica-2-lirios-10-rosas-claveles.webp',
     imageFallback: '/images/products/estructura-geometrica-2-lirios-10-rosas-claveles.jpg',
-    description: 'Innovador diseño de autor montado en marco geométrico con 2 lirios rosados, 10 rosas seleccionadas y claveles finos.'
+    description: 'Estructura geométrica con 2 lirios, 10 rosas y claveles en marco moderno.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000057',
-    title: 'Bouquet Ternura 1 Lirio Rosado & 3 Rosas',
+    title: '1 Lirio más 3 Rosas',
     category: 'pastel',
     categories: ['pastel', 'rosas'],
     categoryName: 'Delicadeza Pastel & Lirios',
     price: 'S/ 70.00',
-    tag: 'Ternura Soft',
+    tag: '1 Lirio + 3 Rosas',
     image: '/images/products/bouquet-ternura-1-lirio-rosado-3-rosas.webp',
     imageFallback: '/images/products/bouquet-ternura-1-lirio-rosado-3-rosas.jpg',
-    description: 'Exquisito bouquet con 1 lirio oriental perfumado, 3 rosas en tono suave y detalles de gypsophila en papel coreano rosado.'
+    description: 'Bouquet de 1 lirio rosado con 3 rosas en papel coreano marfil.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000058',
-    title: 'Bouquet Elegance 8 Rosas Pastel & Perlas',
+    title: '8 Rosas Elegance',
     category: 'rosas',
     categories: ['rosas', 'pastel'],
     categoryName: 'Rosas Premium',
     price: 'S/ 100.00',
-    tag: 'Elegance Rouss',
+    tag: '8 Rosas',
     image: '/images/products/bouquet-elegance-8-rosas-pastel-perlas.webp',
     imageFallback: '/images/products/bouquet-elegance-8-rosas-pastel-perlas.jpg',
-    description: 'Arreglo de 8 rosas seleccionadas en tonalidades marfil y blush con baby breath fino y cinta de seda.'
+    description: 'Bouquet de 8 rosas en tono pastel con lazo de satén.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000059',
-    title: 'Bouquet Pasión 8 Rosas Rojas',
+    title: '8 Rosas Rojas',
     category: 'rosas',
     categories: ['rosas'],
     categoryName: 'Rosas Premium',
     price: 'S/ 80.00',
-    tag: 'Pasión Clásica',
+    tag: '8 Rosas',
     image: '/images/products/bouquet-pasion-8-rosas-rojas.webp',
     imageFallback: '/images/products/bouquet-pasion-8-rosas-rojas.jpg',
-    description: 'Clásico ramo cónico con 8 rosas rojas aterciopeladas de exportación en envoltura blanca de alta densidad.'
+    description: 'Ramo de 8 rosas rojas en papel coreano negro con cinta.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000060',
-    title: 'Bouquet Sublime 1 Lirio Oriental & 3 Rosas',
+    title: '1 Lirio más 3 Rosas',
     category: 'pastel',
     categories: ['pastel', 'rosas'],
     categoryName: 'Delicadeza Pastel & Lirios',
     price: 'S/ 75.00',
-    tag: 'Fragancia Pura',
+    tag: '1 Lirio + 3 Rosas',
     image: '/images/products/bouquet-sublime-1-lirio-oriental-3-rosas.webp',
     imageFallback: '/images/products/bouquet-sublime-1-lirio-oriental-3-rosas.jpg',
-    description: 'Arreglo delicado de 1 lirio rosado con 3 rosas de tallo largo y papel plisado en tonos lila y rosa.'
+    description: 'Bouquet de 1 lirio oriental con 3 rosas en papel coreano.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000061',
-    title: 'Bouquet Rústico Chic 1 Lirio & Follaje',
+    title: '1 Lirio Rústico',
     category: 'pastel',
     categories: ['pastel'],
     categoryName: 'Delicadeza Pastel & Lirios',
     price: 'S/ 60.00',
-    tag: 'Estilo Rústico',
+    tag: '1 Lirio',
     image: '/images/products/bouquet-rustico-chic-1-lirio-follaje.webp',
     imageFallback: '/images/products/bouquet-rustico-chic-1-lirio-follaje.jpg',
-    description: 'Encantador arreglo individual de 1 lirio oriental con astromelias en envoltura natural tipo kraft de alta calidad.'
+    description: 'Arreglo rústico de 1 lirio con follaje verde y papel madera.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000062',
-    title: 'Bouquet Fortuna 12 Rosas Blush & Lirios',
+    title: '12 Rosas Blush & Lirios',
     category: 'combos',
     categories: ['combos', 'rosas'],
     categoryName: 'Detalles & Combos Especiales',
     price: 'S/ 180.00',
-    tag: 'Personalizable',
+    tag: '12 Rosas + Lirios',
     image: '/images/products/bouquet-fortuna-12-rosas-blush-lirios.webp',
     imageFallback: '/images/products/bouquet-fortuna-12-rosas-blush-lirios.jpg',
-    description: 'Espectacular bouquet de 12 rosas blush y lirios aromáticos con opción de personalización decorativa con billetes u ornamentos de lujo.'
+    description: 'Ramo de 12 rosas blush con lirios y envoltura marfil.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000063',
-    title: 'Bouquet Royal 6 Rosas Azules & Detalles Plateados',
+    title: '6 Rosas Azules',
     category: 'rosas',
     categories: ['rosas'],
     categoryName: 'Rosas Premium',
     price: 'S/ 70.00',
-    tag: 'Azul Royal',
+    tag: '6 Rosas Azules',
     image: '/images/products/bouquet-royal-6-rosas-azules-detalles-plateados.webp',
     imageFallback: '/images/products/bouquet-royal-6-rosas-azules-detalles-plateados.jpg',
-    description: 'Exclusivo bouquet con 6 rosas teñidas en tono azul rey, mariposas decorativas y envoltura de gala blanca.'
+    description: 'Bouquet de 6 rosas azules en papel coreano con detalles plateados.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000064',
-    title: 'Bouquet Solar 6 Rosas Amarillas & Astromelias',
+    title: '6 Rosas más Astromelias',
     category: 'rosas',
     categories: ['rosas'],
     categoryName: 'Rosas Premium',
     price: 'S/ 65.00',
-    tag: 'Color & Luz',
+    tag: '6 Rosas + Astromelias',
     image: '/images/products/bouquet-solar-6-rosas-amarillas-astromelias.webp',
     imageFallback: '/images/products/bouquet-solar-6-rosas-amarillas-astromelias.jpg',
-    description: 'Luminoso bouquet redondo compuesto por 6 rosas amarillas rodeadas de astromelias blancas y follaje fino.'
+    description: 'Ramo de 6 rosas amarillas con astromelias y papel translúcido.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000065',
-    title: 'Bouquet Silvestre 1 Lirio Rosado & Astromelias',
+    title: '1 Lirio más Astromelias',
     category: 'pastel',
     categories: ['pastel'],
     categoryName: 'Delicadeza Pastel & Lirios',
     price: 'S/ 70.00',
-    tag: 'Astromelias Silvestres',
+    tag: '1 Lirio + Astromelias',
     image: '/images/products/bouquet-silvestre-1-lirio-rosado-astromelias.webp',
     imageFallback: '/images/products/bouquet-silvestre-1-lirio-rosado-astromelias.jpg',
-    description: 'Sinfonía floral de 1 lirio oriental rosado complementado con astromelias multicolores en papel coreano rosa.'
+    description: 'Bouquet de 1 lirio rosado con astromelias y follaje en papel marfil.'
   },
 
   // TANDA 4 (12 - COLECCIÓN TULIPANES & BOXES)
   {
     id: 'ba000001-0000-4000-a000-000000000071',
-    title: 'Bouquet Dúo Lirios Orientales & Corona Floral',
+    title: '2 Lirios sin Chocolate',
     category: 'pastel',
     categories: ['pastel'],
     categoryName: 'Delicadeza Pastel & Lirios',
     price: 'S/ 90.00',
-    tag: 'Dúo Aromático',
+    tag: '2 Lirios',
     image: '/images/products/bouquet-duo-lirios-orientales-corona-floral.webp',
     imageFallback: '/images/products/bouquet-duo-lirios-orientales-corona-floral.jpg',
-    description: 'Espectacular bouquet de 2 lirios orientales abiertos en plenitud rodeados de una corona de flores y envoltura roja con lazo de gala.'
+    description: 'Arreglo de 2 varas de lirios con follaje y envoltura festiva.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000072',
-    title: 'Wood Floral Box 7 Rosas & Lirios Silvestres',
+    title: 'Ramo Box 7 Rosas',
     category: 'combos',
     categories: ['combos', 'rosas'],
     categoryName: 'Detalles & Combos Especiales',
     price: 'S/ 110.00',
-    tag: 'Floral Box Wood',
+    tag: 'Ramo Box',
     image: '/images/products/wood-floral-box-7-rosas-lirios-silvestres.webp',
     imageFallback: '/images/products/wood-floral-box-7-rosas-lirios-silvestres.jpg',
-    description: 'Arreglo de autor en caja floral de madera rústica con 7 rosas rojas selectas, lirio silvestre y cinta decorativa de alta costura.'
+    description: 'Caja floral de madera con 7 rosas rojas y lirio silvestre.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000073',
-    title: 'Maxi Bouquet 12 Tulipanes Rosados',
+    title: '12 Tulipanes Rosados',
     category: 'tulipanes',
     categories: ['tulipanes', 'pastel'],
     categoryName: 'Tulipanes',
@@ -592,83 +592,83 @@ const INITIAL_PRODUCTS = [
     tag: '12 Tulipanes',
     image: '/images/products/maxi-bouquet-imperial-12-tulipanes-rosa-holandes.webp',
     imageFallback: '/images/products/maxi-bouquet-imperial-12-tulipanes-rosa-holandes.jpg',
-    description: 'Lujoso bouquet de 12 tulipanes frescos en tonalidad rosa suave, cuidadosamente envueltos en papel coreano plisado y cinta con sello de autor Rouss.'
+    description: 'Ramo de 12 tulipanes frescos en tono rosa suave con papel coreano plisado.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000074',
-    title: 'Bouquet Alta Costura 6 Tulipanes Rojos',
+    title: '6 Tulipanes Rojos',
     category: 'tulipanes',
     categories: ['tulipanes', 'rosas'],
     categoryName: 'Tulipanes',
-    price: 'S/ 190.00',
-    tag: 'Tulipán Pasión',
+    price: 'S/ 130.00',
+    tag: '6 Tulipanes',
     image: '/images/products/bouquet-alta-costura-6-tulipanes-rojos.webp',
     imageFallback: '/images/products/bouquet-alta-costura-6-tulipanes-rojos.jpg',
-    description: 'Elegante ramo alargado con 6 tulipanes rojos de exportación en envoltura de seda blanca y lazo de gala.'
+    description: 'Ramo alargado de 6 tulipanes rojos frescos en envoltura blanca y lazo de gala.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000075',
-    title: 'Bouquet Delicadeza 5 Tulipanes Rosados',
+    title: '5 Tulipanes Rosados',
     category: 'tulipanes',
     categories: ['tulipanes', 'pastel'],
     categoryName: 'Tulipanes',
     price: 'S/ 160.00',
-    tag: 'Tulipán Soft',
+    tag: '5 Tulipanes',
     image: '/images/products/bouquet-delicadeza-5-tulipanes-rosados.webp',
     imageFallback: '/images/products/bouquet-delicadeza-5-tulipanes-rosados.jpg',
-    description: 'Exquisito bouquet cónico de 5 tulipanes rosados frescos en papel coreano blanco perlado.'
+    description: 'Bouquet cónico de 5 tulipanes rosados frescos en papel coreano blanco.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000076',
-    title: 'Bouquet Solar 3 Tulipanes Amarillos & Margaritas',
+    title: '3 Tulipanes Amarillos con Margaritas',
     category: 'tulipanes',
     categories: ['tulipanes', 'pastel'],
     categoryName: 'Tulipanes',
     price: 'S/ 85.00',
-    tag: 'Tulipán Solar',
+    tag: '3 Tulipanes',
     image: '/images/products/bouquet-solar-3-tulipanes-amarillos-margaritas.webp',
     imageFallback: '/images/products/bouquet-solar-3-tulipanes-amarillos-margaritas.jpg',
-    description: 'Luminoso bouquet que combina 3 tulipanes amarillos intensos con margaritas silvestres y envoltura de diseñador.'
+    description: 'Bouquet de 3 tulipanes amarillos con margaritas silvestres y papel de diseñador.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000077',
-    title: 'Bouquet Black & White 6 Tulipanes Rosa Pastel',
+    title: '6 Tulipanes Rosados',
     category: 'tulipanes',
     categories: ['tulipanes', 'pastel'],
     categoryName: 'Tulipanes',
     price: 'S/ 200.00',
-    tag: 'Tulipán Black & White',
+    tag: '6 Tulipanes',
     image: '/images/products/bouquet-black-white-6-tulipanes-rosa-pastel.webp',
     imageFallback: '/images/products/bouquet-black-white-6-tulipanes-rosa-pastel.jpg',
-    description: 'Moderno y contrastado diseño de 6 tulipanes rosados envueltos en papel coreano bicolor negro y blanco con dedicatoria.'
+    description: 'Bouquet de 6 tulipanes rosados en papel coreano bicolor negro y blanco.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000078',
-    title: 'Bouquet Gold Chic 6 Tulipanes Rosa Pastel',
+    title: '6 Tulipanes Rosados (Gold)',
     category: 'tulipanes',
     categories: ['tulipanes', 'pastel'],
     categoryName: 'Tulipanes',
     price: 'S/ 200.00',
-    tag: 'Tulipán Gold',
+    tag: '6 Tulipanes',
     image: '/images/products/bouquet-gold-chic-6-tulipanes-rosa-pastel.webp',
     imageFallback: '/images/products/bouquet-gold-chic-6-tulipanes-rosa-pastel.jpg',
-    description: 'Distinguido ramo de 6 tulipanes rosados envuelto en papel dorado champagne de alta textura y lazo satinado.'
+    description: 'Ramo de 6 tulipanes rosados envuelto en papel dorado champagne y lazo satinado.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000079',
-    title: 'Maxi Ramo 12 Tulipanes Rojos de Gala',
+    title: '12 Tulipanes Rojos',
     category: 'tulipanes',
     categories: ['tulipanes', 'rosas'],
     categoryName: 'Tulipanes',
     price: 'S/ 270.00',
-    tag: 'Tulipán Gala',
+    tag: '12 Tulipanes',
     image: '/images/products/maxi-ramo-12-tulipanes-rojos-de-gala.webp',
     imageFallback: '/images/products/maxi-ramo-12-tulipanes-rojos-de-gala.jpg',
-    description: 'Monumental arreglo de 12 tulipanes rojos vivos con delicada nube de gypsophila en envoltura de alta densidad.'
+    description: 'Ramo de 12 tulipanes rojos con nube de gypsophila en envoltura de alta densidad.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000080',
-    title: 'Bouquet 10 Tulipanes Bicolores Rojo & Rosa',
+    title: '10 Tulipanes Bicolores',
     category: 'tulipanes',
     categories: ['tulipanes', 'pastel'],
     categoryName: 'Tulipanes',
@@ -676,23 +676,23 @@ const INITIAL_PRODUCTS = [
     tag: '10 Tulipanes',
     image: '/images/products/bouquet-imperial-10-tulipanes-bicolores-rojo-rosa.webp',
     imageFallback: '/images/products/bouquet-imperial-10-tulipanes-bicolores-rojo-rosa.jpg',
-    description: 'Exclusivo arreglo esférico de 10 tulipanes en degradé rojo y rosa con fino lazo de seda en tono plata.'
+    description: 'Ramo de 10 tulipanes en degradé rojo y rosa con lazo de seda en tono plata.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000081',
-    title: 'Bouquet Primavera 3 Tulipanes Blancos & Girasoles',
+    title: '3 Tulipanes Blancos',
     category: 'tulipanes',
     categories: ['tulipanes', 'buchones'],
     categoryName: 'Tulipanes',
     price: 'S/ 120.00',
-    tag: 'Tulipán & Girasol',
+    tag: '3 Tulipanes',
     image: '/images/products/bouquet-primavera-3-tulipanes-blancos-girasoles.webp',
     imageFallback: '/images/products/bouquet-primavera-3-tulipanes-blancos-girasoles.jpg',
-    description: 'Fresca fusión de 3 tulipanes blancos puros con girasol y margaritas silvestres en envoltura de alta costura.'
+    description: 'Fusión de 3 tulipanes blancos puros con margaritas silvestres y envoltura de gala.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000082',
-    title: 'Bouquet 8 Tulipanes Púrpura',
+    title: '8 Tulipanes Morados',
     category: 'tulipanes',
     categories: ['tulipanes', 'pastel'],
     categoryName: 'Tulipanes',
@@ -700,7 +700,7 @@ const INITIAL_PRODUCTS = [
     tag: '8 Tulipanes',
     image: '/images/products/bouquet-royal-8-tulipanes-purpura-imperial.webp',
     imageFallback: '/images/products/bouquet-royal-8-tulipanes-purpura-imperial.jpg',
-    description: 'Raro y sofisticado bouquet con 8 tulipanes morados en envoltura rosa con lazo de satén.'
+    description: 'Ramo de 8 tulipanes morados en envoltura rosa con lazo de satén.'
   }
 ];
 

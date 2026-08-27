@@ -31,22 +31,22 @@ describe('Florería Rouss - Catálogo & Componentes', () => {
     fireEvent.click(catalogBtns[0])
 
     // Tanda 1
-    expect(screen.getByText(/Ramo Buchón "Sol Radiante"/i)).toBeInTheDocument()
+    expect(screen.getAllByText(/12 Girasoles/i).length).toBeGreaterThanOrEqual(1)
     expect(screen.getAllByText('S/ 180.00').length).toBeGreaterThanOrEqual(1)
 
     // Tanda 2
-    expect(screen.getByText(/Cucurucho Pasión 8 Rosas Rojas/i)).toBeInTheDocument()
+    expect(screen.getAllByText(/8 Rosas Cucurucho/i).length).toBeGreaterThanOrEqual(1)
     expect(screen.getAllByText('S/ 80.00').length).toBeGreaterThanOrEqual(1)
 
     // Tanda 3
-    expect(screen.getByText(/Ramo Princesa 2 Gerberas & Follaje Rosa/i)).toBeInTheDocument()
+    expect(screen.getAllByText(/2 Gerberas Ramo Princesa/i).length).toBeGreaterThanOrEqual(1)
     expect(screen.getAllByText('S/ 85.00').length).toBeGreaterThanOrEqual(1)
 
     // Tanda 4 (Tulipanes)
-    expect(screen.getByText(/Maxi Bouquet 12 Tulipanes Rosados/i)).toBeInTheDocument()
+    expect(screen.getAllByText(/12 Tulipanes Rosados/i).length).toBeGreaterThanOrEqual(1)
     expect(screen.getAllByText('S/ 350.00').length).toBeGreaterThanOrEqual(1)
-    expect(screen.getByText(/Bouquet Alta Costura 6 Tulipanes Rojos/i)).toBeInTheDocument()
-    expect(screen.getAllByText('S/ 190.00').length).toBeGreaterThanOrEqual(1)
+    expect(screen.getAllByText(/6 Tulipanes Rojos/i).length).toBeGreaterThanOrEqual(1)
+    expect(screen.getAllByText('S/ 130.00').length).toBeGreaterThanOrEqual(1)
   })
 
   it('filters products accurately when typing in search input for Tulipanes', async () => {
@@ -57,7 +57,7 @@ describe('Florería Rouss - Catálogo & Componentes', () => {
     const searchInput = screen.getByPlaceholderText(/Buscar arreglo/i)
     fireEvent.change(searchInput, { target: { value: 'Tulipanes' } })
 
-    expect(screen.getByText(/Maxi Bouquet 12 Tulipanes Rosados/i)).toBeInTheDocument()
+    expect(screen.getAllByText(/12 Tulipanes Rosados/i).length).toBeGreaterThanOrEqual(1)
   })
 
   it('opens WhatsApp with official number +51 941 493 471 when clicking order button', async () => {
@@ -80,7 +80,7 @@ describe('Florería Rouss - Catálogo & Componentes', () => {
     const catalogBtns = screen.getAllByRole('button', { name: 'Catálogo Exclusivo' })
     fireEvent.click(catalogBtns[0])
 
-    const productImg = screen.getByAltText(/Ramo Buchón "Sol Radiante"/i)
+    const productImg = screen.getByAltText(/12 Girasoles/i)
     fireEvent.click(productImg)
 
     expect(screen.getAllByText(/Ramos Buchones & Girasoles/i).length).toBeGreaterThanOrEqual(1)
@@ -93,7 +93,7 @@ describe('Florería Rouss - Catálogo & Componentes', () => {
     fireEvent.click(tulipanesBtn)
 
     expect(screen.getByText('Colección Exclusiva Rouss')).toBeInTheDocument()
-    expect(screen.getByText(/Maxi Bouquet 12 Tulipanes Rosados/i)).toBeInTheDocument()
+    expect(screen.getByText(/12 Tulipanes Rosados/i)).toBeInTheDocument()
     expect(window.location.search).toContain('categoria=tulipanes')
   })
 
