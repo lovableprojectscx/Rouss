@@ -74,7 +74,7 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 'ba000001-0000-4000-a000-000000000022',
-    title: '50 Rosas más Corona',
+    title: '50 Rosas + Corona',
     category: 'coronas',
     categories: ['coronas', 'buchones'],
     categoryName: 'Cumpleaños & Coronales',
@@ -1650,7 +1650,7 @@ export default function App() {
                     <source srcSet="/images/products/ramo-buchon-corona-reina-50-rosas.webp" type="image/webp" />
                     <img 
                       src="/images/products/ramo-buchon-corona-reina-50-rosas.jpg" 
-                      alt="50 Rosas más Corona Florería Rouss by Jharol Baldeón" 
+                      alt="50 Rosas + Corona Florería Rouss by Jharol Baldeón" 
                       className="about-img"
                       width="480"
                       height="600"
