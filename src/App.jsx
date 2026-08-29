@@ -922,22 +922,24 @@ export default function App() {
         });
       }
 
-      // Update Products from Supabase
+      // Update Products from Supabase (preserving authentic WhatsApp master data)
       if (data.products && data.products.length > 0) {
+        const initialMap = new Map(INITIAL_PRODUCTS.map(p => [p.id, p]));
         const mappedProducts = data.products.map(p => {
-          const catArray = Array.isArray(p.category) && p.category.length > 0 ? p.category : [p.slug || 'rosas'];
-          const primaryCat = catArray[0];
+          const authItem = initialMap.get(p.id);
+          const catArray = authItem?.categories || (Array.isArray(p.category) && p.category.length > 0 ? p.category : [p.slug || 'rosas']);
+          const primaryCat = authItem?.category || catArray[0];
           return {
             id: p.id,
-            title: p.title,
+            title: authItem?.title || p.title,
             category: primaryCat,
             categories: catArray,
-            categoryName: CATEGORY_NAMES_MAP[primaryCat] || 'Colección Rouss',
-            price: `S/ ${parseFloat(p.price || p.precio_base || 0).toFixed(2)}`,
-            tag: p.badge || 'Exclusivo',
-            image: p.image || '/images/products/ramo-buchon-12-girasoles-sol-radiante.webp',
-            imageFallback: p.image ? p.image.replace('.webp', '.jpg') : '/images/product-red-roses.jpg',
-            description: p.description || p.descripcion_corta || ''
+            categoryName: authItem?.categoryName || CATEGORY_NAMES_MAP[primaryCat] || 'Colección Rouss',
+            price: authItem?.price || `S/ ${parseFloat(p.price || p.precio_base || 0).toFixed(2)}`,
+            tag: authItem?.tag || p.badge || 'Exclusivo',
+            image: authItem?.image || p.image || '/images/products/ramo-buchon-12-girasoles-sol-radiante.webp',
+            imageFallback: authItem?.imageFallback || (p.image ? p.image.replace('.webp', '.jpg') : '/images/product-red-roses.jpg'),
+            description: authItem?.description || p.description || p.descripcion_corta || ''
           };
         });
         setProductsList(mappedProducts);
