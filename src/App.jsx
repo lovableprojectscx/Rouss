@@ -170,7 +170,7 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 'ba000001-0000-4000-a000-000000000015',
-    title: '4 Lirios y Papel Coreano',
+    title: '4 Lirios',
     category: 'pastel',
     categories: ['pastel'],
     categoryName: 'Delicadeza Pastel & Lirios',
@@ -660,7 +660,7 @@ const INITIAL_PRODUCTS = [
     category: 'tulipanes',
     categories: ['tulipanes', 'rosas'],
     categoryName: 'Tulipanes',
-    price: 'S/ 270.00',
+    price: 'S/ 300.00',
     tag: '12 Tulipanes',
     image: '/images/products/maxi-ramo-12-tulipanes-rojos-de-gala.webp',
     imageFallback: '/images/products/maxi-ramo-12-tulipanes-rojos-de-gala.jpg',
