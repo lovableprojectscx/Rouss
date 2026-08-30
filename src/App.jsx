@@ -74,15 +74,15 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 'ba000001-0000-4000-a000-000000000022',
-    title: '50 Rosas + Corona',
+    title: 'Ramo Princesa 50 Rosas + Corona',
     category: 'coronas',
     categories: ['coronas', 'buchones'],
     categoryName: 'Cumpleaños & Coronales',
     price: 'S/ 300.00',
-    tag: 'Corona 👑',
+    tag: 'Princesa 👑',
     image: '/images/products/ramo-buchon-corona-reina-50-rosas.webp',
     imageFallback: '/images/products/ramo-buchon-corona-reina-50-rosas.jpg',
-    description: 'Ramo de 50 rosas rojas con corona de cumpleaños dorada y cinta personalizada.'
+    description: 'Ramo de 50 rosas rojas con corona de cumpleaños dorada y cinta de Feliz Cumpleaños.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000017',
@@ -90,11 +90,11 @@ const INITIAL_PRODUCTS = [
     category: 'buchones',
     categories: ['buchones', 'rosas'],
     categoryName: 'Ramos Buchones & Girasoles',
-    price: 'S/ 250.00',
+    price: 'S/ 300.00',
     tag: '50 Rosas',
     image: '/images/products/ramo-buchon-elite-50-rosas.webp',
     imageFallback: '/images/products/ramo-buchon-elite-50-rosas.jpg',
-    description: 'Ramo de 50 rosas rojas. Billetes opcionales proporcionados por el cliente (+S/ 10 por colocación).'
+    description: 'Ramo de 50 rosas rojas. Trabajo manual de colocación de billetes incluido (billetes proporcionados por el cliente).'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000018',
@@ -122,15 +122,15 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 'ba000001-0000-4000-a000-000000000019',
-    title: '20 Rosas + Peluche + 1 Lirio',
+    title: '20 Rosas + 1 Lirio + Peluche',
     category: 'combos',
     categories: ['combos', 'pastel'],
     categoryName: 'Detalles & Combos Especiales',
-    price: 'S/ 230.00',
-    tag: 'Combo Peluche',
+    price: 'S/ 200.00',
+    tag: '20 Rosas + Peluche',
     image: '/images/products/combo-ternura-20-rosas-peluche-lirio.webp',
     imageFallback: '/images/products/combo-ternura-20-rosas-peluche-lirio.jpg',
-    description: 'Combo especial de 20 rosas rosadas con peluche de oso y 1 lirio oriental.'
+    description: 'Combo especial de 20 rosas rosadas con peluche tierno y 1 lirio oriental.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000020',
@@ -158,15 +158,15 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 'ba000001-0000-4000-a000-000000000023',
-    title: '15 Rosas con Esponja Absorbente',
+    title: '15 Rosas',
     category: 'rosas',
     categories: ['rosas'],
     categoryName: 'Rosas Premium',
-    price: 'S/ 100.00',
+    price: 'S/ 150.00',
     tag: '15 Rosas',
-    image: '/images/products/bouquet-esencial-15-rosas-hidratadas.webp',
-    imageFallback: '/images/products/bouquet-esencial-15-rosas-hidratadas.jpg',
-    description: 'Ramo cónico de 15 rosas rojas con esponja absorbente de agua para mayor frescura.'
+    image: '/images/products/ramo-buchon-15-rosas-esponja-floral.webp',
+    imageFallback: '/images/products/ramo-buchon-15-rosas-esponja-floral.jpg',
+    description: 'Elegante ramo cónico de 15 rosas rojas seleccionadas en papel coreano negro con lazo de autor.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000015',
@@ -186,10 +186,10 @@ const INITIAL_PRODUCTS = [
     category: 'pastel',
     categories: ['pastel'],
     categoryName: 'Delicadeza Pastel & Lirios',
-    price: 'S/ 160.00',
+    price: 'S/ 200.00',
     tag: '3 Lirios + Rosas',
-    image: '/images/products/bouquet-romance-3-lirios-rosas-pastel.webp',
-    imageFallback: '/images/products/bouquet-romance-3-lirios-rosas-pastel.jpg',
+    image: '/images/products/bouquet-3-lirios-rosas-glamour.webp',
+    imageFallback: '/images/products/bouquet-3-lirios-rosas-glamour.jpg',
     description: 'Bouquet de 3 lirios orientales rosados acompañados de rosas en envoltura marfil.'
   },
 
@@ -316,15 +316,15 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 'ba000001-0000-4000-a000-000000000041',
-    title: '6 Girasoles más Margaritas',
-    category: 'buchones',
-    categories: ['buchones'],
-    categoryName: 'Ramos Buchones & Girasoles',
-    price: 'S/ 80.00',
-    tag: '6 Girasoles',
+    title: '1 Lirio más Hortensias y Claveles',
+    category: 'pastel',
+    categories: ['pastel'],
+    categoryName: 'Delicadeza Pastel & Lirios',
+    price: 'S/ 65.00',
+    tag: '1 Lirio + Flores',
     image: '/images/products/bouquet-radiante-6-girasoles-margaritas.webp',
     imageFallback: '/images/products/bouquet-radiante-6-girasoles-margaritas.jpg',
-    description: 'Bouquet de 6 girasoles frescos con margaritas silvestres y envoltura de gala.'
+    description: 'Arreglo floral con 1 lirio aromático acompañado de hortensias y claveles frescos.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000042',
@@ -1652,7 +1652,7 @@ export default function App() {
                     <source srcSet="/images/products/ramo-buchon-corona-reina-50-rosas.webp" type="image/webp" />
                     <img 
                       src="/images/products/ramo-buchon-corona-reina-50-rosas.jpg" 
-                      alt="50 Rosas + Corona Florería Rouss by Jharol Baldeón" 
+                      alt="Ramo Princesa 50 Rosas + Corona Florería Rouss by Jharol Baldeón" 
                       className="about-img"
                       width="480"
                       height="600"
