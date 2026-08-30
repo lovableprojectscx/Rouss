@@ -35,7 +35,7 @@ describe('Florería Rouss - Catálogo & Componentes', () => {
     expect(screen.getAllByText('S/ 180.00').length).toBeGreaterThanOrEqual(1)
 
     // Tanda 2
-    expect(screen.getAllByText(/8 Rosas Cucurucho/i).length).toBeGreaterThanOrEqual(1)
+    expect(screen.getAllByText(/8 Rosas Escarchadas/i).length).toBeGreaterThanOrEqual(1)
     expect(screen.getAllByText('S/ 80.00').length).toBeGreaterThanOrEqual(1)
 
     // Tanda 3
