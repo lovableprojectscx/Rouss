@@ -529,15 +529,15 @@ const INITIAL_PRODUCTS = [
   },
   {
     id: 'ba000001-0000-4000-a000-000000000043',
-    title: 'Arreglo de Autor',
+    title: '1 Lirio + 6 Rosas',
     category: 'pastel',
-    categories: ["pastel"],
+    categories: ["pastel","rosas"],
     categoryName: 'Delicadeza Pastel & Lirios',
-    price: 'S/ 75.00',
-    tag: 'Exclusivo',
-    image: '/images/products/arreglo-de-autor-rouss.webp',
-    imageFallback: '/images/products/arreglo-de-autor-rouss.jpg',
-    description: 'Arreglo floral diseñado por el maestro florista con flores frescas de estación.'
+    price: 'S/ 80.00',
+    tag: '1 Lirio + 6 Rosas',
+    image: '/images/products/1-lirio-mas-6-rosas.webp',
+    imageFallback: '/images/products/1-lirio-mas-6-rosas.jpg',
+    description: 'Arreglo floral con 1 lirio aromático y 6 rosas rojas seleccionadas en envoltura de autor.'
   },
   {
     id: 'ba000001-0000-4000-a000-000000000044',
