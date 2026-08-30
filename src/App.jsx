@@ -922,24 +922,24 @@ export default function App() {
         });
       }
 
-      // Update Products from Supabase (preserving authentic WhatsApp master data)
-      if (data.products && data.products.length > 0) {
-        const initialMap = new Map(INITIAL_PRODUCTS.map(p => [p.id, p]));
+      // Update Products directly from Supabase (100% Real-time dynamic database)
+      if (Array.isArray(data.products)) {
         const mappedProducts = data.products.map(p => {
-          const authItem = initialMap.get(p.id);
-          const catArray = authItem?.categories || (Array.isArray(p.category) && p.category.length > 0 ? p.category : [p.slug || 'rosas']);
-          const primaryCat = authItem?.category || catArray[0];
+          const catArray = Array.isArray(p.category) && p.category.length > 0 
+            ? p.category 
+            : (p.slug ? [p.slug] : ['rosas']);
+          const primaryCat = catArray[0];
           return {
             id: p.id,
-            title: authItem?.title || p.title,
+            title: p.title || 'Arreglo Floral',
             category: primaryCat,
             categories: catArray,
-            categoryName: authItem?.categoryName || CATEGORY_NAMES_MAP[primaryCat] || 'Colección Rouss',
-            price: authItem?.price || `S/ ${parseFloat(p.price || p.precio_base || 0).toFixed(2)}`,
-            tag: authItem?.tag || p.badge || 'Exclusivo',
-            image: authItem?.image || p.image || '/images/products/ramo-buchon-12-girasoles-sol-radiante.webp',
-            imageFallback: authItem?.imageFallback || (p.image ? p.image.replace('.webp', '.jpg') : '/images/product-red-roses.jpg'),
-            description: authItem?.description || p.description || p.descripcion_corta || ''
+            categoryName: CATEGORY_NAMES_MAP[primaryCat] || 'Colección Rouss',
+            price: `S/ ${parseFloat(p.price || p.precio_base || 0).toFixed(2)}`,
+            tag: p.badge || 'Exclusivo',
+            image: p.image || '/images/product-red-roses.jpg',
+            imageFallback: p.image ? p.image.replace('.webp', '.jpg') : '/images/product-red-roses.jpg',
+            description: p.description || p.descripcion_corta || ''
           };
         });
         setProductsList(mappedProducts);
@@ -1902,15 +1902,21 @@ export default function App() {
             </div>
 
             {filteredProducts.length === 0 && (
-              <div className="empty-catalog-state">
-                <p>No encontramos arreglos con el término "{searchQuery}".</p>
-                <button 
-                  onClick={() => { setSearchQuery(''); setActiveCategory('todos'); }}
-                  className="btn-solid-gold"
-                  style={{ marginTop: '1rem', padding: '0.6rem 1.5rem', fontSize: '0.9rem' }}
-                >
-                  Ver Todos los Arreglos
-                </button>
+              <div className="empty-catalog-state" style={{ textAlign: 'center', padding: '3rem 1rem' }}>
+                {searchQuery ? (
+                  <>
+                    <p>No encontramos arreglos con el término "{searchQuery}".</p>
+                    <button 
+                      onClick={() => { setSearchQuery(''); setActiveCategory('todos'); }}
+                      className="btn-solid-gold"
+                      style={{ marginTop: '1rem', padding: '0.6rem 1.5rem', fontSize: '0.9rem' }}
+                    >
+                      Ver Todos los Arreglos
+                    </button>
+                  </>
+                ) : (
+                  <p style={{ color: '#666', fontStyle: 'italic' }}>Catálogo en actualización. Pronto nuevos arreglos florales disponibles.</p>
+                )}
               </div>
             )}
 

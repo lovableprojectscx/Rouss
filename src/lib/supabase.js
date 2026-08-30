@@ -78,22 +78,11 @@ export async function fetchRoussData() {
     ])
 
     const result = {
-      products: productsRes.data && productsRes.data.length > 0 ? productsRes.data : null,
-      categories: categoriesRes.data && categoriesRes.data.length > 0 ? categoriesRes.data : null,
+      products: Array.isArray(productsRes.data) ? productsRes.data : null,
+      categories: Array.isArray(categoriesRes.data) ? categoriesRes.data : null,
       settings: settingsRes.data || null,
-      testimonios: testimoniosRes.data && testimoniosRes.data.length > 0 ? testimoniosRes.data : null,
-      banners: bannersRes.data && bannersRes.data.length > 0 ? bannersRes.data : null
-    }
-
-    // Save to caches
-    memoryCache = result
-    memoryCacheTime = now
-    if (typeof window !== 'undefined') {
-      try {
-        sessionStorage.setItem(CACHE_KEY, JSON.stringify({ timestamp: now, data: result }))
-      } catch {
-        // Storage might be disabled/full
-      }
+      testimonios: Array.isArray(testimoniosRes.data) ? testimoniosRes.data : null,
+      banners: Array.isArray(bannersRes.data) ? bannersRes.data : null
     }
 
     return result
